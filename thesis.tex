@@ -1,0 +1,81 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[
+dissertation,
+copyright,
+final,
+justified,
+numbers,
+sort&compress,
+numsections,
+gsmodern,
+]{uothesis}
+%To see the outline
+\setcounter{tocdepth}{99}
+
+\usepackage{graphicx}
+%\usepackage{babel}
+%\usepackage{todonotes}
+%\usepackage[hang,center]{subfigure}
+%\usepackage{subcaption}
+%\usepackage{caption}
+%\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{unicode-math}
+\usepackage{verbatim}
+\usepackage{atlasphysics}
+\usepackage{blindtext}
+\usepackage{glossaries}
+\usepackage[unicode=true]{hyperref}
+\usepackage{tikz}
+%\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage{multirow}
+\usepackage{slashed}
+\usepackage{smartdiagram}
+%\usepackage[style=numeric,backend=biber,sorting=none]{biblatex}
+\usepackage{bookmark}
+\usepackage{tabularx}
+\usepackage{pdflscape}
+\usepackage{siunitx}
+%\DeclareSourcemap{
+%\maps[datatype=bibtex,overwrite=false]{
+% \map{
+%  \step[fieldsource=collaboration, final=true]
+%	\step[fieldset=author, fieldvalue=collaboration]
+%	}
+%	}
+%}
+%\usepackage{upgreek}
+%\usepackage{pstricks}
+%\RequirePackage{lineno}
+%\linenumbers
+
+%Always load this package last
+\usepackage[capitalise]{cleveref}
+%\crefname{equation}{Equation}{Equations}
+
+%\input{glossaries}
+
+%%\bibliographystyle{unsrt}
+%\bibliography{thesis.bib,ATLAS.bib,CONF.bib}
+
+\begin{document}
+
+%\include{cover}
+%\include{abstract}
+%\include{cv}
+%\include{acknowledgements}  %%acknowledgements page optional
+%\maketitle
+\tableofcontents
+%\glsresetall
+\include{introduction}
+\include{motivations}
+\include{experiment}
+\include{combinedPerformance}
+\include{analysis}
+\include{conclusions}
+%\appendix
+%\include{stat}
+
+%\printbibliography
+
+\end{document}
