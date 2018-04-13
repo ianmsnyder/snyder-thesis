@@ -1,0 +1,122 @@
+\chapter{Overview of the Global Feature Extractor}
+\label{ch:gFEX}
+
+
+\section{Global Feature Extractor Phase I Upgrade}
+
+The Phase I upgrade to the ATLAS detector will be performed during Long Shutdown 2, scheduled for 2019-2020.  This is in preparation of Run 3, which will see a maximum instantaneous luminosity of 2-3 x $10^{34} cm^{-2} s^{-1}$ and 55-80 interactions per bunch crossing with 25 ns spacing.  The trigger electronics must be upgraded to maintain an optimal trigger system.  This includes improvement in object energy resolution and more advanced algorithms to maintain trigger acceptance and rate.  The Liquid Argon (LAr) calorimeter will also be upgraded to have an increase in granularity of an order of magnitude.  This will be done by implementing super cells, which increase the granularity in the front and middle layers from ($\Delta \eta x \Delta \phi $) = (0.1 x 0.1) to (0.025 x 0.1).  New modules in the trigger system, Feature EXtractors (FEXs) will use this increased granularity for object identification algorithms. \\
+
+% Super cells diagram
+\begin{figure} [h!]
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip, scale=.65]{/Users/ian/Documents/Thesis/snyderThesis/figures/superCell.pdf} 
+\caption{(a) The current LAr configuration as Trigger Towers and (b) after the Phase I upgrade as Super Cells with increased granularity. }
+\end{figure}
+
+For transmitting this information to the FEXs, LAr Trigger Digitizer Boards (LTDBs) will be installed in available slots of the LAr front-end crates.  These digitize and transmit calorimeter signals to the LAr Trigger prOcessing MEzzanine (LATOME) cards in the off-detector LAr Digital Processing System (LDPS).  A Field Programmable Gate Array (FPGA) chip on the LATOME  reconstructs the transverse energy of each super cell and the bunch-crossing identification (BCID).  The LATOME then transmits the super cell information to the FEXs in appropriate granularities; full granularity to the electron Feature EXtractor (eFEX), ($\Delta \eta x \Delta \phi $) = (0.1 x 0.1) to the jet Feature EXtractor (jFEX), ($\Delta \eta x \Delta \phi $) = (0.2 x 0.2) to the global Feature EXtractor (gFEX).  The LDPS processes, buffers, and transmits data to the ATLAS Trigger and Data Acquisition System (TDAQ) readout chain and monitoring processes to Level 1 Trigger Acceptance (L1A).  After L1A data from the FEXs and LDPS are routed to the Front End Link EXchange (FELIX) which interfaces sub-detectors with data acquisition.  The LDPS also recreates analog sums with the current granularity and sends the information to the current systems for commissioning of the new systems. \\
+
+\begin{figure} [h!]
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip, scale=1.3]lgFEXnote/l1caloUpdated.pdf} 
+\caption{L1Calo system after the Phase I upgrade with new elements including the FEXs.  }
+\end{figure}
+
+While the eFEX and jFEX will provide improved but similar functionality as the CPMs and JEMs, the gFEX is a new technological addition.  Unlike any other part of the trigger system the gFEX will have the entire calorimeter available on a single module and so can scan the full $\eta$ range of the calorimeter.  This allows the gFEX to trigger on large-radius jets, typical of Lorentz-boosted objects, as well as calculate missing energy, $E_{T}^{miss}$, and centrality-related variables for heavy ion events. \\
+
+In order to scan the entire calorimeter, the gFEX will use three Virtex Ultrascale+ processor FPGAs (pFPGA) to run algorithms and one hybrid Zynq Ultrascale+ FPGA (zFPGA) for control and readout.  The central region of the calorimeter is split between two pFPGAs and the forward regions one the third pFPGA, but pFPGAs will be able to communicate with each other.    \\
+
+The input data from the calorimeters are organized into gTowers, which are summed electromagnetic and hadronic towers typically ($\Delta \eta x \Delta \phi $) = (0.2 x 0.2) in size.  Groups of gTowers, called gBlocks, are constructed with a sliding window algorithm and are usually 3 x 3 gTowers ($\Delta \eta x \Delta \phi $ = 0.6 x 0.6).  These are used to seed large-radius jets and determining jet substructure, as well as for calibration.  Large-radius (R=1.0) jets constructed from gTowers, gJets, are constructed with a simple-cone jet algorithm seeded by gBlocks. gBlocks and gJets are permitted to overlap. \\
+
+\begin{figure} [h!]
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip, scale=.4]{gFEXnote/gFEXgJets} %Replace this with pdf when Preview works again
+\caption{Layout of the gFEX.  The black squares are gTowers, groups of gTowers are gBlocks, and circular groups of gTowers are gJets, seeded by gBlocks.  Note that gBlocks and gTowers can overlap.}
+\end{figure}
+
+Boosted hadronic topologies are characteristics in many new physics scenarios as the decay products of high momenta boson and top quark decay products are highly energetic and are usually very collimated.  Because of this they can merge into a large radius jet which can be detected by the gFEX.  The current trigger system, which looks at relatively small regions of interest, may not trigger on these sort of objects. \\
+
+Most interactions in a bunch crossing are not hard-scatter events that can create interesting physics events, but are soft collisions that are not of interest to physics searches.  The number of interactions per bunch crossing, pileup $(<\mu>)$) will increase after the Phase I and Phase II upgrades as the luminosity in the LHC increases.  Pileup increases the uncertainty of energy of a jet, worsening the jet energy resolution (JER).  As the uncertainty of the energy of a jet increases, the likelihood of fake missing energy increases.  This increases the rate of the missing energy trigger, so the threshold must be increased to accommodate this. \\
+
+Momentum imbalances are also signatures of many new physics scenarios that predict stable invisible particles, such as supersymmetry and dark matter.  Since the missing energy trigger is also very sensitive to pileup, and as the missing energy trigger is often the most efficient trigger to use in searches for new physics, reducing pileup effects in the gFEX is very important. \\
+
+In addition to improving the JER and reducing pileup effects, the gFEX must also be calibrated to determine the jet energy scale (JES).  In the case of dijet events, the gBlock area covers $\geq 90\% $ of an $anti-k_{T}$ R=0.4 jet.  Therefore truth R=0.4 jets can be used to calibrate gBlocks and the JES constant the ratio of R$=\frac{E_{T}^{gBlock}}{E_{T}^{truth}}$ (not to be confused with the jet radius parameter R).  With enough statistics the distribution of the ratio can be built with the JES equal to the mean of the distribution and the JER equal to the RMS of the distribution.  A lookup table (LUT) with correction factors as function of energy and $\eta$ can be constructed and implemented in the gFEX firmware.  This calibration is performed using the official JetETmiss calibration software.  \\
+
+\section{Pileup Suppression}
+
+The usual pileup suppression algorithm using event information is not used here.  Instead, since the small energy deviations in a gTower are mostly due to electronic and pileup noise and since the average pileup over all events is 0 if the proper OFCs are applied, as shown in Figure \ref{fig:gfexpileup}, a noise cut on the gTowers is applied as a function of the standard deviation of the noise; all gTowers whose absolute energy is less than the noise cut have their energy set to zero.
+
+%\begin{figure}[h!]
+%  \centering
+%	\includegraphics[width=0.7\textwidth]{gTowerPileup.pdf}
+%\caption{\label{fig:gfexpileup}{ Distribution of pileup across all events with $\langle \mu \rangle = 80$.  The distribution is centered around 0 with proper OFCs. }} 
+%\end{figure}	
+
+After this noise cut the JES is determined similarly to typical approach with the exception that in addition to matching to a truth jet a gTower must also match to an offline jet as that is what is reconstructed offline
+
+
+\section{Calibration}
+
+The JetETmiss software is designed to match truth jets to reconstructed HLT jets and determine the JES by the mean of the distribution of the ratio R$=\frac{E_{T}^{gBlock}}{E_{T}^{truth}}$ in bins of energy and $\eta$.  The values of the JES are checked by calculating the closure. %\textcolor{red}{Define closure here}
+ \\
+ 
+ A noise cut of 4$\sigma$ on the energy is made here, though other choices may be optimal for other pileup conditions.  After making this noise cut on the gTowers they are rebinned as $\frac{E_{gTower, central}}{E_{gBlock}}$ since most of the energy of a dijet lies in the central gTower.  Figure \ref{fig:gTowerEnergyResponseSlice} shows the energy response of a slice in $\eta$ and $\pt$.  \\
+
+
+
+ \begin{figure}[h!]
+  \centering
+	\includegraphics[width=0.7\textwidth]{gTowerEnergyResponseSlice}
+\caption{\label{fig:gTowerEnergyResponseSlice}{Energy response of the gTowers after a noise cut for a slice in $\eta$ and $\pt$.}} 
+\end{figure}
+
+This response is repeated over all $\eta$ and $\pt$ to obtain a complete set of calibration constants.  Figure \ref{ig:gTowerEnergyResponse} shows the response over the calorimeters with various values of $\pt$.
+ 
+ \begin{figure}[h!]
+  \centering
+	\includegraphics[width=0.7\textwidth]{gTowerEnergyResponse.pdf}
+\caption{\label{fig:gTowerEnergyResponse}{Energy response of the gTowers after a noise cut as a function of $\eta$ for various energies of truth jets.}} 
+\end{figure}
+ 
+ After determining and applying the calibration the gBlocks are constructed from the calibrated gTowers.  Figure \ref{fig:EnergyResponseCalibratedgBlock} shows the energy response of the gBlocks compared to truth jets after this calibration.  If the calibration is perfect then one would expect a straight line at 1.0.  For higher $\pt$ truth jets this is close to the result.  Lower $\pt$ truth jets have a worse response, but this is to be expected as a sampling calorimeter only detects a fraction of the energy of a jet and low $\pt$ jets are generally hard to calibrate.
+ 
+  \begin{figure}[h!]
+  \centering
+	\includegraphics[width=0.7\textwidth]{EnergyResponseCalibratedgBlock}
+\caption{\label{fig:gTowerEnergyResponseSlice}{Energy response of gBlocks after a noise cut over $\eta$ for several values of $\pt$.}} 
+\end{figure}
+ 
+ 
+%The first plot shows the calorimeter response for gBlocks after calibration.  As an example, a noise cut of 3GeV is applied.  A flat line at 1 is an ideal response.  There is some variation in lower energy gBlocks, which is expected as there is a lower limit of the energy of a gBlock that can be calibrated. \\
+
+
+
+
+%\textcolor{red}{Updated calibration plot here}
+
+%\textcolor{red}{Discuss numerical inversion}
+
+
+%Jet calibration usually involves several steps: correcting for pileup, nonlinear detector response, $\eta$-dependent response, flavor-dependent response\footnote{Different jet flavors results in different observables.  Additionally, jets initiated by gluons usually have a wider transverse profile and have more particles than quark-initiated jets, which tend to be softer as well.  This leads to a quark-initiated jets having a lower calorimeter response than gluon-initiated jets\cite{GSC}. }, and any differences between data and simulation.  The approach for the nonlinear response and $\eta$-dependent response is to use \texit{numerical inversion}.  To perform numerical inversion first calculate the response, then calculate the correction by inverting the response and finally apply a jet-by-jet correction.  Finally, the new energy distribution should match the expected energy distribution.  If this is the case then numerical inversion has \textit{achieved closure}.  
+
+
+
+ 
+
+\section{Trigger Efficiences and Rate}
+
+The turn-on curve represents the efficiency of the trigger and the steepness of the plot demonstrates the resolution for a jet at a certain energy.  An energy of 100 GeV and the turn-ons for calibrated (with a noise cut) and uncalibrated in the most central region and a forward region are shown.  The rate plot helps determine the jet energy that can be triggered on, since there is limited bandwidth. \\
+
+%\textcolor{red}{Updated turn on and rate plots here}
+
+\begin{figure}[h!]
+  \centering
+	\includegraphics[width=0.7\textwidth]{gfexfigues/TurnOn_noisecut4sigmagBlock120offline85Mu80.pdf}
+\caption{\label{fig:gBlockTurnOn}{Triger efficiency for an offline jet of $\pt=$120 GeV for the central region and forward region.  }} 
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+	\includegraphics[width=0.7\textwidth]{gfexfigues/gBlockMu80AllRates_log.pdf}
+\caption{\label{fig:gBlockRates}{Triger rates for a range of gBlock $\pt$.}} 
+\end{figure}
+
+%\section{Missing Energy Resolution}
+
+\section{gFEX in the Phase II Upgrade}

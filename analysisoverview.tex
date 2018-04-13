@@ -1,0 +1,104 @@
+\chapter{Analysis Overview}
+\label{ch:analysisOverview}
+
+
+This chapter provides an overview of the analysis.  More details will be provided in Chapter \ref{ch:analysis}.  The search for the stop is well-motivated and should be lighter than other squarks; the large Yukawa couplings tend to drive down the masses of the third generation squarks in the renormalization group equations faster than the first two generations.  Additionally, the large Yukawa couplings make the masses of the third generation squarks have the largest impact on the mass of the Higgs; if naturalness is to be maintained then their masses should be small.  \\
+
+As it has the highest impact on naturalness, and is also the lightest squark, the stop is a good candidate for a search.  Additionally, the neutralino is a viable dark matter candidate and is produced in conjunction with the stop in $R$-parity conserving models.  While it's the lightest squark it still has a small cross section and thus searches are challenging.  Figure \ref{fig:stopCS} shows the cross stop of the stop quark as a function of its mass with several SM processed shown for comparison.  \\%\color{red}{Some more motivation here?}\color{black}{}
+
+
+\begin{figure}[tbh]
+	\centering
+	\includegraphics[width=1\textwidth,trim={0 0 0 0},clip]{stopCS_1.pdf}
+	\caption{\label{fig:stopCS}{Cross section for the stop quark as a function of mass at a center of mass energy of 13TeV.  Several SM cross sections, $t\bar{t}$, $Z+$jets\cite{ttZcs}, and $tt+Z$\cite{ttZcs}, are shown as well for reference.  Note that for heavier stop quarks SM processes have cross sections that are orders of magnitude larger.}}
+\end{figure}
+
+This dissertation describes a search for {\bf direct} stop pair production (in
+contrast to top squarks produced through gluino cascade decays). % where the mass of the top squark (\stop) is larger than the mass of the top quark ($t$): $m_{\stop} > m_t$. 
+The search is performed in the channel
+$pp \rightarrow \stop\, {\stop}^{\ast} + X$, where two decay modes are
+possible for the stop decay:
+
+\begin{itemize}
+\item $\stop \rightarrow t + \ninoone$, or
+\item  $\stop \rightarrow b + \chinopm \rightarrow b + W^{(\ast)} + \ninoone$.
+\end{itemize}
+
+
+In all cases, the all-hadronic decay of the top quark (or of the W in the $b + W^{(\ast)}
++ \ninoone$ mode) is considered. Orthogonal searches also exist that
+focus on the lepton+jets and dilepton decay modes of the top quark. \\
+
+The all-hadronic top decay mode is nominally
+with six jets, but events with at least four reconstructed jets are also
+considered. However, this channel has the feature that there are no
+neutrinos in the final state, so only intrinsic \met\ is from the
+$\nino$s. (If semi-leptonic decays are also considered, intrinsic
+\met\ is coming also from semi-leptonic $b$ decays.) Therefore the experimental
+signature is multiple jets and high \met. 
+% Top categories
+
+
+Signal regions A (SRA) and B (SRB) are optimized for high stop masses.  SRA is optimized to be sensitive to decays of heavy stops into a top quark and a light \LSP. Events are divided into three categories based on the reconstructed top candidate mass. The TT category includes events with two well-reconstructed top candidates, the TW category contains events with a well-reconstructed leading \pt\ top candidate and a well-reconstructed subleading $W$ candidate (from the subleading $R=1.2$ reclustered mass), and the T0 category represents events with only a leading top candidate. This is shown in Figure \ref{fig:categories}. The categorization showed an improvement in discovery significance. \\
+
+
+\begin{figure}[t]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{figures/SRA/CategoryDefs.eps}
+    \caption{Illustration of signal-region categories (TT, TW, and T0) based on the $R=1.2$ reclustered top-candidate masses for simulated direct top-squark pair production with $(m_{\stop},m_{\ninoone})=(1000,1) \GeV$ after the loose preselection requirement described in the text. The black lines represent the requirements on the reclustered jet masses.}
+    \label{fig:categories}
+  \end{center}
+\end{figure}
+
+In SRC the signature of stop decays when $\Delta m(\stop,\LSP)\sim m_{t}$ is significantly softer with low \met. This decay topology is very similar to non-resonant \ttbar\ production making signal and background separation challenging. However, several kinematic properties can be exploited to separate stop decays from \ttbar\ when an ISR jet is present in the final state. \\
+
+The selections for SRD are optimized for the decay of both pair-produced top squarks into a b and a \chinoonepm. SRE is designed for a model for which the tops are highly boosted. Such signatures can either come from direct stop pair production with a very high stop mass, or in the gluino-mediated compressed-stop scenario with large $\mgluino - \mstop$. \\
+
+%The analysis is also sensitive to gluino mediated stop production in the case where $\Delta(\mgluino, \mstop)$ is large but $\Delta(\mstop,\mLSP)$ is small. This results in a decay signature that is similar to direct stop production with highly boosted tops and high \met. \\
+
+The dominant background sources are:
+
+\begin{itemize}
+\item $Z\rightarrow \nu \nbar$ plus additional $b$-jets, typically produced in a Drell-Yan process.  
+\item Semileptonic $\ttbar$ events, which contain $\Wboson \to e/\mu/\tau \nu$ decays where the lepton is either lost or mis-identified as a jet (and have high \met\ due to the escaping neutrino),
+\item $W\rightarrow \ell \nbar$ plus additional $b$-jets, 
+\item $\ttbar+\Zboson$, where both tops decay hadronically and $\Zboson\rightarrow \nu \nbar$, and
+\item $Wt$-channel single top decays, where one $W$ decays hadronically and one leptonically.
+\end{itemize}
+
+Figure \ref{fig:atlasbsmsummaryfiducialxsect} summarizes theory predictions and ATLAS measurements for various SM production cross-sections and shows both total and fiducial cross sections.  A fiducial cross section is a cross section for the subset of a process which is visible in the detector.  
+
+\begin{figure}[tbh!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{figures/stop0L/ATLAS_b_SMSummary_FiducialXsect}
+	\caption{Summary of several SM total and fiducial production cross section measurements compared to the corresponding theoretical expectations {\cite{atlassmsummaryplots}}.}
+	\label{fig:atlasbsmsummaryfiducialxsect}
+\end{figure}
+
+
+Control regions (CRs) are defined for the major backgrounds in each SR to normalize from simulation to data.  CRs are designed to be orthogonal to all SRs while as close to the SR kinematically as possible to reduce uncertainties from the extrapolation.  To reduce uncertainties in normalization factors a lot of data is required.  The strategy for the CRs are:
+
+\begin{itemize}
+	\item 1-lepton: Requires exactly one well-identified lepton in order to be orthogonal to the SRs and treat it as a jet.  This CR is used for leptonically-decaying $W$ bosons, as in the $t\bar{t}$, $W+$jets, and single top backgrounds.  The CRs are orthogonal to 1-lepton searches.
+	\item 2-lepton: Requires exactly two well-defined leptons in order to be orthogonal to the SRs.  This is used to model $Z\rightarrow \nu \nbar$ events, so the invariant mass of the leptons must be that of the $Z$ boson.  These leptons are thus treated as invisible particles and their \pt\ added to the \met.
+	\item The QCD multijet background occurs when jets are mismodeled to produce fake \met.  To estimate this background jet smearing\cite{jetSmearing} is used, where the\pt\ and jet response function of well-measured jets with low \met\ in data are smeared to simulate jet mismodeling.
+\end{itemize} 
+
+
+
+Validation Regions (VRs) are designed to validate the CRs and are a region orthogonal to the SR and corresponding CR.  Normalization factors calculated from the CRs are applied to the VRs and checked against data.  The strategy for the VRs are:
+
+\begin{itemize}
+	\item 0-lepton: This is closer kinematically than a 1- or 2-lepton CR and is designed for \Zboson +jets for all SRs except for SRC, which has negligible contribution to the background.  To avoid overlap with the signal region the \drbjetbjet\ and/or the \mantikttwelvezero/\mantikteightzero\ requirement is reversed. 
+	\item 1-lepton: 
+\end{itemize}
+
+
+%In order to maximize sensitivity for SRA and SRB, final state categories based on top reconstruction were developed.  There are three cases: two top candidates are successfully reconstructed, a top and a $W$ boson are reconstructed, and one top is reconstructed but no second top or $W$ are reconstructed.  Cuts were decided for each category to maximize sensitivity in each.  
+
+
+
+
+
+
+

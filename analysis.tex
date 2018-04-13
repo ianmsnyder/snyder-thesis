@@ -1,22 +1,1167 @@
 \chapter{Analysis}
+\label{ch:analysis}
 
 
 
-\section{Object Selection}
+%\section{Object Selection}
+This chapter describes the analysis in depth, beginning with the signal regions and continuing with background estimation finally presenting the results and interpretations.  The lightest supersymmetric parter to the top quark being produced in direct pair production is the main focus of the analysis, while other scenarios are also discussed.  
+
 
 \section{Signal Region Definitions}
 
+Leading order stop pair-production at the LHC is dominated by gluon fusion, followed by $q\bar{q}$ scattering.  The stops are pair produced, conserving $R-$parity, are produced directly, so there are no intermediate particles in the simplified model.  \\
+
+As discussed in Chapter \ref{ch:analysisOverview} there are five distinct signal regions developed to optimize discovery significance for different topologies, SRA-E.  All of the searches share the following preselection requirements:
+
+\begin{itemize}
+	\item For data samples, events must be in the Good Runs List (GRL), which are runs that pass certain data quality requirements.  This gives a total luminosity of 36.46 fb\textsuperscript{-1}.
+	\item For data samples, cleaning from noise bursts and incomplete events.
+	\item The event must pass the lowest unprescaled \met\ trigger as well as have \met\ $>$ 250 GeV.
+	\item The event must have a reconstructed primary vertex.
+	\item The event must not contain any "bad jets" from the "BadLooser" jet definition described in section \ref{section:jetcleaning} with \pt\ $>$ 20 GeV.
+	\item The event must not contain any cosmic muons as discussed in section \ref{section:jetcleaning}
+	\item The event must not contain any bad muons as described in section \ref{section:muons}.
+	\item The event must contain no baseline electron candidates with \pt\ $>$ 7 GeV and no baseline muons with \pt\ $>$ 6 GeV.
+	\item The event must contain at least four jets.
+	\item The \dphi\ between the leading two (three) jets and the \met, \dphijettwomet (\dphijetthreemet), must be greater than 0.4 for ISR based regions (non-ISR based regions). 
+	\item The \mettrk\ must be greater than 30 GeV.
+	\item The \dphi, between the calo \met\ and the \mettrk, \dphimettrk, must be smaller than $\pi/3$.
+\item At least one b-tagged jet at the 77\% working point is required.
+\end{itemize}
+
+The analysis relies heavily on reconstruction top quark candidates, which is done using jet ``reclustering."  Jet reclustering is performed using the \antikt\ algorithm with a larger distance parameter (i.e., $R=1.2$) over the calibrated \antikt\ $R=0.4$ jet collection. The highest (second-highest) \pT\ reclustered jet is designated as the first (second) top candidate. Various optimization studies have found that this method using $R=1.2$ (top candidate) and $R=0.8$ (W candidate) results in the best signal sensitivity. The mass distribution is shown in FIgure \ref{fig:preselection}The masses are indicated by \mantikttwelvezero, \mantikttwelveone, \mantikteightzero, \mantikteightone. \\
+
+
+
+A suite of discriminating variables based on \antikt\ $R=0.4$ jets will be considered in the analysis optimization: 
+\begin{itemize}
+	\item $\dphijettwomet$: The difference in $\phi$ between the jet and \met, for the two leading jet in the event. This variable rejects events with fake \met\ from QCD, hadronic \ttbar, and detector effects.
+	\item $\HT$: The scalar sum of the \pt\ of all signal \antikt\ $R=0.4$ jets ($\pt>20\gev$, $|\eta|<2.8$, after overlap removal).
+	\item $\mtjetimet$: The transverse mass (\mt) between the $i$th jet and the \met\ in the event. The massless approximation is used for this and all following \mt\ variables:\newline $\mtjetimet = \sqrt{2\ptjeti\met\left(1-\cos{\Delta\phi\left(\mathrm{jet}^i,\met\right)}\right)}$, where $\ptjeti$ is the transverse momentum of the $i$th jet.
+	\item $\mtbmin$: Transverse mass between closest $b$-jet to $\met$ and $\met$. This variable provides the most powerful discrimination between signal and semileptonic \ttbar\ background.
+	\item $\mtbmax$: Transverse mass between furthest $b$-jet to $\met$ and $\met$. This variable provides very good discrimination between signal and semileptonic \ttbar\ background.
+	\item $\drbb$: The angular separation between the two jets with the highest MV2c10 weight. This variable is useful in discriminating against the $Z(\nu\overline\nu)+b\overline{b}+\rm{jets}$ background.
+\end{itemize}
+
+Distributions of ~\mantikttwelvezero\ and (b)~\mtbmin\ are shown in Figure \ref{fig:preselection}.  
+
+\begin{figure}[t]
+  \begin{center}
+    \subfloat[]{\includegraphics[width=0.5\textwidth]{figures/AntiKt12M0_preCutSRPlot_withRatio.eps}}
+    \subfloat[]{\includegraphics[width=0.5\textwidth]{figures/MtBMin_preCutSRPlot_withRatio.eps}}
+    \caption{Distributions of the discriminating variables (a)~\mantikttwelvezero\ and (b)~\mtbmin\ after the common preselection and an additional $\mtbmin>50\gev$ requirement. The stacked histograms show the SM expectation before being normalized using scale factors derived from the simultaneous fit to all dominant backgrounds. The ``Data/SM" plots show the ratio of data events to the total SM expectation. The hatched uncertainty band around the SM expectation and in the ratio plots illustrates the combination of statistical and detector-related systematic uncertainties. The rightmost bin includes all overflows.}
+    \label{fig:preselection}
+  \end{center}
+\end{figure}
+
+\subsection{SRA and SRB}
+SRA and SRB are optimized for high stop masses.  In addition to the preselection, SRA and SRB have common requirements of $\mtbmin>200\gev$, which reduces $t\bar{t}$ background,  two b-tagged jets, and a $\tau$-veto. \\
+
+SRA is optimized to be sensitive to decays of heavy stops into a top quark and a light \LSP. The main discriminating variables are the reclustered top masses, with $R=1.2$ and $R=0.8$, \mtbmin, \drbjetbjet, and \met. Events are divided into three categories based on the reconstructed top candidate mass ($R=1.2$ reclustered jet mass). The TT category includes events with two well-reconstructed top candidates, the TW category contains events with a well-reconstructed leading \pt\ top candidate and a well-reconstructed subleading $W$ candidate (from the subleading $R=1.2$ reclustered mass), and the T0 category represents events with only a leading top candidate. \\
+
+The categorization showed an improvement in discovery significance, assuming the shape of the $\mstop=800\gev,\mLSP=1\gev$ benchmark, from 2$\sigma$ to 3$\sigma$, yielding comparable results to a boosted decision tree (BDT). For the benchmark point with $\mstop=1000\gev,\mLSP=1\gev$, after the SRA-B preselection, $\sim$91\% (TT=38\%, TW=22\%, and T0=31\%) of events fall into one of these three categories.  \\ %In addition to the requirements listed in Table~\ref{tab:SRcommon}, SRA and SRB have common requirements of $\mtbmin>200\gev$, two b-tagged jets, and a $\tau$-veto (in addition to the preselection cuts).   \\ %NOTE: include BDT studies?
+
+A similar strategy was taken for the optimization of SRB which is aimed at being sensitive to $\mstop=600\gev,\mLSP=300\gev$. In addition to the \met\ and reclustered masses, \mtbmax, \mtbmin, and \drbjetbjet\ were used in the optimization.  The fraction of events in each category is after the SRA-B preselection: TT=14\%, TW=20\%, T0=35\%. All three categories are used in the optimization resulting in the signal regions defined in Table~\ref{tab:SignalRegionAB}. \\
+
+\begin{table}[htb]
+  \caption{Signal region definitions, in addition to the requirements presented in Table~\ref{tab:SRcommon}. \SRA\ is optimized for $\mstop=1000\gev,\mLSP=1\gev$ while SRB is optimized for $\mstop=700\gev,\mLSP=400\gev$.}
+  \begin{center}
+    \def\arraystretch{1.4}%
+    \begin{tabular}{c||l|c|c|c} \hline\hline
+      {\bf Signal Region}      &                    & {\bf TT}     & {\bf TW}     & {\bf T0}     \\ \hline \hline
+                               & \mantikttwelvezero & \multicolumn{3}{c}{$>120\gev$}             \\ \cline{2-5}
+                               & \mantikttwelveone  & $>120\gev$   & $60-120\gev$ & $<60\gev$    \\ \cline{2-5}
+                               & \mtbmin            & \multicolumn{3}{c}{$>200\gev$}             \\ \cline{2-5}
+                               & $b$-tagged jets    & \multicolumn{3}{c}{$\ge2$}                 \\ \cline{2-5}
+                               & $\tau$-veto        & \multicolumn{3}{c}{yes}                    \\ \cline{2-5}
+                               & \dphijetthreemet        & \multicolumn{3}{c}{$>0.4$}                    \\ \cline{2-5}\hline \hline
+      \multirow{3}{*}{{\bf A}} & \mantikteightzero  & \multicolumn{3}{c}{$>60\gev$}              \\ \cline{2-5}
+                               & \drbjetbjet        & $>1$         & \multicolumn{2}{c}{-}       \\ \cline{2-5}
+                               & \mttwo               & $>400$ GeV   & $>400$ GeV   & $>500$ GeV   \\ \cline{2-5}
+                               & \met               & $>400 \gev$ & $> 500 \gev$ & $> 550 \gev$ \\ \hline \hline
+      \multirow{2}{*}{{\bf B}} & \mtbmax            & \multicolumn{3}{c}{$>200\gev$}             \\ \cline{2-5}
+                               & \drbjetbjet        & \multicolumn{3}{c}{$>1.2$}                 \\ \cline{2-5}              
+\hline\hline
+    \end{tabular}
+  \end{center}
+    \label{tab:SignalRegionAB}
+\end{table}%
+
+Distributions of discriminating variables for SRA and SRB are shown in Figures \ref{fig:SRAMetAntiKt8M} and \ref{fig:SRBDRBBMtBMax} respectively, including the benchmark points.  Note that cutting on the variables reduces background more than it reduces the signal, thus improving sensitivity.  \\
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[width=0.445\textwidth]{figures/Met_SRA_TT.eps} 
+		\includegraphics[width=0.445\textwidth]{figures/AntiKt8M0_SRA_TT.eps} \\
+		\includegraphics[width=0.445\textwidth]{figures/Met_SRA_TW.eps} 
+		\includegraphics[width=0.445\textwidth]{figures/AntiKt8M0_SRA_TW.eps} \\
+		\includegraphics[width=0.445\textwidth]{figures/Met_SRA_T0.eps} 
+		\includegraphics[width=0.445\textwidth]{figures/AntiKt8M0_SRA_T0.eps} \\
+		\caption[Distributions of the \met\ and the \mantikteightzero\ for SRA]{\label{fig:SRAMetAntiKt8M} Distributions of the \met\ and the \mantikteightzero\ for SRA-TT, SRA-TW, and SRA-T0 after all requirements (except for the \met\ and \mantikteightzero, respectively) of Table~\ref{tab:SignalRegionAB} are made. The stacked histogram represent the total expected background estimated from MC while the hashed area represents the uncertainty due to MC statistics. Signal is shown in dashed and dotted lines for the $\mstop=600\gev,\mLSP=300\gev$ and $\mstop=1000\gev,\mLSP=1\gev$ benchmarks, respectively. }
+	\end{center}
+\end{figure}
+
+\begin{figure}[!htb]
+	\begin{center}
+		\includegraphics[width=0.445\textwidth]{figures/DRBB_SRB_TT.eps}
+		\includegraphics[width=0.445\textwidth]{figures/MtBMax_SRB_TT.eps}\\
+		\includegraphics[width=0.445\textwidth]{figures/DRBB_SRB_TW.eps}
+		\includegraphics[width=0.445\textwidth]{figures/MtBMax_SRB_TW.eps}\\
+		\includegraphics[width=0.445\textwidth]{figures/DRBB_SRB_T0.eps}
+		\includegraphics[width=0.445\textwidth]{figures/MtBMax_SRB_T0.eps}\\
+		\caption[Distributions of the \drbb\ and the \mtbmax\ for SRB]{\label{fig:SRBDRBBMtBMax} Distributions of the \drbb\ for SRB-TT, SRB-TW, SRB-T0 and after all requirements except for the \drbb\ of Table~\ref{tab:SignalRegionAB} are made. The \mtbmax\ distributions are also shown with all but the \mtbmax\ requirements made.  The stacked histogram represent the total expected background estimated from MC while the hashed area represents the uncertainty due to MC statistics. Signal is shown in dashed and dotted lines for the $\mstop=600~\gev,\mLSP=300~\gev$ and $\mstop=1000~\gev,\mLSP=1~\gev$ benchmarks, respectively. }
+	\end{center}
+\end{figure}
+
+
+ 
+%To interpret the results the p-values are reported in each category along with the combined p-value.  
+
+%SRC
+\subsection{SRC}
+The signature of stop decays when $\Delta m(\stop,\LSP)\sim m_{t}$ is significantly softer with low \met. This decay topology is very similar to non-resonant \ttbar\ production making signal and background separation challenging. However, several kinematic properties can be exploited to separate stop decays from \ttbar\ when an ISR jet is present in the final state. \\
+
+An additional set of discriminating variables is defined for signal regions using ISR to gain sensitivity the compressed ($\mstop-\mLSP\sim m_t$) signal grid region. These variables are all defined in the transverse center-of-mass (CM) of the sparticle plus ISR frame. Visible objects are grouped into being either a part of the ISR or the sparticle system. This is performed using a recursive jigsaw reconstruction technique, which looks for a ``thrust axis" where the \pt\-projection of all jets and \met\ in the center of mass frame in the event are maximized.  This axis then divides the space into the sparticle or ISR system (more details can be found in \cite{RJR_ISR}.  This association with the ISR or sparticle system is indicated by an ISR or S superscript, respectively. The V superscript denotes the visible part of system.  For example, \mV denotes the transverse mass of only the visible (jets+leptons) part of the sparticle system without the \met.  The variables considered are:
+
+\begin{itemize}
+\item [\boldmath \nBJetS: number of b-tagged jets associated with the sparticle hemisphere.
+\item \nJetS: number of jets associated with the sparticle hemisphere.
+\item  \pTSBZero: \pt\ of the leading b-jet in the sparticle hemisphere.
+\item  \pTSFour: \pt\ of the fourth jet ordered in \pt\ in the sparticle hemisphere.
+\item  \dPhiISRMET: angular separation in $\phi$ of the ISR and the \met in the CM frame.
+\item  \pTISR: \pt\ of the ISR system, evaluated in the CM frame.
+\item  \mS: transverse mass between the whole sparticle system and \met.
+\item  \mV/\mS: ratio of the transverse mass of the only the visible part of the sparticle system without \met and the whole sparticle system including \met.
+\item  \rISR: Ratio between invisible system (\met in CM frame) and \pTISR
+\end{itemize}
+
+After the preselection, defined in Table~\ref{tab:SRcommon},
+additional requirements are made resulting in eight signal regions,
+SRC-1 through SRC-8, for which the exact requirements are listed in
+Table~\ref{tab:SignalRegionC}. 
+
+\begin{table}[htpb]
+  \caption{Signal region C definitions, in addition to the requirements presented in Table~\ref{tab:SRcommon}. }
+  \begin{center}
+    \def\arraystretch{1.4}%
+    \begin{tabular}{c||c|c|c|c|c|} \hline\hline
+      {\bf Variable} & SRC-1 & SRC-2 & SRC-3 & SRC-4 & SRC-5 \\ \hline \hline
+       b-tagged jets & \multicolumn{5}{c}{$\ge1$} \\ 
+      \nBJetS & \multicolumn{5}{c}{$\ge1$} \\
+      \nJetS & \multicolumn{5}{c}{$\ge5$}  \\
+      \pTSBZero & \multicolumn{5}{c}{$>40\gev$}  \\ 
+      \mS & \multicolumn{5}{c}{$>300\gev$}  \\ 
+      \dPhiISRMET & \multicolumn{5}{c}{$>3.00$}  \\ 
+      \pTISR & \multicolumn{5}{c}{$>400$ GeV}   \\ 
+      \pTSFour & \multicolumn{5}{c}{$>50$ GeV}   \\ \hline
+      \rISR &  0.30-0.40 & 0.40-0.50 & 0.50-0.60 & 0.60-0.70 & 0.70-0.80\\  \hline \hline
+    \end{tabular}
+  \end{center}
+  \label{tab:SignalRegionC}
+\end{table}%
+
+
+
+
+%SRD
+
+\subsection{SRD}
+
+The selections for SRD are optimized for the decay of both pair-produced top squarks into a $b$ quark and a \chinoonepm. In this case no top-quark candidates are reconstructed, so the sum of the transverse momenta of the two jets with the highest $b-$tagging weight, as well as that of the second, fourth, and fifth highest, are used for additional background rejection.  The models considered for the optimization have the chargino mass fixed to two times the neutralino mass, $m(\chinoonepm) = 2 \cdot m(\ninoone)$. \\
+
+The best selections for the signal samples with m(\stop) = 400 GeV, m(\ninoone) = 50 GeV (SRD-low), %m(\stop) = 600 GeV, m(\ninoone) = 100 GeV (SRD-med), 
+m(\stop) = 700 GeV, m(\ninoone) = 50 GeV (SRD-high) are reported in Table~\ref{tab:SRDsel}. The two regions are not combined, individual p-values are quoted for discovery while the region with the best expected sensitivity is chosen during the exclusion fit.
+
+\begin{table}[!htb]
+  \centering
+  \begin{tabular}{l|c|c}
+    \hline\hline
+    & SRD-low & SRD-high \\
+    \hline
+    \dphijetthreemet     & \multicolumn{2}{c}{$>0.4$}     \\ \hline
+    \met & \multicolumn{2}{c}{$>$ 250 GeV}  \\ \hline
+    NJets & \multicolumn{2}{c}{$\ge5$} \\ \hline
+    b-tagged jets & \multicolumn{2}{c}{$\geq$2} \\ \hline
+    $\Delta R (b,b)$ & \multicolumn{2}{c}{$>$ 0.8} \\ \hline
+    $\tau$-veto & \multicolumn{2}{c}{yes} \\ 
+    \hline
+    \hline
+    jet \ptone & \multicolumn{2}{c}{$>150$ GeV}   \\ \hline
+    jet \ptthree & $>100$ GeV & $>80$ GeV  \\ \hline
+    jet \ptfour & \multicolumn{2}{c}{$>60$ GeV} \\
+    \hline
+    \mtbmin & $>250$ GeV & $>350$ GeV\\
+    \hline
+    \mtbmax & $>300$ GeV & $>450$ GeV\\
+    \hline
+    b-jet \ptzero+\ptone & $>300$ GeV & $>400$ GeV\\
+
+    \hline\hline
+  \end{tabular}
+  \caption{Summary of the optimal selection for models with b\chinoonepm\ and mixed decays. The jets are ordered in \pt. The order of the jet is indicated by the index. Thus if a \ptone\ requirement is made the same requirement is made on \ptzero.}
+  \label{tab:SRDsel}
+\end{table}
+
+\subsection{SRE}
+
+SRE is designed for a model for which the tops are highly boosted. Such signatures can either come from direct stop pair production with a very high stop mass, or in the gluino-mediated compressed-stop scenario with large $\mgluino - \mstop$ . The benchmark for this signal region is a model where $(\mgluino, \mstop, \mLSP) = (1700, 400, 395) \gev$. Due to the large boost, the top daughters are more collimated compared to typical topology expected in \SRA.  Compared to direct stop pair production with $\mstop=800 \gev$ and $\mLSP=1 \gev$, the $\Delta R$ separation between the \Wboson\ and the bottom quark tends to be smaller. This is shown in Figure \ref{fig:SRBoost_dRWb}.  Therefore, \antikt\ $R=0.8$ reclustered jet collection will be considered as the top candidates instead of $R=1.2$ masses in other signal region. Table~\ref{tab:SRE} shows the selection criteria for SRE. 
+
+\begin{table}[!htb]
+	\caption{SRE definitions, in addition to the requirements presented in Table~\ref{tab:SRcommon}. %unless specified otherwise.
+	SRE is optimized for gluino mediated compress stop scenario with $m_{\gluino}=1700 \gev$, $\mstop=400 \gev$, and $\mLSP=395 \gev$.}
+	\begin{center}
+		\begin{tabular}{c||r} \hline\hline
+			{\bf Variable}	& \multicolumn{1}{c}{\bf SRE}	\\
+			\hline
+    \dphijetthreemet     & $>0.4$     \\ \hline
+			$b$-tagged jets		& $\ge2$             \\
+			\mtbmin           & $>200 \gev$        \\
+			\met              & $>550 \gev$        \\
+			\mantikteightzero	& $>120 \gev$        \\
+			\mantikteightone	& $>80	\gev$        \\
+			$H_T$             & $>800\gev$        \\
+			\htsig            & $>18	\sqrt{\gev}$ \\
+			\hline\hline
+		\end{tabular}
+	\end{center}
+	\label{tab:SRE}
+\end{table}
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{figures/dRWbT800L1}
+		\caption{$m(\stop,\ninoone)=(800,1)~\GeV$}
+		\label{fig:SRBoost_dRWb_T800L1}
+	\end{subfigure}
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+	%(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{figures/dRWbGtc5_1400_400}
+		\caption{$m(\gluino,\stop,\ninoone)=(1400,400,395)~\GeV$}
+		\label{fig:SRBoost_dRWb_Gtc_1400_400}
+	\end{subfigure}
+	\caption[The true $\Delta R$ between the \Wboson\ and the $b$-quark vs. the top \pt]{The true $\Delta R$ between the \Wboson\ and the $b$-quark vs.\ the truth top \pt. The common preselection criteria are applied with the exception of the $b$-jet requirement.}
+	\label{fig:SRBoost_dRWb}
+\end{figure}
+
+
 \section{Background Estimation}
 
+
+
+%SRAB
+
+
+
+
+
+ followed by $t\bar{t}$.  In  \ttbar+V. The next three dominant backgrounds for each of the categories have about equal contributions and are, \ttbar, and W+jets. Where statistically possible separate control regions are used for the TT, TW, and T0 categories for the dominant backgrounds. \\ %For the Z+jets background normalization a set of two-lepton, two b-tagged jet control regions (described in Sect.~\ref{sec:ZllCR}) are used while for the \ttbar\ and W+jets normalization two orthogonal sets of one-lepton control regions (described in Sect.~\ref{sec:TopCRdef} and Sect.~\ref{sec:WCR}) are used. The \ttbar+V normalization is derived from a one-lepton $\ttbar+\gamma$ control region.
+
+The SM backgrounds in each SR are estimated with a profile likelihood fit using the observed number of events in the CRs.  The correlations in the systematic uncertainties that are common between SRs and CRs  are treated as nuisance parameters in the fit and are modeled by Gaussian probability density functions.  A normalization factor is then derived from the fit.  For backgrounds without a defined CR, contributions are estimated using the cross section.  \\
+
+
+%Z
+\subsection{$Z+$jets}
+
+$Z \rightarrow \nu\nu$+jets background becomes more relevant as the \MET\ requirement is tightened. A possible way to estimate the $Z \rightarrow
+\nu \nu$ background is by using a $Z \rightarrow \ell \ell$+jets control
+sample. The latter channel has the advantage of an easier selection of
+pure samples in terms of non-$Z$ background, but it is characterized by a
+lower branching fraction than the background that it is trying to
+estimate due to the  axial-vector couplings of the charged leptons to the $Z$.  This becomes particularly problematic when estimating the
+background for events with large $Z$ \pT\ where the number of expected
+events becomes very small. In the current analysis the number of
+$Z$+jets events is reduced by the \MET\ selection, the high jet
+multiplicity and the requirement for 2 $b-$tagged jets.
+
+
+   
+\subsubsection{Control Region}
+%CR
+ A summary of the CR selections can be found in Table~\ref{tb:selectionZllCR}. \\
+
+\begin{table}[htpb]
+  \caption{Selection for the $Z$ CR with 2 b-jets.}
+  \begin{center}
+    \begin{tabular}{c|c|c|c|c}
+      \hline \hline
+      Selection                 & CRZAB-TT-TW & CRZAB-T0 & CRZD & CRZE       \\
+      \hline \hline
+      Leptons selection & \multicolumn{4}{c}{exactly 2 opposite charge electrons or muons} \\
+      %Leptons \pt & \multicolumn{4}{c}{28 GeV} \\
+      \hline
+      Jet multiplicity & \multicolumn{2}{c|}{$ \ge4 $} & $\ge5$ & $\ge4$ \\
+      \hline      
+      Jet \pT\ & \multicolumn{4}{c}{(80,80,40,40) GeV} \\
+      \hline
+      Lepton invariant mass & \multicolumn{4}{c}{$86 < M(\ell\ell) < 96$ GeV} \\
+      \hline
+      $E_{T}^{miss}$  & \multicolumn{4}{c}{$ < 50$ GeV} \\
+      \hline
+      \metprime &\multicolumn{4}{c}{$ > 100$ GeV} \\
+      \hline
+      b-jets & \multicolumn{4}{c}{$ >=2 $}\\
+      \hline
+      \mantikttwelvezero & \multicolumn{2}{c|}{$>120$ GeV} & \multicolumn{2}{c}{-} \\
+      \hline
+      \mantikttwelveone & $>60$ GeV& $<60$ GeV & \multicolumn{2}{c}{-} \\
+      \hline
+      \mtbminprime &  \multicolumn{2}{c|}{-} & 200 & 200 \\
+      \hline 
+      \mtbmaxprime &  \multicolumn{2}{c|}{-} & 200 & - \\
+      \hline 
+      \HT &  \multicolumn{3}{c|}{-} & 500  \\
+      \hline\hline
+    \end{tabular}
+  \end{center}
+  \label{tb:selectionZllCR}
+\end{table}
+
+Figure \ref{fig:CRZ} shows the distribution of some kinematic variables for the CRs.  A normalization factor is derived as the ratio between data and MC,
+correcting for the contamination for non-$Z$ backgrounds. This is found
+to be range from 1 to 1.4. \\
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{figurest/MetLep_CRZAB_TT_TW_log.eps}
+    \includegraphics[width=0.48\textwidth]{figures/MT2Chi2Lep_CRZAB_TT_TW_log.eps}
+   \includegraphics[width=0.48\textwidth]{figures/DRBB_CRZAB_T0.eps}
+   \includegraphics[width=0.48\textwidth]{figures/JetPt_4__CRZD_log.eps}
+   \includegraphics[width=0.48\textwidth]{figures/Ht_CRZE_log.eps}
+   \includegraphics[width=0.48\textwidth]{figures/AntiKt8M_0__CRZE.eps}
+    \caption{\label{fig:CRZ} Postfit distributions for the CRZs of the \metprime, \mttwo\ for SRA-TT and -TW, $\drbjetbjet\ for SRA-T0, fourth leading jet \pt\ for SRD, and \htsigprime\ and \mantikteightzero for SRE. The ratio between data and MC is given in the bottom panel. The hashed area in both the top and lower panel represent the uncertainty due to MC statistics and detector systematics.}
+
+%VRs
+
+\subsubregion{Validation Region}
+
+Zero-lepton validation regions for \Zboson +jets dedicated to the various SRs have
+been designed, except for SRC as the contribution of \Zboson +jets background to that particular SR is negligible. The
+various selections are summarized in Table~\ref{tb:ZVRsel}. To avoid overlap with the signal region the \drbjetbjet\ and/or the \mantikttwelvezero/\mantikteightzero\ requirement is reversed. These reversals also help in reducing \ttbar\ and signal contamination. Signal contamination is below 25\% for all validations regions with the signal causing the highest contamination having $\mstop=500\gev$ with $\mLSP=200\gev$. For VRZAB the signal contamination is 25\% for signal with $\mstop=500\gev$ with $\mLSP=200\gev$ (an already excluded signal point) and 15\% for all other signal points. Similarly, for VRZD the highest signal contamination comes from signal with $\mstop=600\gev$ with $\mLSP=200\gev$, $\mstop=500\gev$ with $\mLSP=200\gev$, and $\mstop=550\gev$ with $\mLSP=250\gev$ at 22\%, 21\%, and 17\%, respectively. The remainder of the signal points have signal contamination less than 15\%. As with VRZAB, the high signal contamination models are all points that have already been excluded. Finally, the signal models with the highest signal contamination for VRZE have $\mstop=500\gev$ with $\mLSP=200\gev$, and $\mstop=550\gev$ with $\mLSP=250\gev$ with a contamination of 19\% and 17\%, respectively. All remaining signal points have less than 15\% contamination. \\
+
+\begin{table}[htpb]
+  \caption{Selection for the $Z$ VRs for SRA/SRB, SRD, and SRE. The same preselection as in the SRs and shown in Table~\ref{tab:SRcommon} are applied.}
+  \begin{center}
+    \begin{tabular}{c|c|c|c}
+      \hline \hline
+      Selection                    & VRZAB                    & VRZD           & VRZE          \\
+      \hline \hline
+      Jet $\rm{p_T^0}, \rm{p_T^1}$ & $80, 80 $ GeV            & $150, 80 $ GeV & $80, 80 $ GeV \\
+\hline
+Lepton \pt                         & \multicolumn{3}{c}{$ >28\gev$}                            \\
+\hline
+Jet multiplicity                   & $\ge4$                   & $\ge5$         & $\ge4$        \\
+      \hline
+      b-jets                       & \multicolumn{3}{c}{$ >=2 $}                               \\
+      \hline
+      $\tau$ veto                  & \multicolumn{2}{c|}{yes} & no                             \\
+      \hline
+      \mtbmin                      & \multicolumn{3}{c}{$>200$ GeV}                            \\
+      \hline 
+      \mantikttwelvezero           & $ <120 $ GeV             & \multicolumn{2}{c}{-}          \\
+      \hline 
+      \drbb                        & $<1$                     & $<0.8$         & $<1$          \\
+      \hline 
+      \mtbmax                      & -                        & $>200$ GeV     & -             \\
+      \hline 
+      \HT                          & \multicolumn{2}{c|}{-}   & $>500$ GeV                     \\
+      \hline
+      \htsig                       & \multicolumn{2}{c|}{-}   & $>14$ $\sqrt{\gev}$            \\
+      \hline 
+      \mantikteightzero            & \multicolumn{2}{c|}{-}   & $ <120 $ GeV                   \\ 
+      \hline\hline
+    \end{tabular}
+  \end{center}
+  \label{tb:ZVRsel}
+\end{table}
+
+Figure \ref{fig:VRZ} shows the distribution of some kinematic variables for the VRs.
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{figurest/Met_VRZAB.eps}
+     \includegraphics[width=0.48\textwidth]{figurest/JetPt_0__VRZAB.eps}
+     \includegraphics[width=0.48\textwidth]{figurest/NJets_VRZAB.eps}
+   \includegraphics[width=0.48\textwidth]{figures/JetPt_4__VRZD.eps}
+    \includegraphics[width=0.48\textwidth]{figurest/DRBB_VRZD.eps}
+    \includegraphics[width=0.48\textwidth]{figures/MtBMin_VRZE.eps }
+    \caption{\label{fig:VRZ} Postfit distributions for the VRZs of the \met, leading jet \pt\ for SRAB, and number of jets for SRAB, fourth leading jet \pt\ and \drbb\ for SRD, and \mtbmin for SRE. The ratio between data and MC is given in the bottom panel. The hashed area in both the top and lower panel represent the uncertainty due to MC statistics and detector systematics.}
+
+%ttbar
+\subsection{\ttbar\, \Wjets\, and single-top}
+\label{sec:1leptonCR}
+
+%In this section the regions defined to estimate the \Wjets\ (CRW), \ttbar\ (CRTopX), and single-top (CRST) backgrounds are introduced.\\
+The \Wjets\ (CRW), \ttbar\ (CRTopX), and single-top (CRST)  backgrounds contribute to the signal region selections because one lepton from the decay of a W-boson is out of acceptance, is mis-identified as a jet, or is an hadronically decaying $\tau$-lepton (the latter is the dominant source). The control regions to estimate the normalization to these backgrounds, hence, are defined by exploiting a one lepton (electron or muon) selection, thus making them orthogonal to the SRs. For consistency with the signal regions, the same \met\ triggers are used as in the SR (Table~\ref{tab:SRcommon}). In these regions the lepton is counted as a jet for the \pt\ requirements and the jet reclustering but not for the QCD cleaning selections. The top control region is further divided to match the various signal regions. A specially designed top control region is used for SRC using similar ISR and recursive jigsaw methods. \\
+
+
+The three sets of CRs (there is one CRW and CRST but there are multiple CRTops) are mutually exclusive. The requirements on the number of b-jets and on \mantikttwelvezero\ ensures that CRW is orthogonal with CRTop and CRST. The selection on $\Delta R(b_{0,1},\ell)_{\mathrm{min}}$, defined as the minimum $\Delta R$ between the two jets with the highest b-tag weight and the selected lepton, ensures the orthogonality of CRTop and CRST. In CRST the requirement on the $\Delta R$ of the two leading-weight b-jets is necessary to reject a large part of the remaining \ttbar\ background and reach a single top purity of $\sim$50\%.\\
+
+\begin{table}[htpb]
+  \caption{Summary of the selection for the 1-lepton, single top, $W$+jets and common to all top control regions. The signal lepton is treated as a jet for the jet counting and \pt\ ordering as well as for the top reco.}
+  \begin{center}
+    \begin{tabular}{c|c|c|c}
+      \hline \hline
+                                    & CRTopX                        & CRST        & CRW                \\ \hline
+      Number of leptons             & \multicolumn{3}{c}{1}                                            \\ \hline
+      Number of jets (incl. lepton) & \multicolumn{3}{c}{$\geq 4$}                                     \\ \hline
+      $\pt$ of jets (incl. lepton)  & \multicolumn{3}{c}{(80,80,40,40) GeV}                            \\ \hline
+      \mindphijettwomet             & \multicolumn{3}{c}{$> 0.4$}                                      \\ \hline
+      $\met$                        & \multicolumn{3}{c}{$>250$ GeV}                                   \\ \hline
+      %\mtlepmet                    & $>30$,$<120$ GeV              & \multicolumn{2}{c}{$>30$,$<100$} \\ \hline
+      \mtlepmet                     & varies                        & \multicolumn{2}{c}{$>30$,$<100$} \\ \hline
+      Number of $b$-jets            & varies                        & $\ge2$ &$=1$                            \\ \hline
+      %Number of $b$-jets           & \multicolumn{2}{c|}{$\geq 2$} & $=1$                             \\ \hline
+      \mantikttwelvezero            & varies                        & $>120$ GeV  & $<60\,$GeV         \\ \hline
+      %\mtbmin                      & $>100\,$GeV                   & $>200\,$GeV & -                  \\ \hline
+      \mtbmin                       & varies                        & $>200\,$GeV & -                  \\ \hline
+      %\mindrblep                   & $<1.5$                        & $>1.5$      & $>2.0$             \\ \hline
+      \mindrblep                    & varies                        & \multicolumn{2}{c}{$>2.0$}             \\ \hline
+      \drbjetbjet                   & -                             & $>1.5$      & -                  \\ \hline \hline
+    \end{tabular}
+  \end{center}
+  \label{tab:1LCR_BaseDefs}
+\end{table}
+
+While the signal contamination in CRW and CRTop is negligible (less than 10\%), in the single top control region contamination of almost 25\% is observed for signal models of direct stop pair-production with the stop decaying, with $BR=1$, to a b-quark and a chargino ($m(\chinoonepm)=2\cdot m(\ninoone)$).\\
+
+
+\subsubsection{$t\bar{t} Control Region$
+
+Tables~\ref{tab:crTopABDef} and ~\ref{tab:crTopCDEDef} show the definitions of the various top control regions after the requirements shown in Table~\ref{tab:1LCR_BaseDefs}. SRA and SRB each have a set of three orthogonal control regions defined by the top candidate categories. Additionally, control regions are designed for SRC, SRD and SRE.  
+
+\begin{table}[htb]
+  \caption{Control region definitions, in addition to the requirements presented in Table~\ref{tab:1LCR_BaseDefs} for CRTopA and CRTopB.}
+  \begin{center}
+    \def\arraystretch{1.4}%
+    \begin{tabular}{c||l|c|c|c} \hline\hline
+      {\bf CRTop}              &                    & {\bf TT}     & {\bf TW}     & {\bf T0}     \\ \hline \hline
+                               & \mantikttwelvezero & \multicolumn{3}{c}{$>120\gev$}             \\ \cline{2-5}
+                               & \mantikttwelveone  & $>120\gev$   & $60-120\gev$ & $<60\gev$    \\ \cline{2-5}
+                               & \mtlepmet          & \multicolumn{3}{c}{$>30$,$<100$ GeV}           \\ \cline{2-5}
+                               & Number of $b$-jets & \multicolumn{3}{c}{$\ge2$}                 \\ \cline{2-5}
+                               & \mtbmin            & \multicolumn{3}{c}{$>100\,$GeV}            \\  \cline{2-5}
+                               & \mindrblep         & \multicolumn{3}{c}{$<1.5$}                 \\  \cline{2-5}
+\hline\hline
+      \multirow{3}{*}{{\bf A}} & \mantikteightzero  & \multicolumn{3}{c}{$>60\gev$}              \\ \cline{2-5}
+                               & \drbjetbjet        & $>1$         & \multicolumn{2}{c}{-}       \\ \cline{2-5}
+                               & \met               & $> 250 \gev$ & $> 300 \gev$ & $> 350 \gev$ \\ \hline \hline
+      \multirow{2}{*}{{\bf B}} & \mtbmax            & \multicolumn{3}{c}{$>200\gev$}             \\ \cline{2-5}
+                               & \drbjetbjet        & \multicolumn{3}{c}{$>1.2$}                 \\ \cline{2-5}              
+      \hline\hline
+    \end{tabular}
+  \end{center}
+  \label{tab:crTopABDef}
+\end{table}%
+
+
+\begin{table}[htpb]
+  \caption{Summary of the selection for the 1-lepton top control region for CRTopC, CRTopD and CRTopE, in addition to the requirements presented in Table~\ref{tab:1LCR_BaseDefs}. }
+  \begin{center}
+    \begin{tabular}{l|c|c|c}
+      \hline \hline
+                           & CRTopC    & CRTopD     & CRTopE                  \\ \hline
+      \mtlepmet            & $<80$ GeV & \multicolumn{2}{c}{$>30$,$<100$ GeV} \\ \hline
+      Number of jets   & $\ge4$    & $\ge5$ &  $\ge4$          \\ \hline
+      Number of $b$-jets   & $\ge1$    & \multicolumn{2}{c}{$\ge2$}           \\ \hline
+      \mtbmin              & -         & \multicolumn{2}{c}{$>100\,$GeV}      \\  \hline
+      \mindrblep           & $<2.0$    & \multicolumn{2}{c}{$<1.5$}           \\  \hline
+      \nJetS                 & $\ge5$    & \multicolumn{2}{c}{-}                \\ \hline
+     \nBJetS                 & $\ge1$    & \multicolumn{2}{c}{-}                \\ \hline
+      \pTSFour             & $>40\gev$ & \multicolumn{2}{c}{-}                \\ \hline
+      \pTISR               & $\ge 400$ GeV & \multicolumn{2}{c}{-}                \\ \hline \hline
+      \drbjetbjet          & -         & $>0.8$     & -                       \\ \hline
+      \mtbmax              & -         & $>100\gev$ & -                       \\ \hline
+      jet \ptone           & -         & $>150$ GeV & -                       \\ \hline
+      jet \ptthree         & -         & $>80$ GeV  & -                       \\ \hline
+      %b-jet \ptzero        & -         & $>150$ GeV & -                       \\ \hline
+      b-jet \ptzero+\ptone & -         & $>300$ GeV & -                       \\ \hline\hline
+      \mantikteightzero    & \multicolumn{2}{c|}{-}          & $>120\,$GeV             \\ \hline 
+      \mantikteightone     & \multicolumn{2}{c|}{-}          & $>80\,$GeV              \\ \hline
+      \HT                  & \multicolumn{2}{c|}{-}          & $>500\,$GeV             \\ 
+      \hline \hline
+    \end{tabular}
+  \end{center}
+  \label{tab:crTopCDEDef}
+\end{table}
+
+
+
+
+%\begin{table}[htpb]
+%  \caption{Background composition of $\ttbar$ control regions for SRA normalised to \intlumi\ \ifb. The signal lepton is treated as a jet. }
+%  \begin{center}
+%    \input{CRTopATTYields.tex}
+%    \input{CRTopATWYields.tex}
+%    \input{CRTopAT0Yields.tex}
+%  \end{center}
+%  \label{tab:crTopAYields}
+%\end{table}
+
+%
+%\begin{table}[htpb]
+%  \caption{Background composition of $\ttbar$ control regions for SRB normalised to \intlumi\ \ifb. The signal lepton is treated as a jet. }
+%  \begin{center}
+%    \input{CRTopBTTYields.tex}
+%    \input{CRTopBTWYields.tex}
+%    \input{CRTopBT0Yields.tex}
+%  \end{center}
+%  \label{tab:crTopBYields}
+%\end{table}
+
+
+%\begin{table}[htpb]
+%  \caption{Background composition of $\ttbar$ control regions for SRD and SRE normalised to \intlumi\ \ifb. The signal lepton is treated as a jet. }
+%  \begin{center}
+%    \input{CRTopCYields.tex}
+%    \input{CRTopDYields.tex}
+%    \input{CRTopEYields.tex}
+%  \end{center}
+%  \label{tab:crTopCDEYields}
+%\end{table}
+
+\subsubsection{$t\bar{t} Validation Region$
+
+
+The selections for $\ttbar$ validation regions in the 0-lepton, two b-jets channel are summarised in Tables~\ref{tab:vrTopABDef} and ~\ref{tab:vrTopCDEDef}. The same preselection as discussed in Table~\ref{tab:SRcommon} are used.
+
+\begin{table}[htb]
+  \caption{Validation region definitions, in addition to the requirements presented in Table~\ref{tab:SRcommon} for VRTopA and VRTopB.}
+  \begin{center}
+    \def\arraystretch{1.4}%
+    \begin{tabular}{c||l|c|c|c} \hline\hline
+      {\bf VRTop}                &                    & {\bf TT}     & {\bf TW}     & {\bf T0}     \\ \hline \hline
+                                 & \mantikttwelvezero & \multicolumn{3}{c}{$>120\gev$}             \\ \cline{2-5}
+                                 & \mantikttwelveone  & $>120\gev$   & $60-120\gev$ & $<60\gev$    \\ \cline{2-5}
+                                 & \mtbmin            & $>100,<200$ GeV & $>140,<200$ GeV & $>160,<200$ GeV       \\ \cline{2-5}
+                                 & Number of $b$-jets & \multicolumn{3}{c}{ $\geq 2$  }            \\ \cline{2-5}
+      \hline\hline
+      \multirow{3}{*}{{\bf A}}   & \mantikteightzero  & \multicolumn{3}{c}{$>60\gev$}              \\ \cline{2-5}
+      & \drbjetbjet        & $>1$         & \multicolumn{2}{c}{-}       \\ \cline{2-5}
+                                 & \met               & $> 300 \gev$ & $> 400 \gev$ & $> 450 \gev$ \\ \hline \hline
+      \multirow{2}{*}{{\bf B}}   & \drbjetbjet           & \multicolumn{3}{c}{$>1.2$}             \\ \cline{2-5}
+       & \mtbmax           & \multicolumn{3}{c}{$>200$ GeV}             \\ \cline{2-5}
+      \hline\hline
+    \end{tabular}
+  \end{center}
+  \label{tab:vrTopABDef}
+\end{table}%
+
+
+\begin{table}[htpb]
+  \caption{Summary of the selection for the 0-lepton top validation region for VRTopC, VRTopD and VRTopE, in addition to the requirements presented in Table~\ref{tab:SRcommon}. }
+  \begin{center}
+    \begin{tabular}{l|c|c|c}
+      \hline \hline
+                           & VRTopC                & VRTopD     & VRTopE                   \\ \hline
+      \mtbmin              & -                     & \multicolumn{2}{c}{ $>100,<200$ GeV  } \\ \hline
+      Number of jets   & $\ge4$                & $\ge 5$ & $\ge4$       \\ \hline \hline
+      Number of $b$-jets   & $\ge1$                & \multicolumn{2}{c}{ $\geq 2$  }       \\ \hline \hline
+      \nJetS                 & $\ge4$                & \multicolumn{2}{c}{-}                 \\ \hline
+      \nBJetS                 & $\ge1$                & \multicolumn{2}{c}{-}                 \\ \hline
+      \pTSBZero                 & $\ge 40$ GeV          & \multicolumn{2}{c}{-}                 \\ \hline
+      \pTSFour             & $>40\gev$ & \multicolumn{2}{c}{-}                \\ \hline
+      \pTISR               & $\ge 400$ GeV         & \multicolumn{2}{c}{-}                 \\ \hline
+      \mS                  & $>100\gev$            & \multicolumn{2}{c}{-}                 \\ \hline
+      $\mV/\mS$            & $<0.6$                & \multicolumn{2}{c}{-}                 \\ \hline
+      \dPhiISRMET            & $<3.00$               & \multicolumn{2}{c}{-}                 \\ \hline\hline
+      %\RISR                & $\ge0.45$             & \multicolumn{2}{c}{-}                 \\ \hline \hline
+      \drbjetbjet          & -                     & $>0.8$     & -                        \\ \hline
+      \mtbmax              & -                     & $>300\gev$ & -                        \\ \hline
+      jet \ptone           & -                     & $>150$ GeV & -                        \\ \hline
+      jet \ptthree         & -                     & $>80$ GeV & -                        \\ \hline
+      %b-jet \ptzero        & -                     & $>150$ GeV & -                        \\ \hline
+      b-jet \ptzero+\ptone & -                     & $>300$ GeV & -                        \\ \hline
+      Jet multiplicity          & $\ge4$                    & $\ge5$     & $\ge4$                        \\ \hline
+      
+      $\tau$-veto          & -                     & yes        & -                        \\ \hline \hline
+      \mantikteightzero    & \multicolumn{2}{c|}{-} & $>120\,$GeV                           \\ \hline 
+      \mantikteightone     & \multicolumn{2}{c|}{-} & $>80\,$GeV                            \\ \hline
+      \hline
+    \end{tabular}
+  \end{center}
+  \label{tab:vrTopCDEDef}
+\end{table}
+
+
+
+
+%The yields in the $\ttbar$ validation regions are summarised in Table~\ref{tab:VRTopA_yields},~\ref{tab:VRTopB_yields}, and~\ref{tab:VRTopCDE_yields}. The $\ttbar$ purity in this region is $\sim$40\%.\\
+%A selection of postfit distributions for the data-MC comparison in the \ttbar\
+%VR is shown in Fig.~\ref{fig:VRTopATT}, \ref{fig:VRTopATW},
+%\ref{fig:VRTopAT0}, \ref{fig:VRTopBTT}, \ref{fig:VRTopBTW}, \ref{fig:VRTopBT0}, \ref{fig:VRTopC}, \ref{fig:VRTopD}, \ref{fig:VRTopE}.
+
+%\begin{table}[!htb]
+%  \centering
+%  \input{VRTopATTYields.tex}
+%  \input{VRTopATWYields.tex}
+%  \input{VRTopAT0Yields.tex}
+%  \caption{Yields in the $\ttbar$ validation regions for SRA in \intlumi\ \ifb\ of data. The Data/MC SF is the simple ratio of Data/Total MC without any correlations. }
+%  % The highest signal contamination comes from ($\mstop$, $\mLSP$) = (250, 77) and amounts to 8\% in VRttbar1 and 10\% in VRttbar2.}
+%  \label{tab:VRTopA_yields}
+%\end{table}
+%
+%\begin{table}[!htb]
+%  \centering
+%  \input{VRTopBTTYields.tex}
+%  \input{VRTopBTWYields.tex}
+%  \input{VRTopBT0Yields.tex}
+%  \caption{Yields in the $\ttbar$ validation regions for SRB in \intlumi\ \ifb\ of data. The Data/MC SF is the simple ratio of Data/Total MC without any correlations. }
+%  % The highest signal contamination comes from ($\mstop$, $\mLSP$) = (250, 77) and amounts to 8\% in VRttbar1 and 10\% in VRttbar2.}
+%  \label{tab:VRTopB_yields}
+%\end{table}
+%
+%
+%\begin{table}[!htb]
+%  \centering
+%  \input{VRTopCYields.tex}
+%  \input{VRTopDYields.tex}
+%  \input{VRTopEYields.tex}
+%  \caption{Yields in the $\ttbar$ validation regions for SRC, SRD, and SRE in \intlumi\ \ifb\ of data. The Data/MC SF is the simple ratio of Data/Total MC without any correlations. }
+%  % The highest signal contamination comes from ($\mstop$, $\mLSP$) = (250, 77) and amounts to 8\% in VRttbar1 and 10\% in VRttbar2.}
+%  \label{tab:VRTopCDE_yields}
+%\end{table}
+
+
+
+
+
+
+
+%SRD
 % dominant backgrounds (not too jargony), CRs, VRs, 
+
+
+Data/MC comparisons in the \Wjets\ control region are shown in
+Fig.~\ref{fig:CRWpts}, \ref{fig:CRW}, \ref{fig:CRWMasses} and the yields in in
+Table~\ref{tab:CRW_yields}. The MC is normalised to \intlumi\ \ifb,
+and no normalisation factors are applied to any of the SM
+components. Only variables for which there is an extrapolation from
+CRW to the various SRs are shown. For SRA the extrapolation is in
+\met, \drbjetbjet, \mantikttwelvezero,  \mantikttwelveone, and
+\mantikteightzero\ while for SRB the extrapolation is in \mtbmin\,
+\mtbmax, and \drbjetbjet. The leading jet \pt s and the leading
+b-tagged jet \pt\ are shown because for these variables there is an extrapolation from CRW to SRD while the \met, \mtbmin, \HT, \htsig, \mantikteightzero, and \mantikteightone\ are shown due to the extrapolation to SRE. The signal contamination is less than 10\% for all signal points with the largest contamination coming from the pure bChino decay of stops with mass 500 GeV and LSP mass of 50 GeV where the chargino mass is assumed to be 100 GeV. No particular trends are observed in the data-MC ratios in any of the distribution. Within statistical uncertainty the data are compatible with the MC SM expectation. \\
+
+%\begin{table}[!htb]
+%  \centering
+%  \input{CRWYields.tex}
+%  \caption{Yields in the CRW in \intlumi\ \ifb\ of data.  }
+%  \label{tab:CRW_yields}
+%\end{table}
+%
+%\begin{figure}[!htb]
+%  \centering
+%  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/JetPt_1__CRW_log.eps}
+%  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/JetPt_3__CRW_log.eps}
+%  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/JetPt_4__CRW_log.eps}
+%  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/NJets_CRW_log.eps}
+%  %\includegraphics[width=0.45\textwidth]{figures/wJets/postfit/JetPt_JetLeadTagIndex_JetPt_JetSubleadTagIndex__CRW_log.eps}
+%  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/Ht_CRW_log.eps}
+%  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/MinDRBLep_CRW.eps}
+%  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/DRBB_CRW.eps}
+%  \caption{Postfit data/MC comparisons in the CRW. From left to right and top to bottom, the variables shown are the leading four jet \pt, the leading b-tagged jet \pt, \HT, \htsig, \mindrblep, and \drbjetbjet. The background contributions from MC are normalised to \intlumi\ \ifb, and summed together, the data points are shown in black. The hatched band in the ratio shows the MC statistical and detector uncertainties.}
+%  \label{fig:CRWpts}
+%\end{figure}
+%
+%\begin{figure}[!htb]
+%  \centering
+%  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/Met_CRW_log.eps}
+%  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/MT2Chi2_CRW_log.eps}
+%  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/HtSig_CRW.eps}
+%  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/MtBMin_CRW.eps}
+%  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/MtBMax_CRW.eps}
+%  \caption{Postfit data/MC comparisons in the CRW. From left to right and top to bottom, the variables shown are \met, \mtbmin, \mtbmax, \mantikttwelvezero, \mantikttwelveone, and \mantikteightzero. The background contributions from MC are normalised to \intlumi\ \ifb, and summed together, the data points are shown in black. The hatched band in the ratio shows the MC statistical and detector uncertainties.}
+%  \label{fig:CRW}
+%\end{figure}
+%
+%\begin{figure}[!htb]
+%  \centering
+%  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/AntiKt12M_0__CRW.eps}
+%  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/AntiKt12M_1__CRW.eps}
+%  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/AntiKt8M_0__CRW.eps}
+%  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/AntiKt8M_1__CRW.eps}
+%  \caption{Postfit data/MC comparisons in the CRW. From left to right and top to bottom, the variables shown are \met, \mtbmin, \mtbmax, \mantikttwelvezero, \mantikttwelveone, and \mantikteightzero. The background contributions from MC are normalised to \intlumi\ \ifb, and summed together, the data points are shown in black. The hatched band in the ratio shows the MC statistical and detecotor uncertainties.}
+%  \label{fig:CRWMasses}
+%\end{figure}
+
+
+\subsubsection{\Wjets\ Validation Region}
+\label{section:VRW}
+
+The selections for a possible \Wjets\ validation region in the 1-lepton, two b-jets channel (VRW) are summarised in Tab.~\ref{tab:VRW}.
+
+\begin{table}[htpb]
+  \caption{Summary of the selection for the 1-lepton $W$+jets validation region. The signal lepton is treated as a jet. The same \met\ triggers as mentioned in Table~\ref{tab:SRcommon} are used.}
+  \begin{center}
+    \begin{tabular}{c|c}
+      \hline \hline
+                                          & VRW              \\ \hline
+      Number of leptons                   & 1                \\ \hline
+      Number of jets (incl. lepton)       & $\geq 4$         \\ \hline
+      $\pt$ of jets (incl. lepton) in GeV & (80,80,40,40)    \\ \hline
+      Number of $b$-jets                  & $\geq 2$         \\ \hline
+      \mindphijettwomet                   & $>0.4$           \\ \hline
+      $\met$                              & $>250$ GeV       \\ \hline
+      \mtlepmet                           & $>30$,$<100$ GeV \\ \hline
+      \mantikttwelvezero                  & $<70\,$GeV       \\ \hline
+      \mtbmin                             & 150 GeV          \\ \hline
+      \mindrblep                          & $>1.8$           \\ \hline \hline
+    \end{tabular}
+  \end{center}
+  \label{tab:VRW}
+\end{table}
+
+The yields in the VRW region are summarised in Tab.~\ref{tab:VRW_yields}. The \Wjets\ purity in this region is 30\% while the signal contamination is less than 15\% for all signal benchmark points except for ($\mstop$, $m_{\chinoonepm}$, $\mLSP$) = (550, 100, 50) GeV which has been excluded in previous searches. 
+
+\begin{table}[!htb]
+  \centering
+  \input{VRWYields.tex}
+  \caption{Yields in the VRW in \intlumi\ \ifb\ of data. The uncertainty on the SF, which is compatible within statistical uncertainties with the SF from the CR, should come down significantly. }
+  \label{tab:VRW_yields}
+\end{table}
+
+A selection of distributions where data is compared to MC (no normalisation factors applied) is shown in Fig.~\ref{fig:VRW}. 
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/JetPt_1__VRW_log.eps}
+  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/JetPt_3__VRW_log.eps}
+  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/JetPt_4__VRW_log.eps}
+  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/NJets_VRW_log.eps}
+  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/JetPt_JetLeadTagIndex_JetPt_JetSubleadTagIndex__VRW_log.eps}
+  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/Ht_VRW_log.eps}
+  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/MinDRBLep_VRW.eps}
+  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/DRBB_VRW.eps}
+  \caption{Postfit data/MC comparisons in the VRW. From left to right and top to bottom, the variables shown are the leading four jet \pt, the leading b-tagged jet \pt, \HT, \htsig, \mindrblep, and \drbjetbjet. The background contributions from MC are normalised to \intlumi\ \ifb, and summed together, the data points are shown in black. The hatched band in the ratio shows the MC statistical and detector uncertainties.}
+  \label{fig:VRWpts}
+\end{figure}
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/Met_VRW_log.eps}
+  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/MT2Chi2_VRW_log.eps}
+  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/HtSig_VRW.eps}
+  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/MtBMin_VRW.eps}
+  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/MtBMax_VRW.eps}
+  \caption{Postfit data/MC comparisons in the VRW. From left to right and top to bottom, the variables shown are \met, \mtbmin, \mtbmax, \mantikttwelvezero, \mantikttwelveone, and \mantikteightzero. The background contributions from MC are normalised to \intlumi\ \ifb, and summed together, the data points are shown in black. The hatched band in the ratio shows the MC statistical and detecotor uncertainties.}
+  \label{fig:VRW}
+\end{figure}
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/AntiKt12M_0__VRW.eps}
+  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/AntiKt12M_1__VRW.eps}
+  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/AntiKt8M_0__VRW.eps}
+  \includegraphics[width=0.45\textwidth]{figures/wJets/postfit/AntiKt8M_1__VRW.eps}
+  \caption{Postfit data/MC comparisons in the VRW. From left to right and top to bottom, the variables shown are \met, \mtbmin, \mtbmax, \mantikttwelvezero, \mantikttwelveone, and \mantikteightzero. The background contributions from MC are normalised to \intlumi\ \ifb, and summed together, the data points are shown in black. The hatched band in the ratio shows the MC statistical and detecotor uncertainties.}
+  \label{fig:VRWMasses}
+\end{figure}
+
+
+The relative \Wjets\ composition split in contributions from the CVetoBVeto, CFilterBVeto and BFilter samples in the \Wjets\ control region is 19.6\%, 36.6\%, and 43.7\% respectively. The same fractions in the WVR are 2.1\%, 7.7\%, and 90.2\%. As an example in SRB-T0 the \Wjets\ relative composition is 0.1\% CVetoBVeto, 11.8\% CFilterBVeto, 88.1\% BFilter - the numbers of CVetoBVeto and CFilterBVeto events in the SR are affected by very large uncertainty due to MC statistics. This shows that even though the composition in the CR does not reflect completely the SR composition, the VR is designed to have very similar type of events as the SR and being hence a very good test of the goodness of the Fit in the CR.
+
+The $W+c$ contribution in the CR amounts to 9.73\%, in the VR to 5.15\%, and in SRC-high to 1.86\% (number based on 20.1, Sherpa 2.1 samples).
+
+\begin{figure}[htpb]
+  \begin{center}
+    \subfloat[]{\includegraphics[width=0.44\textwidth]{figures/Znunu/MT2Chi2Lep_CRZAB_T0_log.eps}}%
+    \subfloat[]{\includegraphics[width=0.44\textwidth]{figures/Znunu/MetLep_CRZE_log.eps}}\\
+    \subfloat[]{\includegraphics[width=0.44\textwidth]{figures/ttbar/CA_RISR_CRTopC.eps}}
+    \subfloat[]{\includegraphics[width=0.44\textwidth]{figures/Wjets/MtBMax_CRW_log.eps}}\\
+     \subfloat[]{\includegraphics[width=0.44\textwidth]{figures/singleTop/JetPt_1__CRST_log.eps}}
+   \subfloat[]{\includegraphics[width=0.44\textwidth]{figures/ttGamma/SigPhotonPt_0__CRTTGamma_log.eps}}%
+
+    %\subfloat[]{\includegraphics[width=0.455\textwidth]{figures/Znunu/MT2Chi2Lep_CRZAB_TT_TW_log.eps}}\\
+    %\subfloat[]{\includegraphics[width=0.455\textwidth]{figures/Znunu/AntiKt12M_1__CRZAB_TT_TW.eps}}%
+    %\subfloat[]{\includegraphics[width=0.455\textwidth]{figures/Znunu/MtBMaxLep_CRZAB_TT_TW_log.eps}}\\
+    %\subfloat[]{\includegraphics[width=0.455\textwidth]{figures/Znunu/MT2Chi2Lep_CRZAB_T0_log.eps}}
+    %\subfloat[]{\includegraphics[width=0.455\textwidth]{figures/Znunu/MetLep_CRZAB_T0_log.eps}}
+    \caption{(a)~\mttwoprime\ distribution in CRZAB-T0, (b)~\metprime\ in CRZE
+      , (c)~the \rISR\ distribution in CRTC, 
+      (d)~the \mtbmax\ distribution in CRW, (e)~the transverse momentum of the second-leading-\pT\ jet in CRST,  and
+      (f)~the photon \pT\ distribution in CRTTGamma. The stacked histograms show the SM expectation, normalized using scale factors derived from the simultaneous fit to all backgrounds. The ``Data/SM" plots show the ratio of data events to the total SM expectation. The hatched uncertainty band around the SM expectation and in the ratio plot illustrates the combination of MC statistical and detector-related systematic uncertainties. The rightmost bin includes all overflows.}
+    \label{fig:CRs}
+  \end{center}
+\end{figure}
+
+\subsection{$t\bar{t}+Z$ by $t\bar{t}+\gamma$
+
+The $\ttbar+Z$ background, where the $Z$ boson decays into neutrinos, is an irreducible background and is increased with respect to the Run 1 analysis. Designing a CR to estimate the $\ttbar+Z$ background by using the charged leptonic $Z$ boson decays would be favorable. However, such CR is difficult to design due to low statistics and the small branching fraction to leptons. In particular a 2-lepton CR suffers from a large contamination of $\ttbar$ and $Z$ + jets processes. For this reason, another data driven approach is followed by building a one-lepton CR for $\ttbar\gamma$ which is a similar process. A zero-lepton region was considered as a validation region but it was found to have a too low $\ttbar\gamma$ contribution, with $\gamma$+jets being the main contaminant.\\
+
+The CR is designed to minimize the differences between the two processes and keep the theoretical uncertainties from the extrapolation of the $\gamma$ to the \Zboson\ low. 
+
+The $\ttbar+\gamma$ CR requires exactly one photon, exactly one signal lepton (electron or muon, and at least four jets of which at least two are required to be b-tagged. Moreover, due to the difference in mass between the \Zboson\ and the $\gamma$, to mimic the $Z \rightarrow \nu\nu$ decay, the highest \pT\ photon is required to have $\pt>150\gev$. 
+
+Unlike the CRTops, CRW, and CRST one-lepton control regions the lepton is not treated as a jet and unlike the CRZs the leptons are not removed from the \met\ calculation. Instead, the photon is used to model the \met\ since the \met\ from $\ttbar+Z$ in the SR originates mostly from the neutrino decay of the \Zboson. 
+The details of the selection for the one-lepton CR are summarized in Table~\ref{tb:ttG_1lepSel}.
+
+
+\begin{table}[htpb]
+  \caption{Selection for the $\ttbar+\gamma$ 1 lepton CR. The same triggers as described in Table~\ref{tb:lepTriggers} are used and the same signal lepton requirements are mad as in Tables~\ref{tb:electronsSignal} and~\ref{tb:muonsSignal}}
+  \begin{center}
+    \begin{tabular}{c|c}
+      \hline \hline
+      Selection                 & Requirement     \\
+      \hline \hline
+      Event selection & Event cleaning \\
+      \hline
+      % Trigger (Data 2015) &\texttt{HLT\_g120\_loose}  \\ 
+      % \hline
+      % Trigger (Data 2016) & \texttt{HLT\_g140\_loose}  \\ 
+      %\hline
+      Leptons & exactly 1 \\
+      Lepton \pt & 28 GeV \\
+      \hline
+      Photons & exactly 1\\
+      \hline
+      jet multiplicity & $ \ge 4 $ \\
+      \hline
+      Jet \pT\ & (80,80,40,40) GeV \\
+      \hline
+      b-jet multiplicity & $\ge 2$ \\
+      \hline
+      $\gamma$ \pT\ & $> 150$ GeV \\
+      \hline\hline
+    \end{tabular}
+  \end{center}
+  \label{tb:ttG_1lepSel}
+\end{table}
+
+Figure \ref{ig:ttVFakeLepCheck} shows the fit to the \met\ modeled with the photon and the \mt\ of the photon and lepton.  \\
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.49\textwidth]{figures/Met_CRTTGamma_withRatio_log.eps}
+\includegraphics[width=0.49\textwidth]{figures/MtMetLep_CRTTGamma_withRatio_log.eps}
+\caption{\label{fig:ttVFakeLepCheck} Prefit distributions of the \met\ and \mtlepmet\ for fake lepton checks. Agreement at low \mtlepmet\ is reasonable indicating no significant contributions from fake leptons. The ratio between data and MC is given in the bottom panel. The hashed area in both the top and lower panel represents the uncertainty due to MC statistics.}
+\end{center}
+\end{figure}
+
+Truth studies are performed in order to check the differencies in
+kinematic distributions. The truth \pT\ ratio for a 2-bjet
+selection are shown in Fig.~\ref{fig:ttZ_vs_ttGamma_pt}.
+
+\begin{figure}[htpb]
+\centering
+%\includegraphics[scale=0.4]{figures/ttGamma/TruthStudies/Pt150}
+\includegraphics[scale=0.4]{figures/UnityNorm_pT150}
+\caption{Truth boson \pT\ ratio.}
+\label{fig:ttZ_vs_ttGamma_pt}
+\end{figure}
+
 
 \section{Systematic Uncertainties}
 
+Systematic uncertainties are associated with the predictions of all background components and the expected signal yields. The systematic uncertainties can be categorized into two sources: experimental and theoretical uncertainties. These systematic uncertainties can impact the expected event yields in the control and signal region as well as the transfer factors used when extrapolating the background expectation from the control to the signal region. \\
+
+The main sources of detector-related systematic uncertainties in the SM background estimates originate from jet energy scale (JES) and jet energy resolution (JER), which reaches up to 16\%, $b-$tagging efficiency, up to 9\%, \met\ soft term, up to 6\%, and pileup, up to 14\%.  There is also an uncertainty in measured luminosity of 3.2\%.
+
+Theory uncertainties affecting the background normalization and kinematic distribution shapes largely impact the background prediction in the signal regions, as they directly affect the background normalization and acceptance times efficiency. If a background normalization is determined by making use of dedicated control regions, then only systematics affecting the analysis acceptance are relevant. Statistical uncertainties in the evaluation of systematics are neglected in general; where necessary, selection cuts are loosened to make the systematic comparison statistically meaningful. \\ %The remainder of this section is dedicated to the discussion on how the theory systematic uncertainties have been derived for each of the background processes considered. \\
+
+Theory uncertainties are evaluated as follows:
+\begin{itemize}
+	\item $W/Z+$jets: renormalization and factorization scales, and merging and resummation scales, are varied in SHERPA.  These are factors that come out of perturbation theory but shouldn't have any impact on physical observables.  The uncertainty for $W/Z+$jets are up to 5\% and 19\% respectively.
+	\item $t\bar{t}$: uncertainty is due to hard scattering generation from the choice of model and emission of additional partons in the initial and final states, comparing generators POWHEG-Box+PYTHIA vs. HERWIG++ and SHERPA.  This impacts SRC the largest, by 11-71\%.
+	\item $t\bar{t}+W/Z$: the uncertainty is estimated by varying the renormalization and factorization scales and choice of PDF and comparing generators.  This results in an uncertainty of up to 6\%.
+	\item Single $t$: the background is dominated by $Wt$ subprocess and uncertainties are evaulated for the choice of parton-showering model and parton emission for initial- and final-state radiation.  A 30\% uncertainty is applied to the background estimate to account for the effect of interference between single-top quark and $t\bar{t}$ production.
+\end{itemize}
+
+
+
+%The complete results of the background fits are shown in Appendix \ref{appendixHistfitter}.  
+
 \section{Results}
+
+The fitted scale factors for the backgrounds are summarized in Table \ref{table.scale.factors}.  
+
+\begin{table}
+  \begin{center}
+    \input{sfs.tex}
+  \end{center}
+  \caption{Fitted scale factors for the MC background samples based on
+    \intlumi\ \ifb of data.}
+  \label{table.scale.factors}
+\end{table}
+
+The observed yields compared to the background estimates (after applying the scale factors) for all SRs are shown in Tables \ref{histFitterTables/YieldsTable.SRA, histFitterTables/YieldsTable.SRB, histFitterTables/YieldsTable.SRC1to3, histFitterTables/YieldsTable.SR4to5, histFitterTables/YieldsTable.SRD, histFitterTables/YieldsTable.SRE}.  No significant excess above the SM expectation is observed in any of the signal regions. \\
+
+When no statistical excess is observed the cause may be the absence of signal, but can also be due to a downward fluctuation in the background.  In the case of a downward fluctuation the limit may be much better than the actual experimental sensitivity.  To account for this the CLS method\cite{CLs1, CLs2} along with the asymptotic formulae\cite{likelihoodFit} can be employed, where the probability is normalized to background-only probability.  In this case the limits are more conservative. Orthogonal signal subregions  \\
+
+%When no significant excess if observed the 95\% confidence level of the signal events is obtained the simultaneous fit to the SRs and CRs using the CLS method as described in \cite{CLs1, CLs2} and the asymptotic formulae as described in \cite{likelihoodFit}. The CLS method scales the probability of excluding a signal by the probability that the data is consistent with the background, so if the background has a downward fluctuation, i.e. the number of events is less than expected, then the limit is increased.  \\
+
+The model-independent limits on the visible signal cross sections, $\sigma_{\textrm{vis}} \equiv \sigma \times A \times \epsilon$, where $\sigma$ is the production cross section, $A$ is the detector acceptance, and $\epsilon$ is the selection efficiency for a signal.  \\
+
+There are two types of limits that are evaluated: 
+
+\begin{itemize}
+	\item Expected limits: obtained by setting the nominal event yield in each SR to the background expectation The $\pm \sigma$ contours are evaluated using the  $\pm \sigma$ uncertainties of the background estimates.
+	\item Observed limits: obtained by using the actual event yield and the $\pm \sigma$ contours are evaluated by varying the signal cross section by the $\pm \sigma$ of the theory uncertainties.  If the actual event yield is larger than the expected yield then the limit is weaker.
+\end{itemize}
+
+\include {histFitterTables/YieldsTable.SRA}
+\include {histFitterTables/YieldsTable.SRB}
+\include {histFitterTables/YieldsTable.SRC1to3}
+\include {histFitterTables/YieldsTable.SRC4to5}
+\include {histFitterTables/YieldsTable.SRD}
+\include {histFitterTables/YieldsTable.SRE}
+
+% Unblinded Results
+
+Figures~\ref{fig:SRAunblinded},~\ref{fig:SRBunblinded},~\ref{fig:SRCunblinded},~\ref{fig:SRDunblinded},~\ref{fig:SREunblinded} show the postfit, unblinded distribution of some of the most discriminating variables of SRA, SRB, SRC, SRD, and SRE at \intlumi\ \ifb. For SRA and SRB the distributions for individual categories are shown. Additionally, the error bands include both MC statistical and all detector systematical uncertainties. 
+
+\begin{figure}[!hp] 
+\begin{center}
+\includegraphics[width=0.45\textwidth]{figures/SRA/Met_SRA_TT.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRA/Met_SRA_TW.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRA/Met_SRA_T0.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRA/MT2Chi2_SRA_TT.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRA/MT2Chi2_SRA_TW.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRA/MT2Chi2_SRA_T0.eps}
+\caption{Unblinded \met\ and \mttwo\ distributions for three SRA categories for \intlumi\ \ifb.}
+\label{fig:SRAunblinded}
+\end{center}
+\end{figure}
+
+\begin{figure}[!hp] 
+\begin{center}
+\includegraphics[width=0.45\textwidth]{figures/SRB/MtBMax_SRB_TT.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRB/MtBMax_SRB_TW.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRB/MtBMax_SRB_T0.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRB/MtBMin_SRB_TT.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRB/MtBMin_SRB_TW.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRB/MtBMin_SRB_T0.eps}
+\caption{Unblinded \mtbmax\ and \mtbmin\ distributions for SRB for \intlumi\ \ifb.}
+\label{fig:SRBunblinded}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[!hp] 
+\begin{center}
+%\includegraphics[width=0.45\textwidth]{figures/SRC/CA_RISR_SRC}
+\caption{Unblinded \rISR\ and \pTISR\ distributions for SRC1-5 for \intlumi\ \ifb.}
+\label{fig:SRCunblinded}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[!hp] 
+\begin{center}
+\includegraphics[width=0.45\textwidth]{figures/SRD/MtBMax_SRD_low.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRD/MtBMax_SRD_high.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRD/JetPt_JetLeadTagIndex_JetPt_JetSubleadTagIndex__SRD_low.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRD/JetPt_JetLeadTagIndex_JetPt_JetSubleadTagIndex__SRD_high.eps}
+
+\caption{Unblinded \mtbmax\ and \ptone\ distributions for SRD-low and SRD-high for \intlumi\ \ifb.}
+\label{fig:SRDunblinded}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[!hp] 
+\begin{center}
+\includegraphics[width=0.45\textwidth]{figures/SRE/HtSig_SRE.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRE/Ht_SRE.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRE/Met_SRE.eps}
+\caption{Unblinded \htsig, \HT, and \met\ distributions for SRE for \intlumi\ \ifb.}
+\label{fig:SREunblinded}
+\end{center}
+\end{figure}
+
+The results of the discovery fit for \intlumi\ \ifb are summarized by the
+model-independent upper limits, as evaluated with asymptotics
+and shown in Table \ref{table.results.exclxsec.pval.upperlimit}. In the asymptotic case, the calculator does not return a p0 value when the number of observed events is less than expected.  The table shows the 95\% confidence level upper limits on the visible cross section ($\langle \epsilon \sigma \rangle$, the detector acceptance multiplied by the efficiency), the number of signal events, the confidence level for the background-only hypothesis, and the discover p-values.  The smaller the p-value the more likely for the background-only hypothesis to be incorrect.  When the number of observed events are smaller than predicted a p-value of 0.50 is assigned.  \\
+
+\include {histFitterTables/UpperLimitTableToys}
+
+
+ The smallest p-values are 0.19, 0.24, 0.27, and 0.29 for SRB-T0, SRD-high, SRA-TT, and SRC3.  These values are currently too large to reject the background-only theory. \\
+
+%The results of the exclusion fits for SRA, B, C, D, and E are shown in Figure 
+The exclusion of orthogonal signal subregions, e.g. SRA-TT, -TW, and -T0, are statistically combined.  In the case of overlapping signal regions the smallest 95\% confidence level is chosen for each model. \\
+
+The yields for the validation and signal regions are shown in Figure \ref{fig:srSum}.  
+Figures~\ref{fig:SRAunblinded},~\ref{fig:SRBunblinded},~\ref{fig:SRCunblinded},~\ref{fig:SRDunblinded},~\ref{fig:SREunblinded} show the postfit, unblinded distribution of some of the most discriminating variables of SRA, SRB, SRC, SRD, and SRE at \intlumi\ \ifb. For SRA and SRB the distributions for individual categories are shown. Additionally, the error bands include both MC statistical and all detector systematical uncertainties. 
+
+\begin{figure}[!hp] 
+\begin{center}
+\includegraphics[width=0.45\textwidth]{figures/SRA/Met_SRA_TT.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRA/Met_SRA_TW.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRA/Met_SRA_T0.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRA/MT2Chi2_SRA_TT.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRA/MT2Chi2_SRA_TW.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRA/MT2Chi2_SRA_T0.eps}
+\caption{Unblinded \met\ and \mttwo\ distributions for three SRA categories for \intlumi\ \ifb.}
+\label{fig:SRAunblinded}
+\end{center}
+\end{figure}
+
+\begin{figure}[!hp] 
+\begin{center}
+\includegraphics[width=0.45\textwidth]{figures/SRB/MtBMax_SRB_TT.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRB/MtBMax_SRB_TW.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRB/MtBMax_SRB_T0.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRB/MtBMin_SRB_TT.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRB/MtBMin_SRB_TW.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRB/MtBMin_SRB_T0.eps}
+\caption{Unblinded \mtbmax\ and \mtbmin\ distributions for SRB for \intlumi\ \ifb.}
+\label{fig:SRBunblinded}
+\end{center}
+\end{figure}
+
+
+
+\begin{figure}[!hp] 
+\begin{center}
+%\includegraphics[width=0.45\textwidth]{figures/SRC/CA_RISR_SRC}
+\caption{Unblinded \rISR\ and \pTISR\ distributions for SRC1-5 for \intlumi\ \ifb.}
+\label{fig:SRCunblinded}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[!hxp] 
+\begin{center}
+\includegraphics[width=0.45\textwidth]{figures/SRD/MtBMax_SRD_low.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRD/MtBMax_SRD_high.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRD/JetPt_JetLeadTagIndex_JetPt_JetSubleadTagIndex__SRD_low.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRD/JetPt_JetLeadTagIndex_JetPt_JetSubleadTagIndex__SRD_high.eps}
+
+\caption{Unblinded \mtbmax\ and \ptone\ distributions for SRD-low and SRD-high for \intlumi\ \ifb.}
+\label{fig:SRDunblinded}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[!hp] 
+\begin{center}
+\includegraphics[width=0.45\textwidth]{figures/SRE/HtSig_SRE.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRE/Ht_SRE.eps}
+\includegraphics[width=0.45\textwidth]{figures/SRE/Met_SRE.eps}
+\caption{Unblinded \htsig, \HT, and \met\ distributions for SRE for \intlumi\ \ifb.}
+\label{fig:SREunblinded}
+\end{center}
+\end{figure}
+
+
+%There is no statistical excess in any of the signal regions.  
+
+As shown in Figure \ref{fig:srSum} the VRs match the background estimation well.  It can be seen that the SRs do as well.  \\
+
+
+\begin{figure}[!hp] 
+\begin{center}
+ \includegraphics[width=0.8\textwidth]{figures/regionSummaryVR.eps}\\ %\hspace{0.05\textwidth}
+ \includegraphics[width=0.8\textwidth]{figures/SRA/regionSummaryLog.eps}%\hspace{0.05\textwidth}
+    \caption{Final yields for all the validation and signal regions. The stacked histograms show the SM expectation and the hatched uncertainty band around the SM expectation shows the MC statistical and detector-related systematic uncertainties.}
+    \label{fig:srSum}
+\end{center}
+\end{figure}
+
+
+
+\begin{figure}[htpb]
+  \begin{center} \includegraphics[width=0.7\textwidth]{figures/atlascls_m0m12_wband1_showcms0_StopZL2016_SRABCDE_Tt_directTTplusbWN_all_Output_fixSigXSecNominal_hypotest__1_harvest_list.eps}%
+    \caption{Observed (red solid line) and expected (blue solid line)
+      exlusion contours at 95\% CL as a function of $\stop$ and
+      $\ninoone$ masses in the scenario where both top squarks decay
+      via $\stop\to t^{(*)} \ninoone$. Masses that are lower than the masses along the lines are excluded. Uncertainty bands corresponding to the $\pm 1
+      \sigma$ variation on the expected limit (yellow band) and the
+      sensitivity of the observed limit to $\pm 1\sigma$ variations of
+      the signal theoretical uncertainties (red dotted lines) are also
+      indicated. Observed limits from all third-generation Run-1 searches~\cite{Atlas8TeVSummary} at $\sqrt{s}=8$ TeV centre-of-mass energy are overlaid for comparison in blue.}
+    \label{fig:SRABC_exclusion}%\label{fig:SRD4_exclusion}
+  \end{center}
+\end{figure}
+
+\begin{figure}[htpb]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{figures/SRABCD_mixed_dm1.eps}
+    \caption{Observed (solid line) and expected (dashed line) exlusion contours at 95\% CL as a function of $\stop$ and $\ninoone$ masses and branching ratio to $\stop\to t\LSP$ in the Natural SUSY-inspired mixed grid scenario where $m_{\chinoonepm}=\mLSP+1\gev$. %Uncertainty bands corresponding to the $\pm 1 \sigma$ variation on the expected limit (yellow band) and the sensitivity of the observed limit to $\pm 1\sigma$ variations of the signal theoretical uncertainties (red dotted lines) are also indicated. Observed limits from the Run~1 search~\cite{stop1L8TeV,stop2L8TeV} are overlaid for comparison. 
+}
+    \label{fig:tbMet_exclusion}
+  \end{center}
+\end{figure}
+
+The SRE results are interpreted for indirect top-squark production
+through gluino decays in terms of the \stop\ vs.\ $\gluino$ mass
+plane with $\Delta m(\stop,\ninoone)=5\GeV$. 
+Gluino masses up to $m_{\gluino}=1800\GeV$ with $\mstop<800\GeV$ are excluded as shown in Fig.~\ref{fig:SRE_exclusion}.
+
+
+\begin{figure}[htpb]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{figures/fit/SRE_exclusion}
+    \caption{Observed (red solid line) and expected (blue solid line)
+      exlusion contours at 95\% CL as a function
+      of $\gluino$ and $\stop$ masses in the scenario where both
+      gluinos decay via $\gluino\to t\stop\to t\ninoone+$soft
+      and $\Delta m(\stop,\ninoone)=5\GeV$. Uncertainty bands corresponding to the $\pm 1
+      \sigma$ variation on the expected limit (yellow band) and the
+      sensitivity of the observed limit to $\pm 1\sigma$ variations of
+      the signal theoretical uncertainties (red dotted lines) are also
+      indicated. Observed limits from previous searches with the ATLAS detector at $\sqrt{s}=8$ and $\sqrt{s}=13$ TeV are overlaid in grey and blue~\cite{GtcStop1L,Gtc1L,GtcMonojet}.}
+    \label{fig:SRE_exclusion}
+  \end{center}
+\end{figure}
+
+
+%Three different likelihood fits are performed to extract the results:
+%
+%\begin{itemize}
+%	\item Background-only fit: Only the control regions are used to constrain the fit parameters.  Potential signal contamination is neglected and the number of observed events in the signal region is not taken into account.
+%	\item Exclusion fit: Both the CR and SR are used to contrain the fit parameters.  The signal contribution as predicted by the tested model is taken into account in both regions and the 
+%\end{itemize}
+
+
+
+%...are performed using HistFitter\cite{histfitter}.  HistFitter is a software framework for statistical data analysis used by the ATLAS Collaboration to analyze large datasets and is the standard statistical tool for SUSY searches.  
 
 \section{Interpretation}
 
+The results have also been interpreted in the context of pMSSM, which is described in \ref{sec:pmssm}.  There are three specific models within pMSSM for which the results have been interpreted:
+
+\begin{itemize}
+	\item Non-asymptotic higgsino: A simplified model motivated by naturalness with a higgsino LSP, ${m_{\chinoonepm}=\mLSP+5\gev}$, and ${m_{\ninotwo}=\mLSP+10\gev}$, assumes three sets of branching ratios for the considered decays of $\stop\to t\ninotwo$, $\stop\to t\LSP$, $\stop\to b\chinoonepm$~\cite{naturalSUSY}. A set of branching ratios with BR($\stop\to t\ninotwo$, $\stop\to t\LSP$, $\stop\to b\chinoonepm$) = 33\%, 33\%, 33\% is considered which is equivalent to a pMSSM model with a mostly left-handed top squark and $\tanb=60$ (ratio of vacuum expectation values of the two Higgs doublets). Additionally, BR($\stop\to t\ninotwo$, $\stop\to t\LSP$, $\stop\to b\chinoonepm$) = 45\%, 10\%, 45\% and BR($\stop\to t\ninotwo$, $\stop\to t\LSP$, $\stop\to b\chinoonepm$) = 25\%, 50\%, 25\% are assumed which correspond to scenarios with $\mqlthree < \mtr$ (regardless of the choice of \tanb) and $\mtr<\mqlthree$ with $\tanb=20$, respectively. Here \mqlthree\ represents the left-handed third-generation mass parameter and \mtr\ is the right-handed top-squark mass parameter. Limits in the \mstop\ and \mLSP\ plane are shown in Fig.~\ref{fig:nonAsymhiggsino_exclusion}.  
+
+	 \item Wino NLSP pMSSM: This model is motivated by models with gauge unification at the GUT scale. The LSP is bino-like and has mass \mone\ and where the NLSP is wino-like with mass \mtwo, while $\mtwo=2\mone$ and $\mstop>\mone$~\cite{naturalSUSY}. Limits are set for both positive and negative $\mu$ (the higgsino mass parameter) as a function of the \stop\ and \ninoone\ masses which can be translated to different \mone\ and \mqlthree, and are shown in Fig.~\ref{fig:winoNLSP_exclusion}. Only bottom and top-squark production are considered in this interpretation. Allowed decays in the top-squark production scenario are $\stop\to t \ninotwo\to h/Z \LSP$, at a maximum branching ratio of 33\%, and $\stop \to b \chinoonepm$. Whether the $\ninotwo$ dominantly decays to a $h$ or $Z$ is determined by the sign of $\mu$. Along the diagonal region, the $\stop\to t\LSP$ decay with 100\% BR is also considered. The equivalent decays in bottom-squark production are $\sbottom\to t\chinoonepm$ and $\sbottom\to b\ninotwo$. The remaining pMSSM parameters have the following values: $\mthree=2.2$ TeV (gluino mass parameter), $\ms=\sqrt{\stopone\stoptwo}=1.2$ TeV (geometric mean of top-squark masses), $\xtms=\sqrt{6}$ (mixing parameter between the left- and right-handed states, where $X_{t}=\at-\mu/\tanb$ and $\at$ is the trilinear coupling parameter in the top quark sector), and $\tanb=20$. All other pMSSM parameters are set to $>$3 TeV. 
+
+	\item Well-tempered neutralino pMSSM: A model that provides a viable dark matter candidate in which three light neutralinos and a light chargino, which are composed as a mixture of bino and higgsino states, are considered with masses within $50$~\GeV\ of the lightest state~\cite{atlasDM,wellTemp}. The model is designed to satisfy the SM Higgs-boson mass and the dark matter relic density ($0.10<\Omega h^{2}<0.12$, where $\Omega$ is density parameter and $h$ is the Planck constant~\cite{relic_density}) with pMSSM parameters: $\mone=-(\mu+\delta)$ where $\delta=20-50\gev$, $\mtwo=2.0$ TeV, $\mthree=1.8$ TeV, $\ms=0.8-1.2$~\TeV, $\xtms\sim\sqrt{6}$, and $\tanb=20$. For this model, limits are shown in Fig.~\ref{fig:wellTemp_exclusion}. Only bottom- and top-squark production are considered in this interpretation. The signal grid points were produced in two planes, $\mu$ vs \mtr\ and $\mu$ vs \mqlthree, and then projected to the corresponding \stop\ and \ninoone\ masses. All other pMSSM parameters are set to $>$3 TeV. 
+\end{itemize}
+
+\begin{figure}[htpb]
+  \begin{center}
+   \includegraphics[width=0.7\textwidth]{figures/SRABCD_tN1tN2bC1.pdf}
+    \caption{Observed (solid line) and expected (dashed line) exlusion contours at 95\% CL as a function of \mstop\ and \mLSP\ for the pMSSM-inspired non-asymptotic higgsino simplified model for a small tan$\beta$ with BR($\stop\to t\ninotwo$, $\stop\to t\LSP$, $\stop\to b\chinoonepm$) = 45\%, 10\%, 45\% (blue), a large tan$\beta$ with BR($\stop\to t\ninotwo$, $\stop\to t\LSP$, $\stop\to b\chinoonepm$) = 33\%, 33\%, 33\% (red), and a small right-handed top-squark mass parameter with BR($\stop\to t\ninotwo$, $\stop\to t\LSP$, $\stop\to b\chinoonepm$) = 25\%, 50\%, 25\% (green) assumption. Uncertainty bands correspond to the $\pm 1 \sigma$ variation on the expected limit.}
+    \label{fig:nonAsymhiggsino_exclusion}
+  \end{center}
+\end{figure}
+
+
+\begin{figure}[htpb]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{figures/SRABCD_winoNLSP.pdf}
+    \caption{Observed (solid line) and expected (dashed line) exlusion contours at 95\% CL as a function of $\stop$ and $\ninoone$ masses for the Wino NLSP pMSSM model for both positive (blue) and negative (red) values of $\mu$. Uncertainty bands correspond to the $\pm 1 \sigma$ variation on the expected limit. % Uncertainty bands corresponding to the $\pm 1 \sigma$ variation on the expected limit (yellow band) and the sensitivity of the observed limit to $\pm 1\sigma$ variations of the signal theoretical uncertainties (red dotted lines) are also indicated.
+    }
+    \label{fig:winoNLSP_exclusion}
+  \end{center}
+\end{figure}
+
+\begin{figure}[htpb]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{figures/SRABCD_wellTempered.pdf}
+    \caption{Observed (solid line) and expected (dashed line) exlusion contours at 95\% CL as a function of $\stop$ and $\ninoone$ masses for the left-handed top-squark mass parameter scan (red) as well as in the right-handed top-squark mass parameter scan (blue) in the well-tempered pMSSM model. Uncertainty bands correspond to the $\pm 1 \sigma$ variation on the expected limit.} 
+    
+    \label{fig:wellTemp_exclusion}
+  \end{center}
+\end{figure}
+
+
 \section{Outlook}
+
+
 
 %limitations in the analysis, ideas for improvements, recommendations, evaluate and compare to CMS and their strengths and weaknesses
 

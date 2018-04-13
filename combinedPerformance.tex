@@ -1,14 +1,218 @@
 \chapter{Event Reconstruction}
-
+\label{ch:combinedPerformance}
 \section{Particle Identification}
-\subsection{Tracks}
-\subsection{Topoclusers}
 
-\section{Jets}
+The ATLAS detector tracks the path of final state particles and records their energy deposits.  In order to determine what happened in the interaction point these particles must be identified and traced back in time to the interaction, reconstructing the event.  This chapter discusses the process by which this happens including starting with tracks and topoclusters and constructing jets, leptons and photons and the role that modeling has.
+
+\subsection{Tracks}
+
+As charged particles travel through inner detector (ID) its path is curved by the strong magnetic field created by the ATLAS solenoid magnet and it leaves "hits" in the ID layers.  The hits are converted from raw data in the layers into three-dimensional measurements called space-points.  Specialized algorithms reconstruct the charged particle trajectories from the space-points, and these trajectories can be used to determine the transverse and longitudinal impact parameters, the angles of the trajectory, and the ratio of charge to momenta\cite{ATL-PHYS-PUB-2015-006}.  
+
+
+\subsection{Topoclusters}
+
+Topological clusters (topoclusters) are groups of connected calorimeter cells defined by the 4-2-0 algorithm\ref{slidingwindow}.  The 4-2-0 algorithm begins with seed cells which have a signal energy greater than four times greater than the noise energy (electronic and pileup), then all adjacent cells with at least twice the signal energy are added to it, and then finally all adjacent cells with signal energy greater than 0 are added.  \\
+
+The topoclusters can have a local calibration applied, referred to as "local hadronic cell weighting" (LCW) calibration.  These values are determined with MC simulations and is called "local" because it calibrates small and local topoclusters.  If this weight is applied the topoclusters are referred to as LCTopo jets, otherwise EMTopo jets. \\
+
+\section{Jets} \label{sec:jets}
+
+\subsection{Jet-finding}
+
+The topoclusters are used as inputs to the jet finding algorithm.  A jet finding algorithm must satisfy two requirements; first, that adding or removing a soft jet will not change the jet collections (infrared safe) and second that splitting or merging high $\pt$ particles will not change the jet collections (collinear safe).  Jet finding algorithms that are not safe are infrared or collinear sensitive; this is illustrated in FIgure \ref{fig:jetsafety}.  \\
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{0.35\textwidth}
+		\includegraphics[width=.5\textwidth]{figures/infrared}
+		\caption{Infrared sensitivity}
+		\label{fig:jetsafety}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}[b]{0.35\textwidth}
+		\includegraphics[width=.5\textwidth]{figures/colinear}
+		\caption{Collinear sensitivity}
+		\label{fig:jetcollinear}
+	\end{subfigure}
+	\caption{Jet finding algorithm that is a) infrared sensitive and b)collinear sensitive.  Adding a soft jet merges the jets when infrared sensitive and splitting the high $\pt$ jet separates the jets when collinear sensitive.}
+\end{figure}
+
+The jet finding algorithm used is the $\antikt$ algorithm, which is one of several $k_{\mathrm{t}}$ algorithms.  These algorithms start by calculating the distances between an entity $i$ and all possible pseudojets $j$, $d_{ij}$, and between $i$ and the beam $B$, $d_{iB}$ as:  
+
+\begin{align}
+	d_{ij} &= \min (k_{ti}^{2p}, k_{tj}^{2p}) \frac{(\Delta R)^2_{ij}}{R}, \\
+	d_{iB} &= k_{ti}^{2p}
+\end{align}
+
+where $R$ is the distance parameter (most commonly in ATLAS is $R=0.4), $k_t = \pt$, and $p$ is an integer whose value depends on the specific algorithm.  The inclusive $k_{\mathrm{t}}$ algorithm has a $p$ value of 1, the $\antikt$ algorithm has a $p$ value of -1, and the inclusive Cambridge/Aachen algorithm has a $p$ value of 0.  If $d_{ij}$ is smaller than $d_{iB}$ then $i$ and $j$ are merged, otherwise $i$ is labeled as a jet and removed from the list of entities.  This is repeated for all possible entities. \\
+
+The $k_{\mathrm{t}}$ family of algorithms are both infrared safe and collinear safe.  Figure \ref{fig:ktalgos} shows how the $\antikt$ algorithm performs compared to other jet finding algorithms.  Note that for the $\antikt$ algorithm hard jets have a circular shape with a radius equal to the distance parameter $R$ while softer jets are crescent moon-shaped when bordering a hard jet, which takes some of the area of the softer jet.  Compare this to, for instance, the $k_{\mathrm{t}}$ algorithm where the jets have irregular shapes and lighter jets can steal some of the area of the harder jets. \\
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=.25\textwidth]{figures/siscone}
+		\caption{SISCone}
+		%\label{fig:sisconearea}
+	\end{subfigure}
+	%~
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=.25\textwidth]{figures/kt}
+		\caption{$k_t$}
+		%\label{fig:ktarea}
+	\end{subfigure}
+	\\
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=.25\textwidth]{figures/ca}
+		\caption{\acrlong{ca}}
+		%\label{fig:caarea}
+	\end{subfigure}
+	%~
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=.25\textwidth]{figures/antikt}
+		\caption{Anti-$k_t$}
+		%\label{fig:antiktarea}
+	\end{subfigure}
+	\caption{Results from several jet-finding algorithms\cite{antikt}.  Note the shape and size differences between jets with different algorithms.} 
+	\label{fig:ktalgos}
+\end{figure}
+
+\subsection{Jet calibration}
+
+After the jets are constructed they must be calibrated.  The steps are shown in Figure \ref{fig:calsteps}.  First, a pileup correction is made by subtracting the average energy of the $\eta \times \phi$ plane as well as corrections based on the number of primary vertices and the average number of interactions per bunch crossing. \\
+
+Next the jet energy scale (JES) correction is applied.  The scale factors are determined from truth particles in simulation and are a function of $\eta$ and $\pt$ of the jet.  An origin correction is also applied to correct for bias in the $\eta$ direction, which shows up especially in the gap and transition regions. \\
+
+There is also dependence of the JES on longitudinal and transverse features of the jet.  These dependencies are corrected sequentially as they are mostly uncorrelated.  These dependencies include the fraction of energy deposited in the tile calorimeter and in the third layer of the EM calorimeter, the number of tracks associated to the jet, the $\pt$-weighted width of the tracks, and the number of muon segments associated to the jet.  These corrections are referred to as global sequential corrections. \\
+
+Finally in situ corrections correct differences between data and MC.  This is performed with well-measured and understood object like $\gamma / Z+$jets and multijet processes. \\
+
+\subsection{Jet cleaning}
+\label{section:jetcleaning}
+
+There can be several backgrounds for jets coming from hard collisions.  This includes\cite{jetCleaning}:
+
+\begin{itemize}
+	\item Beam induced background (BIB), coming from proton interactions upstream of the interaction point
+	\item Cosmic-ray showers, produced in the atmosphere and mostly made up of muons as most other particles will not penetrate to the depth of the detector underground
+	\item Calorimeter noise from large scale coherent noise or isolated pathological cells
+\end{itemize}
+
+The process to reject these "fake" jets is called "jet cleaning" and uses the following variables:
+
+\begin{itemize}
+	\item $Q^{LAr}_{cell}$: The quadratic difference between actual and expected pulse shapes
+	\item $\langle Q \rightangle$: The average jet quality, defined as the energy-squared weighted average of pulse quality of the calorimeter cells in the jet
+	\item $f_{Q}^{LAr}$: Fraction of the energy in the LAr calorimeter cells of a jet with poor signal shape quality
+	\item $f_{Q}^{HEC}$: Fraction of energy in the HEC calorimeter cells of a jet with poor signal shape quality
+	\item $E_{neg}$: Sum of the energy of all cells with negative energy as negative energy in a good jet is due to electronic and pileup noise
+	\item $f_{ch}$: Ratio of the scalar sum of the $\pt$ of the tracks from the primary vertex associated with the jet to the jet $\pt$
+	\item $f_{max}$: The fraction of the jet energy in the layer with maximum deposit.
+\end{itemize}
+
+A jet is considered fake if it satisfies at least one of the BadLooser requirements listed above.  The first two identify jets due to sporadic noise bursts in HEC, the third identifies jets due to large coherent noise or isolated pathological cells in LAr, and the last three are more general and identify hardware issues, BIB or cosmic muon showers:
+
+\begin{itemize}
+	\item $f_{HEC}>0.5$ and $|f_{Q}^{HEC}|>0.5$ and $\langle Q \rangle > 0.8$ 
+	\item $|E_{neg}|>60$ 
+	\item $f_{EM}>0.95$ and $f_{Q}^{LAr}>0.8$ and $\langle Q \rangle > 0.8$ and $|\eta|<2.8$
+	\item $f_{max}>0.99$ and $|\eta|<2$  
+	\item $f_{EM}<0.05$ and $f_{ch}<0.05$ and $|\eta|<2$
+	\item $f_{EM}<0.05$ and $|\eta|\geq2$
+\end{itemize}
+
+
+\subsection{$b$-tagging}
+
+Since bottom quarks have a delayed decay due to their coupling to top quarks, $B$ mesons live long enough to travel a significant distance, on the order of hundreds of $\mu$m from the primary vertex before decaying to lighter hadrons.  The tracks that these lighter hadrons produce trace to a secondary vertex instead of the primary vertex and this can be used to discriminate $b$-jets from other jets.  Unfortunately charm quarks also can have delayed decays so it can be difficult to distinguish between the two.  Therefore multivariate algorithms have been developed\cite{btagging} the use information such as the impact parameter significance, presence of a secondary vertex, and reconstruction of $B$ meson decay chains to tag $b$-jets.  The algorithm used in this search has an efficiency of 77\%.
+
 %reconstruction, topoclustering, digitization path, etc
 \section{Electrons}
+\label{sec:elec}
+
+Electrons leave a track in the ID al well as producing an electromagnetic (EM) shower in the calorimeter.  Electrons are reconstructed by\cite{ATLAS-CONF-2016-024}:
+
+\begin{itemize}
+	\item A sliding window of size $3 \time 5$ in $\eta \times \phi$ corresponding to the granularity of the middle layer of the LAr calorimeter search for electron cluster "seeds" with cluster energy greater than 2.5 GeV.  Clusters are formed around the seeds that allow for duplicates to be removed.
+	\item Pattern recognition for the track fit uses the electron hypothesis, which allows for more energy to be lost by bremsstrahlung.  
+	\item Seed clusters and tracks are matched to give electron candidates.  
+\end{itemize}
+
+However an electron can be not prompt, meaning that it is not a signal object. An electron can also be produced from a background jet or a photon conversion.  In order to reject background electrons to signal electrons a number of discriminating variables are used in addition to track-cluster matching, including hadronic leakage, EM layer information, track conditions, and TRT radiation. A likelihood-based method is used to reject background photons with Loose, Medium, Tight, with each a subset of previous criteria, and the VeryLoose criteria with is used in this analysis to reject electrons.  Electrons falling into the gap region, from $1.37 < |\eta| < 1.52$, are also considered electrons in the analysis.  For this search electrons are also required to be isolated in a cone of $\Delta R=$0.2 divided by the electron $\pt$ to reduce background from hadrons imitating a lepton and from leptons from hadron decays or photon conversion.  \\
+
+%In this analysis electron candidates must have $|\eta|<2.47$ and $\pt>7$GeV.
+
+
 \section{Photons}
+
+While photons produce an EM shower in the calorimeter, unlike electrons they are not charged and therefore should not leave a track in the ID.  This is complicated by the possibility of pair production from a photon in the tracker.  In this case the cluster is matched to two oppositely-charged tracks.  If there are no tracks associated to a cluster then it is considered an unconverted photon.  Similar to section \ref{sec:elec}, shower shape variables from hadronic leakage and EM layer information is used\cite{ATL-PHYS-PUB-2016-014} to create two criteria, loose and tight.  
+
 \section{Muons}
+\label{section:muons}
+
+Since muons act as minimum-ionizing particles (MIPS) through the calorimeter, the outermost part of the ATLAS detector, the muon spectrometer (MS) is used to detect and measure properties of muons.  Several criteria are used to identify muons\cite{PERF-2015-10}: \textit{q/p significance}, the difference in the ratio of charge and momenta measured in the ID and MS; $\rho'$, the difference between the transverse momenta measured in the ID and MS; and the normalized $\chi^2$ of the combined track fit.  There are also requirements on the numbers of hits in the ID and MS. \\
+
+There are four muon types depending on the subdetectors used in the reconstruction.  Combined muons use hits in the MS to trace back to hits in the ID to reconstruct the muon track, though the opposite approach can complement this.  Segment-tagged muons are formed when a track in the ID is matched to one layer in the MS because of low $\pt$ or because it crosses a region in the MS with reduced acceptance.  Calorimeter-tagged muons identifies a muon consistent with a MIP in the calorimeters and is used to find muons that cross the ID and MS in regions where cabling prevents particle detection.  Extrapolated muons require only tracks in the MS for regions beyond the coverage of the ID.  \\
+
+After identifying and classifying the muons there are four selections based on the type of muon with additional criteria, Loose, Medium, Tight, and High-$\pt$ in order of rejecting background.  Loose criteria is used to identify muons in this analysis.  Isolation requirements for this search are similar to that of electrons.  \\
+
+Additionally, bad or fake muons can be identified by high hit multiplicities in the MS.  This is due to very energetic punchthrough jets, which survive the calorimeters and enter the MS, or badly mismeasured ID tracks in jets wrongly matched to MS segments.  These fake muons are a potential source of fake \met.
+
 \section{Taus}
-\section{Missing Transverse Momentum}
+
+The tau lepton is the only lepton heavy enough to decay hadronically, which results in a final state of a tau neutrino and jets from the $W$ decay.  The decay can have either 1 or 3 charged hadrons; therefore a jet is identified as a tau candidate if it has four or fewer tracks and is close to a the $\met$ ($\Delta \phi (\met, \mathrm{jet}) < \pi/5)$ as well as not $b$-tagged.  These are not fully reconstructed in order to improve signal efficiency.  Leptonic decays are rejected from the lepton veto. \\
+
+
+\section{Missing Transverse Momentum} \label{sec:met}
+
+Conceptually missing transverse momentum, $\met$, is straightforward, as the vector sum of transverse momenta of all final state particles must be equal to zero or there are some final state particles that are invisible to the detector, such as neutrinos or new physics.  Only transverse momenta can be calculated from a hadron collider like the LHC since momenta of the colliding protons is non-uniformly distributed across its constituent partons so the missing $z$ momenta can't be calculated.  As a function of its $x$ and $y$ components, $\met$ and its azimuthal angle $\phi^{\mathrm{miss}}$ is:
+
+\begin{equation}
+\ptmiss = \sqrt{(E_{x}^{\mathrm{miss}})^2 + (E_{y}^{\mathrm{miss}})^2}
+\end{equation}
+
+\begin{equation}
+\phi^{\mathrm{miss}} = \mathrm{arctan}(\frac{E_{y}^{\mathrm{miss}}}{E_{x}^{\mathrm{miss}}})
+\end{equation}
+However it is not as easily calculated as it seems since minimum thresholds, for example, leaves out some energy and contributes as soft terms.  The missing energy is therefore defined as:
+
+\begin{equation}
+\ptmiss = \ptmiss(e) + \ptmiss(\gamma) + \ptmiss({\rm jets}) + \ptmiss(\mu) + \ptmiss({\rm soft})
+\label{eq:met}
+\end{equation}
+
+
+There are several methods of calculating $\met$ that different in important ways, several of which are compared here\cite{metrun2}. \\
+
+The first  includes a calorimeter-based soft term, CSC $\met$.  This is constructed from energy deposits in the calorimeter not associated with hard objects that come from underlying event activity and soft radiation.  This is vulnerable to pileup interactions, both in-time and out-of-time. \\
+
+The second, Track $\met$ uses tracks from the inner detector and is therefore resilient to pileup.  However used purely it misses neutral particles that don't leave tracks. \\
+
+The third includes a track-based soft term, TST $\met$, and is combined with the calorimeter-based measurements for the hard terms.  This is a good compromise between the first two methods and is the primary method for Run 2. including this analysis, while CST $\met$ was the primary method for Run 1.  Pure track $\met$ is also used to reject $\met$ from mis-modeled jets.\\
+
+
 \section{Monte Carlo Simulations}
+
+The complexities of collisions and decays, along with detector effects, make calculations unmanageable.  Therefore in order to test predictions from theory, observables in data must be compared to those in computer simulations.  This is performed with event generators and detector simulations.
+
+\subsection{Event Generators}
+
+To simulate particle interactions and productions Monte Carlo generators are 
+
+Figure \ref{exampleJets} shows a simplified diagram of an event.  Quarks and gluons, which carry color, can emit QCD radiation either as initial state radiation (ISR) or final state radiation (FSR), shown in dark blue and light green respectively.  Parton shower (PS) generators simulate these processes, the precision of which are leading logarithm (LL), next-to-leading logarithm (NLL), etc, classified by the number of logarithms arriving from loop calculations.  
+
+To begin with, the momentum of an individual proton is non-uniformly spread out over its components.  The fraction of momenta each parton carries is controlled by the parton distribution function (PDF) which is determined experimentally.  Then hard scattering and following possible decays are called matrix elements (ME) and are computed to some approximation as it's too laborious to calculate beyond a few orders in perturbation theory.  The precision of the approximation is leading order (LO), next-to-leading order (NLO), etc. 
+
+There are various Monte Carlo generators that are used to simulate events that can be chosen depends on the physics needs:
+
+\begin{itemize}
+	\item SHERPA\cite{sherpa}:  (Simulation of High-Energy Reactions of PArticles) A general-purpose tool that contains a flexible tree-level matrix-element generator for calculating hard scattering processes with both SM and new physics models.  This generator is used for $Z+$jets and $W+$jets in the analysis.
+	\item PYTHIA\cite{pythia8}: A standard tool for modeling the evolution from a few-body hard process to a complex multihadronic final state, including modeling ISR and FSR parton showers.
+	\item POWHEG\cite{powheg-box}: (Positive Weight Hardest Emission Generator) A NLO generator.  For this analysis leptonic top decay and single-top production background processes use this generator interfaced to PYTHIA for parton scattering and hadronisation.  
+	\item MadGraph_aMC@NLO\cite{madgraph}: A leading order and NLO amplitude and event generator.  For this analysis $tt+V$, where $V$ is a $W$ or $Z$, and $tt+\gamma$ background processes use this generator interfaced to PYTHIA for parton scattering and hadronisation.  
+	\item EvtGen\cite{evtGen}: A generator for $b$ physics including underlying events, used for $b$-hadron decays in this analysis.
+\end{itemize}
+
+\subsection{Detector Simulation}
+
+The toolkit GEANT\cite{GEANT} was developed to simulate all aspects particles passing through the detector, including tracking, geometry, physics models, and particle showers in calorimeters and covers a comprehensive range of physics processes.  In a full simulation particles' interactions with every part of ATLAS is simulated with all details, and in fast simulation showers in the EM and hadronic calorimeters are simulated.  Energy deposits are processed in the digitizer to simulated the readout system and then turned into the raw data format identical to real data.
