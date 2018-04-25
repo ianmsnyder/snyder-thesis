@@ -94,11 +94,22 @@ gsmodern,
 
 \usepackage{atlasphysics}
 
-
+\usepackage{float}
+%\usepackage{floatrow}
+%\floatsetup[table]{capposition=top}
+\usepackage{tabularx}
+\usepackage{pdflscape}
+\usepackage{siunitx}
+\usepackage{footnote}
+\usepackage{footnotebackref}
+\usepackage{tocbibind}
+\usepackage{enumitem}
 
 \usepackage{epsfig}
 \usepackage{epstopdf}
-%\usepackage{subcaption}
+\usepackage{subcaption}
+%\usepackage{caption}
+
 \usepackage{enumerate}
 \usepackage{rotating} %GR added
 \usepackage{mdwlist}
@@ -111,7 +122,7 @@ gsmodern,
 \usepackage{hyperref} %If you get an error due to hyperref package, delete your old INT.aux file then recompile.
 \usepackage{tikz}
 \usepackage[compat=1.1.0]{tikz-feynman}
-\usepackage{multirow}
+%\usepackage{multirow}
 \usepackage{slashed}
 \usepackage{smartdiagram}
 
@@ -129,6 +140,7 @@ gsmodern,
 
 \usepackage[style=numeric-comp,backend=biber,sorting=none]{biblatex}
 %\usepackage[hang,center]{subfigure}
+\usepackage{subfigure}
 
 %\usepackage[utf8]{inputenc}
 
@@ -162,17 +174,21 @@ gsmodern,
 \setlength\parindent{0pt}
 
 
-\usepackage{lineno}
-\linenumbers
+\usepackage{lineno, lipsum}
+%\RequirePackage{lineno}
+%\linenumbers
 
 
 \begin{document}
-
+\begin{linenumbers}
 
 
 \include{cover}
+\include{abstract}
 
 \maketitle
+
+
 
 \tableofcontents
 
@@ -185,6 +201,14 @@ gsmodern,
 \include{combinedPerformance}
 \include{analysis}
 \include{conclusions}
+
+%\begin{appendices}
+\appendix
+\include{sanityChecks}
+%\appendix
+\include{signalContamination}
+%\end{appendices}
+\end{linenumbers}
 
 %% List of contributors - print here or after the Bibliography.
 %%\PrintAtlasContribute{0.30}

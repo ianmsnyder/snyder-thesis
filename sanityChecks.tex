@@ -1,0 +1,305 @@
+% !TEX root = INT.tex
+
+\chapter{Standard MC and data checks}
+
+The following sections describes basic checks on the MC and data.
+
+\label{sec:Standard_Checks}
+
+\subsection{Dependence of variables on pileup}
+
+The purpose of this is to check the analysis dependence on pileup.  Ideally there is no dependence.  The preselection is the same as in Section~\ref{sec:Selection_EventPreselection}.% which the exeptions $\met > 200 \gev$ and no \mtbmin\ cut.  This is to increase statistics in data.
+
+
+\begin{figure}[htbp]
+\begin{center} 
+\includegraphics[width=0.3\textwidth]{figures/sanityChecks/HtNvtxProfileMCData.eps}
+\includegraphics[width=0.3\textwidth]{figures/sanityChecks/HtSigNvtxProfileMCData.eps}
+\includegraphics[width=0.3\textwidth]{figures/sanityChecks/JetPtLeadingNvtxProfileMCData.eps}
+\includegraphics[width=0.3\textwidth]{figures/sanityChecks/JetPtSubleadingNvtxProfileMCData.eps}
+\includegraphics[width=0.3\textwidth]{figures/sanityChecks/JetPtLeastleadingNvtxProfileMCData.eps}
+\includegraphics[width=0.3\textwidth]{figures/sanityChecks/JetPtLeastSubleadingNvtxProfileMCData.eps}
+\includegraphics[width=0.3\textwidth]{figures/sanityChecks/JetPtLeastThirdleadingNvtxProfileMCData.eps}
+\includegraphics[width=0.3\textwidth]{figures/sanityChecks/MetNvtxProfileMCData.eps}
+\includegraphics[width=0.3\textwidth]{figures/sanityChecks/MtBMinNvtxProfileMCData.eps}
+\includegraphics[width=0.3\textwidth]{figures/sanityChecks/NBJetsNvtxProfileMCData.eps}
+\includegraphics[width=0.3\textwidth]{figures/sanityChecks/NJetsNvtxProfileMCData.eps}
+\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC12MassLeadingNvtxProfileMCData.eps}
+\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC12MassSubleadingNvtxProfileMCData.eps}
+\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC8MassLeadingNvtxProfileMCData.eps}
+\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC8MassSubleadingNvtxProfileMCData.eps}
+\caption{Distribution of various variables in Data and Monte Carlo used as a function of number of vertices.}
+\label{fig:Fit2ele}
+\end{center}
+\end{figure}
+
+%\begin{figure}[htbp]
+%\begin{center} 
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/HtNvtxProfileMCCombined.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/HtSigNvtxProfileMCCombined.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/MetNvtxProfileMCCombined.eps}
+%%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/MetSigNvtxProfileMCCombined.eps}
+%%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/MetSumEtNvtxProfileMCCombined.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/MtBMinNvtxProfileMCCombined.eps}
+%%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/MtJetSoftJetNvtxProfileMCCombined.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/NBJetsNvtxProfileMCCombined.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/NJetsNvtxProfileMCCombined.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC12MassLeadingNvtxProfileMCCombined.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC12MassSubleadingNvtxProfileMCCombined.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC8MassLeadingNvtxProfileMCCombined.eps}
+%%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC8MassSubleadingNvtxProfileMCCombined.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/JetPtLeadingNvtxProfileDataCombined.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/JetPtSubleadingNvtxProfileDataCombined.eps}
+%%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC4MassLeadingNvtxProfileMCCombined.eps}
+%%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC4MassSubleadingNvtxProfileMCCombined.eps}
+%\caption{Distribution of various variables in Monte Carlo used as a function of number of vertices.  A jet $\pT>20$~GeV is shown in solid black while a jet $\pT>35$~ GeV is shown in dotted red.}
+%\label{fig:Fit2ele}
+%\end{center}
+%\end{figure}
+%
+%
+%\begin{figure}[htbp]
+%\begin{center} 
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/HtNvtxProfileDataCombined2015.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/HtSigNvtxProfileDataCombined2015.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/MetNvtxProfileDataCombined2015.eps}
+%%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/MetSigNvtxProfileDataCombined2015.eps}
+%%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/MetSumEtNvtxProfileDataCombined2015.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/MtBMinNvtxProfileDataCombined2015.eps}
+%%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/MtJetSoftJetNvtxProfileDataCombined2015.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/NBJetsNvtxProfileDataCombined2015.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/NJetsNvtxProfileDataCombined2015.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC12MassLeadingNvtxProfileDataCombined2015.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC12MassSubleadingNvtxProfileDataCombined2015.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC8MassLeadingNvtxProfileDataCombined2015.eps}
+%%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC8MassSubleadingNvtxProfileDataCombined2015.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/JetPtLeadingNvtxProfileDataCombined2015.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/JetPtSubleadingNvtxProfileDataCombined2015.eps}
+%%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC4MassLeadingNvtxProfileDataCombined2015.eps}
+%%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC4MassSubleadingNvtxProfileDataCombined2015.eps}
+%\caption{Distribution of various variables in data used as a function of number of vertices for 2015 data.}
+%\label{fig:Fit2ele}
+%\end{center}
+%\end{figure}
+%
+%\begin{figure}[htbp]
+%\begin{center} 
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/HtNvtxProfileDataCombined2016.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/HtSigNvtxProfileDataCombined2016.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/MetNvtxProfileDataCombined2016.eps}
+%%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/MetSigNvtxProfileDataCombined2016.eps}
+%%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/MetSumEtNvtxProfileDataCombined2016.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/MtBMinNvtxProfileDataCombined2016.eps}
+%%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/MtJetSoftJetNvtxProfileDataCombined2016.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/NBJetsNvtxProfileDataCombined2016.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/NJetsNvtxProfileDataCombined2016.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC12MassLeadingNvtxProfileDataCombined2016.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC12MassSubleadingNvtxProfileDataCombined2016.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC8MassLeadingNvtxProfileDataCombined2016.eps}
+%%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC8MassSubleadingNvtxProfileDataCombined2016.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/JetPtLeadingNvtxProfileDataCombined2016.eps}
+%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/JetPtSubleadingNvtxProfileDataCombined2016.eps}
+%%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC4MassLeadingNvtxProfileDataCombined2016.eps}
+%%\includegraphics[width=0.3\textwidth]{figures/sanityChecks/RC4MassSubleadingNvtxProfileDataCombined2016.eps}
+%\caption{Distribution of various variables in data used as a function of number of vertices for 2016 data.}
+%\label{fig:Fit2ele}
+%\end{center}
+%\end{figure}
+
+These plots demonstrate that the variables used in the analysis do not have a dependence on pileup.
+
+\newpage
+
+\subsection{Lumi-normalized yields}
+%
+%The purpose of this is to check the dependence of analysis on the run number, i.e. to check for issues in data runs.  The number of events in each run number is normalized by the luminosity of that run number.  The signal regions, control regions, and validation regions are shown below.
+%
+%\begin{figure}[htbp]
+%\begin{center} 
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRA-TTLumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRA-TWLumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRA-T0LumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRB-TTLumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRB-TWLumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRB-T0LumiNormalized.eps}
+%%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRBLumiNormalized.eps}
+%%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRC-highLumiNormalized.eps}
+%%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRC-medLumiNormalized.eps}
+%%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRC-lowLumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRC1LumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRC2LumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRC3LumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRC4LumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRC5LumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRC6LumiNormalized.eps}
+%\caption{Lumi-normalized distribution of run numbers in 2015 and 2016 in signal regions SRA, SRB, and SRC.}
+%\label{fig:Fit2ele}
+%\end{center}
+%\end{figure}
+%
+%\begin{figure}[htbp]
+%\begin{center} 
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRD-lowLumiNormalized.eps}
+%%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRD-medLumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRD-highLumiNormalized.eps}
+%%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRD1LumiNormalized.eps}
+%%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRD2LumiNormalized.eps}
+%%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRD3LumiNormalized.eps}
+%%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRD4LumiNormalized.eps}
+%%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRD5LumiNormalized.eps}
+%%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRD6LumiNormalized.eps}
+%%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRD7LumiNormalized.eps}
+%%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRD8LumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRELumiNormalized.eps}
+%%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SRFLumiNormalized.eps}
+%\caption{Lumi-normalized distribution of run numbers in 2015 and 2016 in signal regions SRD and SRE.}
+%\label{fig:Fit2ele}
+%\end{center}
+%\end{figure}
+
+\begin{figure}[htbp]
+\begin{center} 
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/CRTopATTLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/CRTopATWLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/CRTopAT0LumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/CRTopBTTLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/CRTopBTWLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/CRTopBT0LumiNormalized.eps}
+\caption{Lumi-normalized distribution of run numbers in 2015 and 2016 in $t\bar{t}$ control regions.}
+\label{fig:Fit2ele_1}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center} 
+
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/CRTopCLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/CRTopDLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/CRTopELumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/CRSTLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/CRWLumiNormalized.eps}
+\caption{Lumi-normalized distribution of run numbers in 2015 and 2016 in $t\bar{t}$ control regions.}
+\label{fig:Fit2ele_2}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center} 
+
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/CRZAB_TT_TWLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/CRZAB_T0LumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/CRZDLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/CRZELumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/CRTTGammaLumiNormalized.eps}
+
+\caption{Lumi-normalized distribution of run numbers in 2015 and 2016
+  in $Z$ and $t\bar{t}+\gamma$ control regions.}
+\label{fig:Fit2ele_3}
+\end{center}
+\end{figure}
+
+
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/SingleTopCRLumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/TopCRLumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/WCRLumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/ZCRLumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/ttGammaCRLumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/ISRTopCR-1bLumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/ISRTopCR-2bLumiNormalized.eps}
+
+
+
+\begin{figure}[htbp]
+\begin{center} 
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/VRTopATTLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/VRTopATWLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/VRTopAT0LumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/VRTopBTTLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/VRTopBTWLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/VRTopBT0LumiNormalized.eps}
+\caption{Lumi-normalized distribution of run numbers in 2015 and 2016 in validation regions.}
+\label{fig:Fit2ele}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center} 
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/VRTopCLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/VRTopDLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/VRTopELumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/VRSTLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/VRWLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/VRZABLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/VRZDLumiNormalized.eps}
+\includegraphics[width=0.4\textwidth]{figures/sanityChecks/VRZELumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/TopVR1LumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/TopVR2LumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/WVRLumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/ZVRALumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/ZVRBLumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/ZVRCLumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/ZVRELumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/ZVRFLumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/ISRTopVR-1bLumiNormalized.eps}
+%\includegraphics[width=0.4\textwidth]{figures/sanityChecks/ISRTopVR-2bLumiNormalized.eps}
+\caption{Lumi-normalized distribution of run numbers in 2015 and 2016 in validation regions.}
+\label{fig:Fit2ele}
+\end{center}
+\end{figure}
+
+
+\newpage
+
+
+\subsection{nvtx distribution before and after pileup reweighting}
+
+The purpose of this check is to check the pileup reweighting.  Ideally the Monte Carlo will match the data after reweighting.  The preselection is the same as in Section~\ref{sec:Selection_EventPreselection}.% which the exeptions $\met > 200 \gev$ and no \mtbmetmindphi\ cut or number of b-jets.  The plot demonstrates that the Monte Carlo is close to data after reweighting.
+
+\begin{figure}[htbp]
+\begin{center} 
+  \includegraphics[width=0.5\textwidth]{figures/sanityChecks/nvtxDistribution.eps}
+\caption{Distribution of nvtx before reweighting (blue) and after reweighting (red) compared to data (black).}
+\label{fig:Fit2ele}
+\end{center}
+\end{figure}
+
+%\newpage
+%
+%\subsection{Jet $\eta$ distribution.}
+%
+%The purpose of this check is to check the jet distribution in $\eta$.  Ideally the distribution peaks at $\eta=0$ and has a falling distribution to $|\eta|=2.8$.  The preselection is the same as in Section~\ref{sec:Selection_EventPreselection}.% which the exeptions $\met > 200 \gev$ and no \mtbmetmindphi\ cut or number of b-jets.  The plot demonstrates that the Monte Carlo is close to data after reweighting.
+%
+%\begin{figure}[htbp]
+%\begin{center} 
+%  \includegraphics[width=0.4\textwidth]{figures/sanityChecks/JetEta0_preCutSRPlot_withRatio.eps}
+%    \includegraphics[width=0.4\textwidth]{figures/sanityChecks/JetEta1_preCutSRPlot_withRatio.eps}\\
+%  \includegraphics[width=0.4\textwidth]{figures/sanityChecks/JetEta2_preCutSRPlot_withRatio.eps}
+%   \includegraphics[width=0.4\textwidth]{figures/sanityChecks/JetEtaNJets-3_preCutSRPlot_withRatio.eps}\\
+%   \includegraphics[width=0.4\textwidth]{figures/sanityChecks/JetEtaNJets-2_preCutSRPlot_withRatio.eps}
+%   \includegraphics[width=0.4\textwidth]{figures/sanityChecks/JetEtaNJets-1_preCutSRPlot_withRatio.eps}  \\
+%\caption{Jet $\eta$ distribution for leading three jets and least leading three jets.}
+%\label{fig:Fit2ele}
+%\end{center}
+%\end{figure}
+%
+%\newpage
+%
+%
+%\subsection{Muon $\eta$ distribution.}
+%
+%The purpose of this check is to ensure there are no muons out of acceptance in control regions.  All muons should be within $|\eta|<2.4$.
+%
+%\begin{figure}[htbp]
+%\begin{center} 
+%  \includegraphics[width=0.4\textwidth]{figures/sanityChecks/MuEta_CRZAB_TT_TW_withRatio_log.eps}
+%    \includegraphics[width=0.4\textwidth]{figures/sanityChecks/MuEta_CRZAB_T0_withRatio_log.eps}\\
+%  \includegraphics[width=0.4\textwidth]{figures/sanityChecks/MuEta_CRZD_withRatio_log.eps}
+%   \includegraphics[width=0.4\textwidth]{figures/sanityChecks/MuEta_CRZE_withRatio_log.eps}\\
+%   \includegraphics[width=0.4\textwidth]{figures/sanityChecks/MuEta_CRTTGamma_withRatio_log.eps}
+%\caption{Muon $\eta$ distribution for CRZ and CRTTGamma.}
+%\label{fig:Fit2ele}
+%\end{center}
+%\end{figure}
+%
+%\newpage
+%
