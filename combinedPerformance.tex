@@ -3,7 +3,7 @@
 \section{Particle Identification}
 
 The ATLAS detector tracks the path of final state particles and records their energy deposits.  In order to determine what happened in the interaction point these particles must be identified and traced back in time to the interaction, reconstructing the event.  This chapter discusses the process by which this is performed, including starting with tracks and topoclusters and constructing jets, leptons and photons, as well as the role that modeling has.
-\antikt\ 
+ 
 
 \subsection{Tracks}
 
@@ -36,7 +36,7 @@ The topoclusters are used as inputs to a jet finding algorithm.  A jet finding a
 %		%\label{fig:jetcollinear}
 %	\end{subfigure}
 	\includegraphics[width=.9\textwidth]{figures/jetSafety.pdf}
-	\caption{Illustration of a) infrared sensitivity and b)collinear sensitivity.  Adding a soft jet merges the jets when infrared sensitive and splitting the high $\pt$ jet separates the jets when collinear sensitive.}
+	\caption[Infrared sensitivity and collinear sensitivity]{Illustration of a) infrared sensitivity and b)collinear sensitivity (figure from \cite{IRCDiagram}).  Adding a soft jet merges the jets when infrared sensitive and splitting the high $\pt$ jet separates the jets when collinear sensitive.}
 	\label{fig:jetsafety}
 \end{figure}
 
@@ -47,9 +47,9 @@ The jet finding algorithm currently most commonly used at ATLAS is the \antikt\ 
 	d_{iB} &= k_{ti}^{2p}
 \end{align}
 
-where $R=\sqrt{(\Delta \eta)^2 + (\Delta \phi)^2}}$ is the distance parameter (most commonly in ATLAS is $R=0.4), $k_t = \pt$, and $p$ is an integer whose value depends on the specific algorithm.  The inclusive $k_{\mathrm{t}}$ algorithm has a $p$ value of 1, the \antikt\ algorithm has a $p$ value of -1, and the inclusive Cambridge/Aachen algorithm has a $p$ value of 0.  If $d_{ij}$ is smaller than $d_{iB}$ then $i$ and $j$ are merged, otherwise $i$ is labeled as a jet and removed from the list of entities.  This is repeated for all possible entities. \\
+where $R=\sqrt{(\Delta \eta)^2 + (\Delta \phi)^2}$ is the distance parameter (most commonly in ATLAS is $R=0.4$), $k_{\rm{t}} = \pt$, and $p$ is an integer whose value depends on the specific algorithm.  The inclusive $k_{\mathrm{t}}$ algorithm has a $p$ value of 1, the \antikt\ algorithm has a $p$ value of -1, and the inclusive Cambridge/Aachen algorithm has a $p$ value of 0.  If $d_{ij}$ is smaller than $d_{iB}$ then $i$ and $j$ are merged, otherwise $i$ is labeled as a jet and removed from the list of entities.  This is repeated for all possible entities. \\
 
-The $k_{\mathrm{t}}$ family of algorithms are both infrared safe and collinear safe.  Figure \ref{fig:ktalgos} shows how the \antikt\ algorithm performs compared to other jet finding algorithms.  Note that for the \antikt\ algorithm hard jets have a circular, more physical shape that gives better position resolution, with a radius equal to the distance parameter $R$ while softer jets are crescent moon-shaped when bordering a hard jet, which takes some of the area of the softer jet.  Compare this to, for instance, the $k_{\mathrm{t}}$ algorithm where the jets have irregular shapes and lighter jets can steal some of the area of the harder jets. \\
+The $k_{\mathrm{t}}$ family of algorithms are both infrared safe and collinear safe.  Figure \ref{fig:ktalgos} shows how the \antikt\ algorithm performs compared to other jet finding algorithms.  Note that for the \antikt\ algorithm hard jets have a circular, more physical shape that gives good position resolution, with a radius equal to the distance parameter $R$ while softer jets are crescent moon-shaped when bordering a hard jet, which takes some of the area of the softer jet.  Compare this to, for instance, the $k_{\mathrm{t}}$ algorithm where the jets have irregular shapes and lighter jets can steal some of the area of the harder jets. \\
 
 %\begin{figure}[h]
 %	\centering
@@ -83,7 +83,7 @@ The $k_{\mathrm{t}}$ family of algorithms are both infrared safe and collinear s
 \begin{figure}[h]
 \centering
 \includegraphics[width=.90\textwidth]{figures/jetfinderalgos.pdf}
-\caption{Results from several jet finder algorithms\cite{antiKt}.  Note the shape differences in different algorithms and what jet \pt s can steal away from other jets.}
+\caption[Jet finder algorithms]{Results from several jet finder algorithms (figure from \cite{antiKt}).  Note the shape differences in different algorithms and what jet \pt s can steal away from other jets.}
 \label{fig:ktalgos} 
 \end{figure}
 
@@ -93,8 +93,8 @@ After the jets are constructed they must be calibrated.  The steps are shown in 
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=.90\textwidth]{figures/calibrationSteps.pdf}
-\caption{Calibration steps at ATLAS.}
+\includegraphics[width=.90\textwidth]{jetCalibrationDiagram.pdf}
+\caption[Jet calibration steps at ATLAS ]{Jet calibration steps at ATLAS (diagram from \cite{Aaboud:2017jcu}).}
 \label{fig:calsteps} 
 \end{figure}
 
@@ -102,12 +102,12 @@ Next the jet energy scale (JES) correction is applied.  The scale factors are de
 
 There is also dependence of the JES on longitudinal and transverse features of the jet.  These dependencies are corrected sequentially as they are mostly uncorrelated.  These dependencies include the fraction of energy deposited in the tile calorimeter and in the third layer of the EM calorimeter, the number of tracks associated to the jet, the $\pt$-weighted width of the tracks, and the number of muon segments associated to the jet.  These corrections are referred to as global sequential corrections. \\
 
-Finally in situ corrections correct differences between data and MC.  This is performed with well-measured and understood object like $\gamma / Z+$jets and multijet processes. \\
+Finally in situ corrections correct differences between data and MC.  This is performed with well-measured and understood objects like $\gamma / Z+$jets and multijet processes. \\
 
 \subsection{Jet cleaning}
 \label{section:jetcleaning}
 
-There can be several backgrounds for jets coming from hard collisions.  This includes\cite{jetCleaning}:
+There can be several backgrounds for jets coming from hard collisions, including\cite{jetCleaning}:
 
 \begin{itemize}
 	\item Beam induced background (BIB), coming from proton interactions upstream of the interaction point
@@ -166,7 +166,7 @@ For signal electrons, used in the control regions, the electron must have a \pt\
 
 \section{Photons}
 
-While photons produce an EM shower in the calorimeter, unlike electrons they are not charged and therefore should not leave a track in the ID.  This is complicated by the possibility of pair production from a photon in the tracker.  In this case the cluster is matched to two oppositely-charged tracks.  If there are no tracks associated to a cluster then it is considered an unconverted photon.  Similar to Section \ref{sec:elec}, shower shape variables from hadronic leakage and EM layer information is used\cite{ATL-PHYS-PUB-2016-014} to create two criteria, loose and tight.  Photons are used in this analysis for the control region for $t\bar{r}+V$ background.
+While photons produce an EM shower in the calorimeter, unlike electrons they are not charged and therefore should not leave a track in the ID.  This is complicated by the possibility of pair production from a photon in the tracker.  In this case the cluster is matched to two oppositely-charged tracks.  If there are no tracks associated to a cluster then it is considered an unconverted photon.  Similar to Section \ref{sec:elec}, shower shape variables from hadronic leakage and EM layer information is used\cite{ATL-PHYS-PUB-2016-014} to create two criteria, loose and tight.  Photons are used in this analysis for the control region for $t\bar{t}+V$ background.
 
 \section{Muons}
 \label{section:muons}
@@ -177,11 +177,11 @@ There are four muon types depending on the subdetectors used in the reconstructi
 
 After identifying and classifying the muons there are four selections based on the type of muon with additional criteria, Loose, Medium, Tight, and High-\pt\ in order of rejecting background.  Loose (Medium) criteria with \pt$>6$ GeV (\pt$>20$ GeV) with $\Delta R(\mu,\ jet) > 0.4$ are used to identify muons for the signal regions (control regions). \\
 
-Additionally, bad or fake muons can be identified by high hit multiplicities in the MS.  This is due to very energetic punchthrough jets, which survive the calorimeters and enter the MS, or badly mismeasured ID tracks in jets wrongly matched to MS segments.  These fake muons are a potential source of fake \met.
+Additionally, bad or fake muons can be identified by high hit multiplicities in the MS.  This is due to very energetic punch-through jets, which survive the calorimeters and enter the MS, or badly mis-measured ID tracks in jets wrongly matched to MS segments.  These fake muons are a potential source of fake \met.
 
 \section{Taus}
 
-The tau lepton is the only lepton heavy enough to decay hadronically, which results in a final state of a tau neutrino and jets from the $W$ decay in $t\bar{t}$ or $W+$jets events.  The decay can have either 1 or 3 charged hadrons; therefore a jet is identified as a tau candidate if it has four or fewer tracks, is close to a the $\met$ vector ($\Delta \phi (\met, \mathrm{jet}) < \pi/5)$ from the neutrino, as well as not $b$-tagged.  In this analysis these are not fully reconstructed in order to have efficient rejection of $\tau$ candidates from the $W$ bosons, and leptonic decays are rejected from the lepton veto. \\
+The tau lepton is the only lepton heavy enough to decay hadronically, which results in a final state of a tau neutrino and jets from the $W$ decay in $t\bar{t}$ or $W+$jets events.  The decay can have either 1 or 3 charged hadrons; therefore a jet is identified as a tau candidate if it has four or fewer tracks, is close to the $\met$ vector ($\Delta \phi (\met, \mathrm{jet}) < \pi/5)$ from the neutrino, as well as not $b$-tagged.  In this analysis these are not fully reconstructed in order to have efficient rejection of $\tau$ candidates from the $W$ bosons, and leptonic decays are rejected from the lepton veto. \\
 
 
 \section{Missing Transverse Momentum} \label{sec:met}
@@ -206,13 +206,9 @@ The missing energy vector is therefore defined as:
 \end{equation}
 
 
-where \pt($e$), \pt($\gamme$, \pt(jets), \pt($\mu$) are the the momenta of electrons, photons, jets, and muons.   Low-\pt\ objects not associated with hard \pt\ objects and unassociated topoclusters are grouped into the \pt(soft) term.  The \pt(soft)  There are several methods of calculating $\met$ that differ in important ways, several of which are compared\cite{metrun2}. \\
+where \pt($e$), \pt($\gamma$), \pt(jets), \pt($\mu$) are the the momenta of electrons, photons, jets, and muons.   Low-\pt\ objects not associated with hard \pt\ objects and unassociated topoclusters are grouped into the \pt(soft) term.  There are several methods of calculating $\met$ that differ in important ways, several of which are compared\cite{metrun2}. \\
 
-The first  includes a calorimeter-based soft term, CSC $\met$.  This is constructed from energy deposits in the calorimeter not associated with hard objects that come from underlying event activity and soft radiation.  This is vulnerable to pileup interactions, both in-time and out-of-time. \\
-
-The second, Track $\met$ uses tracks from the inner detector and is therefore resilient to pileup.  However, used purely it misses neutral particles that don't leave tracks. \\
-
-The third includes a track-based soft term, TST $\met$, and is combined with the calorimeter-based measurements for the hard terms.  This is a good compromise between the first two methods and is the primary method for Run 2, including for this analysis, while CST $\met$ was the primary method for Run 1.  Pure track $\met$ is also used to reject $\met$ from mis-modeled jets.\\
+The first  includes a calorimeter-based soft term, CSC $\met$.  This is constructed from energy deposits in the calorimeter not associated with hard objects that come from underlying event activity and soft radiation.  This is vulnerable to pileup interactions, both in-time and out-of-time.  The second, Track $\met$ uses tracks from the inner detector and is therefore resilient to pileup.  However, used purely it misses neutral particles that don't leave tracks.  The third includes a track-based soft term, TST $\met$, and is combined with the calorimeter-based measurements for the hard terms.  This is a good compromise between the first two methods and is the primary method for Run 2, including for this analysis, while CST $\met$ was the primary method for Run 1.  Pure track $\met$ is also used to reject $\met$ from mis-modeled jets.\\
 
 \section{Monte Carlo Simulations}
 
@@ -227,7 +223,7 @@ Figure \ref{fig:eventSherpa} shows a simplified diagram of an event.  Quarks and
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.7\linewidth]{figures/sherpaExample.pdf}
-	\caption]{Pictorial representation of a $tth$ event produced by an event generator\cite{sherpa}.  The large red blob is the hard interaction followed by decays of the top quarks and higgs as smaller red blobs.  Hard QCD scattering is produced in red and a secondary interaction takes place in the purple blob, then the final-state partons hadronize, light green, and hadrons decay, dark green.  Additional photon radiation can occur at any stage and is in yellow.}
+	\caption[Simplified diagram of an event]{Pictorial representation of a $tth$ event produced by an event generator (figure from \cite{sherpa}).  The large red blob is the hard interaction followed by decays of the top quarks and Higgs as smaller red blobs.  Hard QCD scattering is produced in red and a secondary interaction takes place in the purple blob, then the final-state partons hadronize, light green, and hadrons decay, dark green.  Additional photon radiation can occur at any stage and is in yellow.}
 	\label{fig:eventSherpa}
 \end{figure}
 
@@ -243,11 +239,11 @@ There are various Monte Carlo generators that are used to simulate events that c
 	\item EvtGen\cite{evtGen}: A generator for $b$ physics including underlying events, used for $b$-hadron decays in this analysis.
 \end{itemize}
 
-Table \ref{ab:mc_samples1} shows an overview of the generators used for the signal samples and each of the backgrounds. \\
+Table \ref{tab:mc_samples1} shows an overview of the generators used for the signal samples and each of the backgrounds. \\
 
 \begin{table}[htpb]
   \centering
-  \small
+  \tiny
     \caption{Overview of the nominal simulated samples. }
   \begin{tabular}{ccccccc}
     Process & Generator & fragm./hadron. & PDF set  & UE Tune & Cross section order\\
@@ -272,6 +268,6 @@ The toolkit GEANT\cite{GEANT} was developed to simulate all aspects particles pa
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.7\linewidth]{figures/event_simulation}
-	\caption]{Visual  representation of different stages of simulation\cite{event_simulation:NBartosik}.}
+	\caption[Representation of different stages of simulation]{Visual  representation of different stages of simulation (figure from \cite{event_simulation:NBartosik}).}
 	\label{fig:eventsimulation}
 \end{figure}

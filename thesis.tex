@@ -107,7 +107,7 @@ gsmodern,
 
 \usepackage{epsfig}
 \usepackage{epstopdf}
-\usepackage{subcaption}
+%\usepackage{subcaption}
 %\usepackage{caption}
 
 \usepackage{enumerate}
@@ -139,8 +139,16 @@ gsmodern,
 \usepackage[flushleft]{threeparttable}
 
 \usepackage[style=numeric-comp,backend=biber,sorting=none]{biblatex}
-%\usepackage[hang,center]{subfigure}
-\usepackage{subfigure}
+\usepackage[hang,center]{subfigure}
+%\usepackage{subfigure}
+
+%\captionsetup[figure]{labelformat=parens, labelsep=newline}
+
+% set up labelformat and labelsep for subfigure
+
+\captionsetup[subfigure]{labelformat=simple}%, labelsep=period}%, labelsep=colon}
+ 
+
 
 %\usepackage[utf8]{inputenc}
 
@@ -171,7 +179,7 @@ gsmodern,
 % Content
 %-------------------------------------------------------------------------------
 \newcommand{\Lagr}{\mathcal{L}}
-\setlength\parindent{0pt}
+%\setlength\parindent{0pt}
 
 
 \usepackage{lineno, lipsum}
@@ -180,17 +188,19 @@ gsmodern,
 
 
 \begin{document}
-\begin{linenumbers}
+%\begin{linenumbers}
 
 
 \include{cover}
 \include{abstract}
+\include{cv}
+\input{acknowledgements}
 
 \maketitle
 
 
 
-\tableofcontents
+%\tableofcontents
 
 
 \include{introduction}
@@ -208,7 +218,7 @@ gsmodern,
 %\appendix
 \include{signalContamination}
 %\end{appendices}
-\end{linenumbers}
+%\end{linenumbers}
 
 %% List of contributors - print here or after the Bibliography.
 %%\PrintAtlasContribute{0.30}
@@ -278,7 +288,6 @@ gsmodern,
 %%%-------------------------------------------------------------------------------
 %%
 %%-------------------------------------------------------------------------------
-%\input{Acknowledgements}
 %%%-------------------------------------------------------------------------------
 %%
 %

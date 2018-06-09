@@ -7,9 +7,11 @@ This chapter describes the experimental apparatus that was used in the search: t
 %LHC paper
 The LHC is the world's largest particle accelerator.  The tunnel, originally used for the CERN Large Electron-Positron Collider (LEP) and reused for the existing structure to avoid building a new tunnel, is 26.7 km in circumference and lies between 45-170 m underground in order to reduce cosmic radiation backgrounds.  The LHC accelerates protons clockwise and counterclockwise around the ring, currently with each beam having an energy of 6.5 TeV, which corresponds to more than 99.9999\% of the speed of light.  The advantage of a collider over, for instance, a fixed target accelerator, is that the center of mass energy scales as $E_{CM} = 2E_{L}$, where $E_{L}$ is the energy of each beam, as opposed to a fixed target accelerator where the center of mass energy scales as $E_{CM}=\sqrt{E_{L}}$ due to the necessary contribution to the kinetic energy of the target.  Therefore the center of mass energy of the LHC is currently 13 TeV.\\
 
-While a lepton accelerator would produce cleaner collisions, protons are used to reduce the energy loss from synchrotron radiation, which scales as the fourth power of the particle mass.  Also proton-proton collisions are used instead of proton-antiproton, as was the case of the Tevatron at Fermilab, due to the fact that the time required to produce antiprotons would limit luminosity.  This has the effect that nearly all the produced particles stem from gluon-gluon fusion instead of quark-antiquark annihilation.  The LHC also produces heavy ion collisions.\\
+The LHC was constructed from 1998-2008.  However during testing a faulty electrical connection caused a magnet quench which broke nearby magnets and caused a delay in operations to late 2009 with an original center of mass energy of 7 and 8 TeV during Run 1.  Upgrades and repairs from 2012-2015 increased the center of mass energy to 13 TeV.  \\
 
-It takes several separate machines to accelerate protons to this energy and superconducting magnets are used to focus, steer, and accelerate the protons around the ring.  Four main detectors study the collisions; two general purpose detectors, ATLAS and CMS, and two specialty detectors, ALICE (primarily studying heavy ion physics) and LHCb (primarily studying b-quark physics). \\%references for each detector?
+While a lepton accelerator would produce cleaner collisions, protons are used to reduce the energy loss from synchrotron radiation, which decreases as the fourth power of the particle mass.  Also proton-proton collisions are used instead of proton-antiproton, as was the case of the Tevatron at Fermilab, due to the fact that the time required to produce antiprotons would limit luminosity.  This has the effect that nearly all the produced particles stem from gluon-gluon fusion instead of quark-antiquark annihilation.  The LHC also produces heavy ion collisions.\\
+
+It takes several separate machines to accelerate protons to this energy and superconducting magnets are used to focus, steer, and accelerate the protons around the ring.  Four main detectors study the collisions; two general purpose detectors, ATLAS and CMS, and two specialty detectors, ALICE (primarily studying heavy ion physics) and LHCb (primarily studying $b$-quark physics). \\%references for each detector?
 
 
 
@@ -20,17 +22,17 @@ Several steps are required to accelerate protons to the energy of the LHC.  The 
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=0.8\textwidth]{./figures/lhcMachine.pdf}
-\caption{\label{fig:lhcMachine}{ The LHC accelerator complex\cite{LHC}. }}
+\caption[The LHC accelerator complex]{\label{fig:lhcMachine}{ The LHC accelerator complex (figure from \cite{LHC}).}}
 \end{figure}
 
-The RF cavities generate an oscillating voltage such that the particles are accelerated at the gap, and since the particle must always be accelerated at the gap the RF frequency must be an integer multiple of the revolution frequency.  The segments of the circumference of the beam centered on this point are called buckets.  Particles that are synchronized with the RF frequency are called synchronous particles and other particles will oscillate around these particles.  Therefore particles get clumped around synchronous particles (rather than a uniform spread) in a bunch that is contained in an RF bucket.  Because of this the LHC can accelerate a beam made up of 35640 bunches.  This is complicated because the PS and SPS are also synchrotrons, and the PS is actually responsible for providing bunch packets with the 25 ns spacing that the LHC uses.  Also, the buckets can be full of protons or be empty; the purpose of empty buckets is to accommodate the time required to dump the beam.  The configuration also determines where the beams cross and collide, which corresponds to different detectors.   \\ %include table 4.1?
+The RF cavities generate an oscillating voltage such that the particles are accelerated at the gap, and since the particle must always be accelerated at the gap the RF frequency must be an integer multiple of the revolution frequency.  The segments of the circumference of the beam centered on this point are called buckets.  Particles that are synchronized with the RF frequency are called synchronous particles and other particles will oscillate around these particles.  Therefore particles get clumped around synchronous particles (rather than a uniform spread) in a bunch that is contained in an RF bucket.  Because of this the LHC can accelerate a beam made up of 35640 bunches.  This is complicated because the PS and SPS are also synchrotrons, and the PS is actually responsible for providing the 25ns spacing that the LHC uses.  Also, the buckets can be full of protons or be empty; the empty buckets accommodate the time required to dump the beam.  The configuration also determines where the beams cross and collide, which corresponds to different detectors.   \\ %include table 4.1?
 
 The quality of the beam is important, which is expressed in part by beam emittance and beta.  Beam emittance refers to the distance a beam is confined to and how similar the particles are in momenta (a small beam emittance corresponds to a closer grouping with the same momentum).  A small emittance increases the luminosity by increasing the likelihood of interaction.  Beta is determined by the cross section of the bunch and the emittance, so a low beta indicates a more squeezed beam.\\
 
 
 \subsection{LHC Magnets}
 
-The protons in the beam are steered using 1.232 dipole magnets, each of which are 14.3 meters in length, producing up to 8.4 Tesla magnetic fields.  This is achieved using superconducting niobium-titanium (NbTi) Rutherford cables operating at 1.9K with about 11,800 amperes of current.  \\
+The protons in the beam are steered using 1,232 dipole magnets, each of which are 14.3 meters in length, producing up to 8.4 Tesla magnetic fields.  This is achieved using superconducting niobium-titanium (NbTi) Rutherford cables operating at 1.9K with about 11,800 amperes of current.  \\
 
 Because the beams are charged, they will diverge if not focused.  Additionally, 392 quadrupole magnets, each between 5-7 meters in length, and each with two apertures, one for each direction, are used to focus the beam.  One set of quadrupole magnets squeezes the beam horizontally (QF), another set vertically (QD). \\%858 quadrupole magnets total?
 
@@ -41,19 +43,19 @@ Luminosity is defined by the number of collisions produced in a detector per squ
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=0.8\textwidth]{./intlumivsyear.eps}
-\caption{\label{fig:intLum}{ Integrated luminosity for individual years of running. }} %luminosity twiki
+\caption[Integrated luminosity for individual years of running]{\label{fig:intLum}{Integrated luminosity for individual years of running (figure from the ATLAS Collaboration). }} %luminosity twiki
 \end{figure}
 
 %ATLAS paper
 
 \subsection{Pileup}
 
-While increasing luminosity is necessary and beneficial for data collection, it corresponds to a major challenge as well; an increase in the number of interactions per bunch crossing, or pileup $(\langle \mu \rangle)$.  Most interactions are not the hard-scatter events that create potentially interesting physics events, but softer collisions that are not of interest and create noise while raising trigger rates.  It's important to reduce plieup as much as possible. Figure \ref{fig:mu} shows the mean number of interactions per crossing for the years 2015-2017 and can be seen that the number has increased each year. \\% and techniques to mitigate it have been and are being developed.
+While increasing luminosity is necessary and beneficial for data collection, it corresponds to a major challenge as well; an increase in the number of interactions per bunch crossing, or pileup $(\langle \mu \rangle)$.  Most interactions are not the hard-scatter events that create potentially interesting physics events, but softer collisions that are not of interest and create noise while raising trigger rates.  It's important to reduce pileup as much as possible. Figure \ref{fig:mu} shows the mean number of interactions per crossing for the years 2015-2017 and can be seen that the number has increased each year. \\% and techniques to mitigate it have been and are being developed.
 
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=0.8\textwidth]{./mu_2015_2017.pdf}
-\caption{\label{fig:mu}{ Pileup during data taking in 2015-2017. }} %luminosity twiki
+\caption[Pileup during data taking in 2015-2017]{\label{fig:mu}{Pileup during data taking in 2015-2017 (figure from the ATLAS Collaboration). }} %luminosity twiki
 \end{figure}
 
 \section{Overview of the ATLAS Detector}
@@ -65,21 +67,21 @@ ATLAS uses a variety of technologies to provide accurate and precise measurement
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=0.8\textwidth]{./figures/energyDeposits}
-\caption{\label{fig:energyDeposits}{ Cut-away view of ATLAS showing where particles deposit tracks and energy. }} %luminosity twiki
+\caption[Cut-away view of ATLAS showing where particles deposit tracks and energy]{\label{fig:energyDeposits}{ Cut-away view of ATLAS showing where particles deposit tracks and energy (figure from the ATLAS Collaboration). }} %luminosity twiki
 \end{figure}
 
 
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=1.\textwidth]{./figures/atlas.pdf}
-\caption{\label{fig:atlas}{ Cut-away view of the ATLAS detector and its subsystems.  Illustrations of people are included to provide a sense of scale. }} %luminosity twiki
+\caption[Cut-away view of the ATLAS detector and its subsystems]{\label{fig:atlas}{ Cut-away view of the ATLAS detector and its subsystems.  Illustrations of people are included to provide a sense of scale (figure from \cite{DetectorPaper:2008}). }} %luminosity twiki
 \end{figure}
 
 
 \subsection{Coordinate System and Common Variables}
 
 %ATLAS paper
-ATLAS uses a right-handed coordinate system where the interaction point is the origin of the coordinate system.  The beam direction defines the z-axis and the x-y plane is transverse to the z-axis.  Positive x points toward the center of the LHC ring and positive y points upwards.  Side-A of the detector is defined as positive z and side-C as negative.  Azimuthal angle $\phi$ is measured around the beam axis, and the polar angle $\theta$ defined as the angle from the beam axis.  Pseudorapidity, $\eta$, is defined as $\eta = -ln[tan(\theta/2)]$ and rapidity, y, as $y=\frac{1}{2} ln(\frac{E+p_{z}}{E-p_{z}})$ in the case of massive objects.  The transverse momentum, \pt\,  the transverse energy, $E_{\mathrm{T}}$, and the missing transverse momentum (denoted as energy), $E_{\mathrm{T}}^{miss}$, are defined in the x-y plane.  The $E_{\mathrm{T}}^{miss}$ is limited to the x-y axis because momenta of colliding particles (such as gluons) in the z direction is unknown.  Finally, the distance $\Delta R$ is defined as $\Delta R = \sqrt{\Delta\eta^{2} + \Delta\phi^{2}}$.\\
+ATLAS uses a right-handed coordinate system where the interaction point is the origin of the coordinate system.  The beam direction defines the $z$-axis and the $x$-$y$ plane is transverse to the $z$-axis.  Positive $x$ points toward the center of the LHC ring and positive $y$ points upwards.  Side-A of the detector is defined as positive $z$ and side-C as negative.  Azimuthal angle $\phi$ is measured around the beam axis, and the polar angle $\theta$ defined as the angle from the beam axis.  Pseudorapidity, $\eta$, is defined as $\eta = -ln[tan(\theta/2)]$ and rapidity, $y$, as $y=\frac{1}{2} ln(\frac{E+p_{z}}{E-p_{z}})$ in the case of massive objects.  The transverse momentum, \pt\,  the transverse energy, $E_{\mathrm{T}}$, and the missing transverse momentum (denoted as energy), \met, are defined in the $x$-$y$ plane.  The \met\ is limited to the $x$-$y$ axis because momenta of colliding particles (such as gluons) in the $z$ direction is unknown.  Finally, the distance $\Delta R$ is defined as $\Delta R = \sqrt{\Delta\eta^{2} + \Delta\phi^{2}}$.\\
 
 \subsection{Magnet System}
 
@@ -87,46 +89,46 @@ ATLAS has two magnet systems of note, the solenoid magnet and toroid magnets.\\
 
 A thin superconducting solenoid magnet surrounds the inner detector and creates a 2T field that makes the tracking of charged particles possible.  \\
 
-The toroid system consists of two parts, the endcap and barrel magnets as shown in Figure \ref{fig:atlasToroids}.  The magnets consists of eight coils, symmetrically arranged around the beam axis and radially assembled, weighing 830 tons.  The peak field is of the barrel magnets 3.9T and 4.1T for the endcap magnets.  This strong magnetic field permits tracking high energy muons to determine momentum.\\
+The toroid system consists of two parts, the endcap and barrel magnets as shown in Figure \ref{fig:atlasToroids}.  The magnets consists of eight coils, symmetrically arranged around the beam axis and radially assembled, weighing 830 tons.  The peak field is of the barrel magnets is 3.9T and 4.1T for the endcap magnets.  This strong magnetic field permits tracking high energy muons to determine momentum.\\
 
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=0.8\textwidth]{./figures/toroidMagnets.pdf}
-\caption{\label{fig:atlasToroids}{ Layout of the ATLAS toroid magnets. }} %luminosity twiki
+\caption[Layout of the ATLAS toroid magnets]{\label{fig:atlasToroids}{ Layout of the ATLAS toroid magnets (figure from \cite{DetectorPaper:2008}). }} %luminosity twiki
 \end{figure}
 
 \subsection{Inner Detector}
 
 The inner detector, which sits inside the 2T solenoid magnet, is used to reconstruct tracks that charged particles make as they bend in the magnetic field.  It provides hermetic coverage and pattern recognition, extending to $\eta=2.5$, and also provides momentum resolution and both primary and secondary vertex measurement.  Secondary vertices are important to identify and measure particles with delayed decays, such as bottom quarks, charm quarks, and tau leptons.  \\
 
-The inner detector consists of several subsystems.  Going from innermost to outermost of the beam, they are the insertable b-layer (IBL, the newest addition, added during Long Shutdown I), silicon pixel detectors, and the transition radiation tracker.  This can be seen in Figure \ref{fig:innerDetector}.\\
+The inner detector consists of several subsystems.  Going from innermost to outermost of the beam, they are the Pixel Detector (with the newest addition, the insertable $b$-layer (IBL), added during Long Shutdown I), Semiconductor Tracker (SCT), and the Transition Radiation Tracker(TRT).  This can be seen in Figure \ref{fig:innerDetector}.\\
 
 The IBL was added to be closer to the IP and thus improve vertexing, and involved adding a smaller beam pipe.  It uses a combination of planar technology, the same as the silicon pixel layers, and 3D technology, where the electronics pass through the bulk of the sensors in addition to lying on the surface.  The 3D technology covers the outermost 25\% of the IBL to improve resolution in the forward regions. \\ % http://iopscience.iop.org/article/10.1088/1748-0221/9/02/C02018/pdf
 
-The silicon pixel detector consists of three pixel layers.  The pixel sensor is made by implanting high positive and negative dose regions on each side of a wafer, so when a charged particle passes through the wafer an electric current passes through it.  The design also ensures single pixel isolation and minimizes leakage current.  The SCT can provide up to 4 additional measurement points, so these layers provide good tracking information.  \\%http://iopscience.iop.org/article/10.1088/1748-0221/3/07/P07007/pdf
+The Pixel Detector consists of four layers.  The pixel sensor is made by implanting high positive and negative dose regions on each side of a wafer, so when a charged particle passes through the wafer an electric current passes through it.  The design also ensures single pixel isolation and minimizes leakage current.  The SCT is a silicon microstrip tracker and can provide up to 4 additional measurement points, so these layers provide good tracking information.  \\%http://iopscience.iop.org/article/10.1088/1748-0221/3/07/P07007/pdf
 
 The transition radiation tracker (TRT) consists of 73 straw planes in the barrel and 160 in the endcap, extending to $|\eta|=2.0$.  The detector exploits the fact that charged particles emit electromagnetic radiation with moving from one medium to another, in this case carbon dioxide and polypropylene.  The energy loss depends on the mass of the particle, so lighter particles emit more of their energy.  Emitted EM radiation interacts with the gases inside a tube to increase the current when a charged particle passes though.  This can distinguish between, for instance, electrons and pions.  While the resolution of the TRT is less than the silicon wafers, extending silicon wafers out to the endpoint of the TRT is cost prohibitive.  \\
 
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=0.8\textwidth]{./innerDetectorIBL.pdf}
-\caption{\label{fig:innerDetector}{ Cut-away view of the ATLAS inner detector\cite{IBL}. }} %luminosity twiki
+\caption[Cut-away view of the ATLAS inner detector]{\label{fig:innerDetector}{ Cut-away view of the ATLAS inner detector (figure from \cite{IBL}). }} %luminosity twiki
 \end{figure}
 
 \subsection{Calorimeters}  \label{sec:calorimeters}%into to next section
 
-Unlike the ID, which changes the path of charged particles to provide tracking information, the calorimeters absorb both charged and neutral particles to measure their energy.  The exception to this is muons, which pass through the calorimeters, as well as neutrinos which pass through the entire detector without detection.  This can be done with a homogeneous material, like a scintillator, or with separate layers of absorber and detector material, called a sampling calorimeter.  This is the case with the ATLAS liquid argon (LAr) calorimeter, in which lead (absorber) and liquid argon (detector) is arranged in an accordion shape with copper-tungsten sensors as can be seen in \ref{fig:larLayout}.  Lead is chosen because its density increases the probability of interaction with the particles, and argon is chosen because it is radiation hard, stable, and affordable.  The particle interacts with the absorber material to generate secondary particles.  This in turn creates cascades of particles, the energy of which is measured from ionizations in the detector regions.  This aids in measuring neutral particles, the energy of which is measured by the secondary particles they create.  The absorptive power is also statistical as a Poisson distribution so precision depends on $\frac{\Delta E}{E}$ and varies like $\sqrt{E}$ while spectrometers vary as $E^{2}$.  There is also a fast response, which aides in triggering.  However, the measured energy is limited to a few tens of percents of the signal, so statistics has a large effect.  The radiation length ($\chi_{0}$) of a description of a material where, by passing through it, 1/e of a particle's energy is lost to bremsstrahlung (also 7/9 of the mean free path for photon pair production).  There are at least 25 radiation lengths through any path in the calorimeter.  The number of radiation lengths through different portions of the calorimeter is shown in Figure \ref{fig:radLengths}.  The LAr calorimeter primarily measures the energy of electrons and photons.\\
+Unlike the ID, which changes the path of charged particles to provide tracking information, the calorimeters absorb both charged and neutral particles to measure their energy.  The exception to this is muons, which pass through the calorimeters, as well as neutrinos which pass through the entire detector without detection.  This can be done with a homogeneous material, like a scintillator, or with separate layers of absorber and detector material, called a sampling calorimeter.  This is the case with the ATLAS liquid argon (LAr) calorimeter, in which lead (absorber) and liquid argon (detector) is arranged in an accordion shape with copper-tungsten sensors as can be seen in Figure \ref{fig:larLayout}.  Lead is chosen because its density increases the probability of interaction with the particles, and argon is chosen because it is radiation hard, stable, and affordable.  The particle interacts with the absorber material to generate secondary particles.  This in turn creates cascades of particles, the energy of which is measured from ionizations in the detector regions.  This aids in measuring neutral particles, the energy of which is measured by the secondary particles they create.  The absorptive power is also statistical as a Poisson distribution so precision depends on $\frac{\Delta E}{E}$ and varies like $\sqrt{E}$ while spectrometers vary as $E^{2}$.  There is also a fast response, which aides in triggering.  However, the measured energy is limited to a few tens of percents of the signal, so statistics has a large effect.  The radiation length ($\chi_{0}$) of a description of a material where, by passing through it, 1/e of a particle's energy is lost to bremsstrahlung (also 7/9 of the mean free path for photon pair production).  There are at least 25 radiation lengths through any path in the calorimeter.  The number of radiation lengths through different portions of the calorimeter is shown in Figure \ref{fig:radLengths}.  The LAr calorimeter primarily measures the energy of electrons and photons.\\
 
 \begin{figure}[h!]
   \centering
 	\includegraphics[trim=0cm 1cm 0cm 0cm,clip, width=1\textwidth]{./figures/calorimeters.pdf}
-\caption{\label{fig:calorimeters}{ Cut-away view of the ATLAS calorimeters\cite{DetectorPaper:2008}. }} %luminosity twiki
+\caption[Cut-away view of the ATLAS calorimeters]{\label{fig:calorimeters}{ Cut-away view of the ATLAS calorimeters (figure from \cite{DetectorPaper:2008}). }} %luminosity twiki
 \end{figure}
 
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=1\textwidth]{./figures/RadLegths.pdf}
-\caption{\label{fig:radLengths}{ Number of radiation lengths ($\chi_{0}$) as a function of $\eta$. }} %luminosity twiki
+\caption[Number of radiation lengths ($\chi_{0}$) as a function of $\eta$]{\label{fig:radLengths}{ Number of radiation lengths ($\chi_{0}$) as a function of $\eta$ (figure from \cite{DetectorPaper:2008}). }} %luminosity twiki
 \end{figure}
 
 
@@ -135,21 +137,21 @@ Hadrons can only be measured by hadron-nucleon interactions, which is characteri
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=0.8\textwidth]{./figures/interactionLengths.pdf}
-\caption{\label{fig:interactionLengths}{ Number of interaction lengths as a function of $\eta$. }} %luminosity twiki
+\caption[Number of interaction lengths as a function of $\eta$]{\label{fig:interactionLengths}{ Number of interaction lengths as a function of $\eta$ (figure from \cite{DetectorPaper:2008}). }} %luminosity twiki
 \end{figure}
 
 \section{Liquid Argon Calorimetry at ATLAS}
 
 As discussed previously, the Liquid Argon calorimeter is a sampling calorimeter capable of absorbing and measuring the energy of charged and neutral particles.  The LAr calorimeter covers the pseudorapidity range $|\eta| < 3.2$.  The hadronic calorimeter is comprised of a scintillator-tile calorimeter, separated into a large barrel and two smaller extended barrel cylinders on each side of the central barrel and covers the pseudorapidity range $|\eta| < 1.7$.  The endcaps, with $|\eta| > 1.5$ also use LAr calorimetry and extend to $\eta = 3.2$.  The LAr forward calorimeters provide EM and hadronic measurements and extend to $\eta = 4.9$.  Because of the complexity of the arrangement, there are some gaps in the coverage; otherwise, coverage is nearly hermetic.  \\
 
-A aspect to the LAr calorimeter is that it must be kept very cold to operate, so is housed in a cryostat operated at 89K, which contributes to dead material.  In order to reduce the total amount of dead material the LAr calorimeter shares the cryostat and vacuum vessel with the solenoid magnet.  \\
+An aspect to the LAr calorimeter is that it must be kept very cold to operate, so is housed in a cryostat operated at 89K, which contributes to dead material.  In order to reduce the total amount of dead material the LAr calorimeter shares the cryostat and vacuum vessel with the solenoid magnet.  \\
 
 The LAr calorimeter typically operates at a 2000V, with some variance, to create a particle avalanche when a charged particle ionizes the liquid argon.  There is a presampler layer in the barrel region, which corrects for energy loss in material upstream of the calorimeter, followed by three additional layers, which sum together to form a Trigger Tower, which are analog sums of energy deposits contained in an area of $\Delta\eta \times \Delta\phi$ = $0.1 \times 0.1$ across longitudinal layers of the calorimeters.\\
 
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=0.8\textwidth]{./figures/larLayers.pdf}
-\caption{\label{fig:larLayout}{ An illustration of a LAr calorimeter module in the barrel region which shows the accordion structure of the absorbers and the geometry of each section and a Trigger Tower\cite{LArTDR}  }} %LAr TDR
+\caption[An illustration of a LAr calorimeter module in the barrel region]{\label{fig:larLayout}{ An illustration of a LAr calorimeter module in the barrel region which shows the accordion structure of the absorbers and the geometry of each section and a Trigger Tower (figure from \cite{LArTDR}).}} %LAr TDR
 \end{figure}
 
 
@@ -160,18 +162,18 @@ The drift time in the LAr calorimeter is 400-600 ns, compared to the 25 ns bunch
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=0.6\textwidth]{./LArPulse.pdf}
-\caption{\label{fig:larPulse}{ Signal shape before shaping (triangle) and after shaping (curved with dots).  The dots are positions of successive bunch crossings\cite{DetectorPaper:2008}. }} 
+\caption[Signal shape before and after shaping]{\label{fig:larPulse}{ Signal shape before shaping (triangle) and after shaping (curved with dots).  The dots are positions of successive bunch crossings (figure from \cite{DetectorPaper:2008}). }} 
 \end{figure}
 
 
 Since the calorimeters use warm preamplifiers (with exception to the HEC) for long term reliability, the shaping stage is designed to handle both pileup and thermal noise.  It also must cover a dynamic range in excess of 17 bits, so the range is split by three linear output ranges with gains of 1, 10, and 100.  This means that necessary range can be covered by the 12 bit system downstream of the shaper.  The shaped signals are sampled and stored in analog form by switched-capacitor array (SCA) analog pipeline chips.  \\
 
-After the front-end board (FEB), off-detector boards perform digital filtering used to extract information from five samples around the peak of the pulse shape.  Analog sums are performed in steps due to the large number of channels on the shaper chip, the FEB, and on designated boards in front-end crates and used to form trigger towers.  Figure \ref{fig:sigProp} shows the signal path in the LAr electronics.  \\
+After the front-end board (FEB), off-detector boards perform digital filtering used to extract information from four samples around the peak of the pulse shape.  Analog sums are performed in steps due to the large number of channels on the shaper chip, the FEB, and on designated boards in front-end crates and used to form trigger towers.  Figure \ref{fig:sigProp} shows the signal path in the LAr electronics.  \\
 
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=0.8\textwidth]{./signalProp}
-\caption{\label{fig:sigProp}{ Signal propagation through the LAr electronics\cite{larPerf}. }} %LAr TDR
+\caption[Signal propagation through the LAr electronics]{\label{fig:sigProp}{ Signal propagation through the LAr electronics (figure from \cite{larPerf}). }} %LAr TDR
 \end{figure}
 
 \subsection{Calibration}
@@ -199,10 +201,10 @@ In order to detect the Higgs boson, the uncertainty must be small, especially in
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=1\textwidth]{./eUncertainty.pdf}
-\caption{\label{fig:euncertainty}{Electron uncertainty as a function of $p_{T}$ (left) and $\eta$ (right)\cite{eUncertaintyPaper}.  The low uncertainty leads to more precise measurements on important quantities, such as the Higgs mass.}} 
+\caption[Electron uncertainty as a function of $p_{T}$ and $\eta$]{\label{fig:euncertainty}{Electron uncertainty as a function of $p_{T}$ (left) and $\eta$ (right)(figure from \cite{eUncertaintyPaper}).  The low uncertainty leads to more precise measurements on important quantities, such as the Higgs mass.}} 
 \end{figure}
 
-Calibration is also important for the missing energy trigger.  Missing energy, an imbalance of momentum of detected particles, is an indication of new physics as there could be new particles that pass through the detector without interacting with it.  Mis-measured energy can give a false positive for a new particle, so any uncertainty pushes up the quantity of missing energy that can be triggered on with reasonable rates.  Therefore the uncertainty on measured momentum must be minimized.  This is discussed further in section \ref{sec:met}.
+Calibration is also important for the missing energy trigger.  Missing energy, an imbalance of momentum of detected particles, is an indication of new physics as there could be new particles that pass through the detector without interacting with it.  Mis-measured energy can give a false positive for a new particle, so any uncertainty pushes up the quantity of missing energy that can be triggered on with reasonable rates.  Therefore the uncertainty on measured momentum must be minimized.  This is discussed further in Section \ref{sec:met}.
 
 \subsection{Forward Detectors}
 
@@ -226,7 +228,7 @@ The outermost layer of the detector is the muon spectrometer, which measures the
 \begin{figure}[h!]
   \centering
 	\includegraphics[trim=0cm 1cm 0cm 0cm,clip, width=0.8\textwidth]{./figures/muonSystem.pdf}
-\caption{\label{fig:muonCutAway}{ Cut-away view of ATLAS Muon System\cite{DetectorPaper:2008}. }} %luminosity twiki
+\caption[Cut-away view of ATLAS Muon System]{\label{fig:muonCutAway}{ Cut-away view of ATLAS Muon System (figure from \cite{DetectorPaper:2008}). }} %luminosity twiki
 \end{figure}
 
 %
@@ -240,7 +242,7 @@ The outermost layer of the detector is the muon spectrometer, which measures the
 
 The ATLAS trigger system has the job of reducing the enormous quantity of data collected by the detector and reducing the rate to a reasonable one.  The LHC machine has a crossing rate of 40 MHz and data on the order of a kHz can be read out.  To do this the trigger uses a hardware trigger (Level 1, or L1) followed by software-level triggers (the High Level Trigger, or HLT).  \\
 
-The hardware trigger uses fast algorithms with subsets of detector information to reduce the rate to 75 kHz.  The L1Calo trigger uses the calorimeter systems for electrons, photons, hadrons, jets, and $E_{\mathrm{T}}^{miss}$.  The L1Muon trigger uses muon information from the muon system.  The results from the L1 systems are passed to the central trigger processor, which implements a trigger menu made of combinations of trigger selections.    The L1 systems identify regions of interest (RoI) defined by detector geometry and criteria passed, which are passed to the HLT.  The decision time is 25 $\mu$s. \\
+The hardware trigger uses fast algorithms with subsets of detector information to reduce the rate to 100 kHz.  The L1Calo trigger uses the calorimeter systems for electrons, photons, hadrons, jets, and \met.  The L1Muon trigger uses muon information from the muon system.  The results from the L1 systems are passed to the central trigger processor, which implements a trigger menu made of combinations of trigger selections.    The L1 systems identify regions of interest (RoI) defined by detector geometry and criteria passed, which are passed to the HLT.  The decision time is 25 $\mu$s. \\
 
 The Level 2 (L2) trigger, part of the HLT, uses RoIs from the L1 trigger along with full detector granularity to make selections and are designed to reduce the rate to about 3.5kHz in 40 ms.  Finally, the Event Filter reduces the rate to about 1-2 kHz using offline analysis procedures in about 4 seconds.  \\
 
@@ -261,20 +263,20 @@ Additionally, new LAr Trigger Digitizer Boards (LTDB) will be installed on the F
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=0.8\textwidth]{./figures/superCell.pdf}
-\caption{\label{fig:superCell}{ A sample event of a 70 GeV electron as seen by the current L1Calo Trigger, with all cells summed into a Trigger Tower (a) and after the Phase I upgrade with Super Cells (b)\cite{LArPhaseITDR}. }} %LAr TDR  DONE
+\caption[Trigger Towers vs. Super Cells]{\label{fig:superCell}{ A sample event of a 70 GeV electron as seen by the current L1Calo Trigger, with all cells summed into a Trigger Tower (a) and after the Phase I upgrade with Super Cells (b) (figure from \cite{LArPhaseITDR}). }} %LAr TDR  DONE
 \end{figure}
 
 
 %gFEX fdr
-After digitization the LTDB transfers calorimeter signals to the LATOME (LAr Trigger prOcessing MEzzanine) cards in the off-detector LAr Digital Processing System (LDPS), each of which uses a filtering algorithm on an FPGA to reconstruct the transverse energy of the Super Cells every 25 ns and identifies the related bunch-crossing (BCID).  The LATOME then transmits information to the new feature extraction processors (FEXs) that will implement sophisticated object identification algorithms.  These include the eFEX, jFEX, and gFEX.  The eFEX receives full super cell information, and the jFEX receives $\Delta\eta \times \Delta\phi$ = 0.1$\times$0.1 super cell energy sums. Figure \ref{fig:l1calo} shows the updated L1Calo system.  \\%, and the gFEX receives $\Delta\eta \times \Delta\phi$ = 0.2 $\times$ 0.2 super cell energy sums. % Output data from the FEXs are processed and buffered by LDPS after an L1 trigger acceptance (L1A) and are routed toe the Front End Link EXchange (FELIX), which interfaces the ATLAS sub-detectors to the data acquisition system.  The FELIX also allows the system to handle bi-directional low-latency channels by routing data to and from multiple Gigabit Bidirectional Trigger and Data Links (GBTs) by the way of a high-performance general purpose network.
+After digitization the LTDB transfers calorimeter signals to the LATOME (LAr Trigger prOcessing MEzzanine) cards in the off-detector LAr Digital Processing System (LDPS), each of which uses a filtering algorithm on an FPGA to reconstruct the transverse energy of the Super Cells every 25 ns and identifies the related bunch-crossing (BCID).  The LATOME then transmits information to the new feature extraction processors (FEXs) that will implement sophisticated object identification algorithms.  These include the eFEX (electron), jFEX (jet), and gFEX (global).  The eFEX receives full super cell information, and the jFEX receives $\Delta\eta \times \Delta\phi$ = 0.1$\times$0.1 super cell energy sums. Figure \ref{fig:l1calo} shows the updated L1Calo system.  \\%, and the gFEX receives $\Delta\eta \times \Delta\phi$ = 0.2 $\times$ 0.2 super cell energy sums. % Output data from the FEXs are processed and buffered by LDPS after an L1 trigger acceptance (L1A) and are routed toe the Front End Link EXchange (FELIX), which interfaces the ATLAS sub-detectors to the data acquisition system.  The FELIX also allows the system to handle bi-directional low-latency channels by routing data to and from multiple Gigabit Bidirectional Trigger and Data Links (GBTs) by the way of a high-performance general purpose network.
 
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=0.8\textwidth]{./phaseIelectronics.pdf}
-\caption{\label{fig:phaseIelec}{ Schematic diagram of the LAr trigger readout architecture after the Phase I upgrade with new components indicated by red outlines and arrows\cite{LArPhaseITDR}. }} %LAr TDR  DONE
+\caption[Schematic diagram of the LAr trigger readout architecture after the Phase I upgrade]{\label{fig:phaseIelec}{ Schematic diagram of the LAr trigger readout architecture after the Phase I upgrade with new components indicated by red outlines and arrows (figure from \cite{LArPhaseITDR}). }} %LAr TDR  DONE
 \end{figure}
 
-In addition to the eFEX and jFEX, the Global Feature Extractor (gFEX) is new and unique in the fact that it can scan the entire calorimeter with a single module and thus use full-scan algorithms and trigger on boosted topologies.  In order to accommodate the calorimeter on one board the granularity is reduced so the gFEX receives $\Delta\eta \times \Delta\phi$ = 0.2$\times$0.2 super cell energy sums, called gTowers.  gTowers can be summed into 3$\times$3 contiguous towers to form gBlocks also and summed into R=1.0 jets called gJets.  Large $R$ jets are typical of boosted objects, which can be the results of interesting physics processes, and the gFEX will provide the capability to trigger on them and also study their substructure.  Additionally, since the entire calorimeter is on one board it can calculate $E_{\mathrm{T}}^{\mathrm{miss}}$ as well.  The gFEX will be discussed more in the Chapter \ref{ch:gFEX}.  \\%[ADD MORE HERE AS PROJECT COMPLETES]
+In addition to the eFEX and jFEX, the gFEX is new and unique in the fact that it can scan the entire calorimeter with a single module and thus use full-scan algorithms and trigger on boosted topologies.  In order to accommodate the calorimeter on one board the granularity is reduced so the gFEX receives $\Delta\eta \times \Delta\phi$ = 0.2$\times$0.2 super cell energy sums, called gTowers.  gTowers can be summed into 3$\times$3 contiguous towers to form gBlocks also and summed into R=1.0 jets called gJets.  Large $R$ jets are typical of boosted objects, which can be the results of interesting physics processes, and the gFEX will provide the capability to trigger on them and also study their substructure.  Additionally, since the entire calorimeter is on one board it can calculate $E_{\mathrm{T}}^{\mathrm{miss}}$ as well.  The gFEX will be discussed more in the Chapter \ref{ch:gFEX}.  \\%[ADD MORE HERE AS PROJECT COMPLETES]
 
 %\begin{figure}[h!]
 %  \centering
@@ -294,13 +296,14 @@ The Phase-I upgrade also includes consolidation of the existing sub-detectors an
 \begin{figure} [h!]
 \centering
 \includegraphics[trim=0cm 0cm 0cm 0cm,clip, scale=1.3]{gFEXnote/l1caloUpdated.pdf} %Replace this with pdf when Preview works again
-\caption{\label{fig:l1calo}{L1Calo system after the Phase I upgrade with new elements including the FEXs\cite{gFEXFDR}.  }}
+\caption[L1Calo system after the Phase I upgrade]{\label{fig:l1calo}{L1Calo system after the Phase I upgrade with new elements including the FEXs (figure from \cite{gFEXFDR}).  }}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Calorimeter Trigger Phase II Upgrades}
+\label{sec:HLLHC}
 
-After Run 3 a longer shutdown, LS3, is planned to upgrade the LHC to the High Luminosity LHC (HL-LHC).  This upgrade, the Phase II upgrade is scheduled for 2024-2026 and will upgrade various detector systems to handle the increase in luminosity.  The HL-LHC will see an increase in peak luminosity during Run 4 of up to 5$\times$10\textsuperscript{34} cm\textsuperscript{-2}s\textsuperscript{-1} in order to deliver 250 fb\textsuperscript{-1} per year, or 3000 fb\textsuperscript{-1} by the end of Run 4.  This enormous quantity of data will allow for precision measurements of the Higgs boson with all production processes and decay modes, improved SM measurements, and beyond the SM searches. This will also increase pileup to $\sim$200.  \\ %However the increase of pileup to $\sim$ 200 presents a major challenge.  \\
+After Run 3 a longer shutdown, LS3, is planned to upgrade the LHC to the High Luminosity LHC (HL-LHC)\cite{Collaboration:2296879}.  This upgrade, the Phase II upgrade is scheduled for 2024-2026 and will upgrade various detector systems to handle the increase in luminosity.  The HL-LHC will see an increase in peak luminosity during Run 4 of up to 5$\times$10\textsuperscript{34} cm\textsuperscript{-2}s\textsuperscript{-1} in order to deliver 250 fb\textsuperscript{-1} per year, or 3000 fb\textsuperscript{-1} (possible as high as 4000 \ifb) by the end of Run 4.  This enormous quantity of data will allow for precision measurements of the Higgs boson with all production processes and decay modes, improved SM measurements, and beyond the SM searches. This will also increase pileup to $\sim$200.  \\ %However the increase of pileup to $\sim$ 200 presents a major challenge.  \\
 
 The following upgrades are scheduled in order to support the physics goals of the HL-LHC: %ATL-COM-DAQ-2017-160
 \begin{itemize}
@@ -325,7 +328,7 @@ The following upgrades are scheduled in order to support the physics goals of th
 \begin{figure}[h!]
   \centering
 	\includegraphics[width=1\textwidth]{./LArPhaseII}
-\caption{\label{fig:larPhaseII}{Schematic diagram of the LAr trigger readout architecture after the Phase II upgrade\cite{LArPhaseIItdr}.}}
+\caption[Schematic diagram of the LAr trigger readout architecture after the Phase II upgrade]{\label{fig:larPhaseII}{Schematic diagram of the LAr trigger readout architecture after the Phase II upgrade (figure from \cite{LArPhaseIItdr}).}}
 \end{figure}
 
 

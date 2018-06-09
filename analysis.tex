@@ -3,7 +3,7 @@
 
 
 
-This chapter describes the analysis in depth, beginning with the signal regions and continuing with background estimation and finally presenting the results, interpretations, and outlook.  The lightest supersymmetric parter to the top quark being produced in direct pair production is the main focus of the analysis, while other scenarios are also discussed.  
+This chapter describes the analysis in depth, beginning with the signal regions and continuing with background estimation and finally presenting the results, interpretations, and outlook.  The lightest supersymmetric partner to the top quark\footnote{There is a SUSY partner to the helicity states of the top quark in the SM, $\tilde{t}_{L}$ and $\tilde{t}_{R}$, which mix to form the $\tilde{t}_{1}$ and $\tilde{t}_{2}$ where the $\tilde{t}_{1}$ is the lightest of the two.} being produced in direct pair production is the main focus of the analysis, while other scenarios are also discussed.  
 
 %\section{Object Selection}
 
@@ -13,21 +13,21 @@ This chapter describes the analysis in depth, beginning with the signal regions 
 \section{Signal Region Definitions}
 \label{sec:srDefs}
 
-Leading order stop pair-production at the LHC is dominated by gluon fusion, followed by $q\bar{q}$ scattering.  The stops are pair produced, conserving $R-$parity, and are produced directly, so there are no intermediate particles in the simplified model.  \\
+Leading order stop pair-production at the LHC is expected to be dominated by gluon fusion, then by the subprocess $q\bar{q}$ annihilation.  The stops are pair produced, conserving $R-$parity, and are produced directly, so there are no intermediate particles in the simplified model.  \\
 
 As discussed in Chapter \ref{ch:analysisOverview} there are five distinct signal regions developed to optimize discovery significance for different topologies, SRA-E.  All of the searches share the following preselection requirements:
 
 \begin{itemize}
-	\item For data samples, events must be in the Good Runs List (GRL), which are runs that pass certain data quality requirements.  This gives a total luminosity of 36.46 fb\textsuperscript{-1}.
-	\item For data samples, cleaning from noise bursts and incomplete events.
-	\item The event must pass the lowest unprescaled \met\ trigger as well as have \met\ $>$ 250 GeV.
+	\item For data samples, events must be in the Good Runs List (GRL), which are runs that pass certain data quality requirements.%  This gives a total luminosity of 36.1 fb\textsuperscript{-1}.
+	\item For data samples, Must pass cleaning selection which removes events with incomplete data or with calorimeter noise bursts.
+	\item The event must pass the lowest unprescaled \met\ trigger as well as have offline \met\ $>$ 250 GeV.
 	\item The event must have a reconstructed primary vertex.
 	\item The event must not contain any ``bad jets" from the jet definition described in section \ref{section:jetcleaning} with \pt\ $>$ 20 GeV. %``BadLooser"
 	\item The event must not contain any cosmic muons as discussed in section \ref{section:jetcleaning}
 	\item The event must not contain any bad muons as described in section \ref{section:muons}.
 	\item The event must contain no baseline electron candidates with \pt\ $>$ 7 GeV and no baseline muons with \pt\ $>$ 6 GeV.
 	\item The event must contain at least four jets.
-	\item The \dphi\ between the leading two (three) jets and the \met, \dphijettwomet (\dphijetthreemet), must be greater than 0.4 for ISR based regions (non-ISR based regions). 
+	\item The \dphi\ between the leading two (three) jets and the \met, \dphijettwomet, (\dphijetthreemet), must be greater than 0.4 for ISR based regions (non-ISR based regions). 
 	\item The \mettrk\ must be greater than 30 GeV.
 	\item The \dphi, between the calo \met\ and the \mettrk, \dphimettrk, must be smaller than $\pi/3$.
 \item At least one b-tagged jet at the 77\% working point is required.
@@ -165,6 +165,7 @@ A similar strategy was taken for the optimization of SRB which is aimed at being
 
 %SRC
 \subsection{SRC}
+\label{sec:SRC}
 The signature of stop decays when $\Delta m(\stop,\LSP)\sim m_{t}$ is significantly softer with low \met. This decay topology is very similar to non-resonant \ttbar\ production making signal and background separation challenging. However, several kinematic properties can be exploited to separate stop decays from \ttbar\ when an ISR jet is present in the final state. \\
 
 An additional set of discriminating variables is defined for signal regions using ISR to gain sensitivity the compressed ($\mstop-\mLSP\sim m_t$) signal grid region. These variables are all defined in the transverse center-of-mass (CM) of the sparticle plus ISR frame. Visible objects are grouped into being either a part of the ISR or the sparticle system. This is performed using a recursive jigsaw reconstruction technique\cite{RJR_ISR}, which looks for a ``thrust axis" where the \pt-projection of all jets and \met\ in the center of mass frame in the event are maximized.  This axis then divides the space into the sparticle or ISR system.  This association with the ISR or sparticle system is indicated by an ISR or S superscript, respectively. The ``V" subscript denotes the visible part of system.  For example, \mV\ denotes the transverse mass of only the visible (jets+leptons) part of the sparticle system without the \met.  The variables considered are:
@@ -246,7 +247,7 @@ m(\stop) = 700 GeV, m(\ninoone) = 100 GeV (SRD-high) are reported in Table~\ref{
 
 \subsection{SRE}
 
-SRE is designed for a model for which the tops are highly boosted. Such signatures can either come from direct stop pair production with a very high stop mass, or in the gluino-mediated compressed-stop scenario with large $\mgluino - \mstop$ . The benchmark for this signal region is a model where $(\mgluino, \mstop, \mLSP) = (1700, 400, 395) \gev$. Due to the large boost, the top daughters are more collimated compared to typical topology expected in \SRA.  Compared to direct stop pair production with $\mstop=800 \gev$ and $\mLSP=1 \gev$, the $\Delta R$ separation between the \Wboson\ and the bottom quark tends to be smaller. This is shown in Figure \ref{fig:SRBoost_dRWb}.  Therefore, \antikt\ $R=0.8$ reclustered jet collection will be considered as the top candidates instead of $R=1.2$ masses in other signal region. Table~\ref{tab:SRE} shows the selection criteria for SRE. 
+SRE is designed for a model for which the tops are highly boosted. Such signatures can either come from direct stop pair production with a very high stop mass, or in the gluino-mediated compressed-stop scenario with large $\mgluino - \mstop$. The benchmark for this signal region is a model where $(\mgluino, \mstop, \mLSP) = (1700, 400, 395) \gev$. Due to the large boost, the top daughters are more collimated compared to typical topology expected in \SRA.  Compared to direct stop pair production with $\mstop=800 \gev$ and $\mLSP=1 \gev$, the $\Delta R$ separation between the \Wboson\ and the bottom quark tends to be smaller. This is shown in Figure \ref{fig:SRBoost_dRWb}.  Therefore, \antikt\ $R=0.8$ reclustered jet collection will be considered as the top candidates instead of $R=1.2$ masses in other signal region. Table~\ref{tab:SignalRegionE} shows the selection criteria for SRE. 
 
 \begin{table}[!htb]
   \caption[Selection criteria for SRE]{Selection criteria for SRE in addition to the common preselection requirements as shown in Table \ref{tab:SRcommon}.}
@@ -288,7 +289,6 @@ SRE is designed for a model for which the tops are highly boosted. Such signatur
 	\caption[$\Delta R$ between the \Wboson\ and the $b$-quark vs. the top \pt]{The true $\Delta R$ between the \Wboson\ and the $b$-quark vs.\ the truth top \pt\ for (a) SRA and (b) SRE. The common preselection criteria are applied with the exception of the $b$-jet requirement.}
 	\label{fig:SRBoost_dRWb}
 \end{figure}
-\clearpage
 
 \section{Background Estimation}
 \label{sec:backgroundEstimation}
@@ -540,7 +540,12 @@ been designed, except for SRC as the contribution of \Zboson +jets background to
 The \ttbar\ (CRTX), \Wjets\ (CRW), and single-top (CRST)  backgrounds contribute to the signal region selections because one lepton from the decay of a $W$ boson is out of acceptance, is mis-identified as a jet, or is an hadronically decaying $\tau$-lepton. The control regions to estimate the normalization to these backgrounds are thus defined by exploiting a one-lepton (electron or muon) selection, making them orthogonal to the SRs. For consistency with the signal regions, the same \met\ triggers are used as in the SR (Table~\ref{tab:SRcommon}). In these regions the lepton is counted as a jet for the \pt\ requirements and the jet reclustering but not for the QCD cleaning selections. The top control region is further divided to match the various signal regions. A specially designed top control region is used for SRC using similar ISR and recursive jigsaw methods. \\
 
 
-The three sets of CRs (with multiple CRTs) are mutually exclusive. The requirements on the number of b-jets and on \mantikttwelvezero\ ensures that CRW is orthogonal with CRT and CRST. The selection on $\Delta R(b_{0,1},\ell)_{\mathrm{min}}$, defined as the minimum $\Delta R$ between the two jets with the highest b-tag weight and the selected lepton, ensures the orthogonality of CRT and CRST. In CRST the requirement on the $\Delta R$ of the two leading-weight b-jets is necessary to reject a large part of the remaining \ttbar\ background.\\% and reach a single top purity of $\sim$50\%.\\
+The three sets of CRs (with multiple CRTs) are mutually exclusive. The requirements on the number of b-jets and on \mantikttwelvezero\ ensures that CRW is orthogonal with CRT and CRST. The selection on $\Delta R(b_{0,1},\ell)_{\mathrm{min}}$, defined as the minimum $\Delta R$ between the two jets with the highest $b$-tag weight and the selected lepton, ensures the orthogonality of CRT and CRST. In CRST the requirement on the $\Delta R$ of the two leading-weight $b$-jets is necessary to reject a large part of the remaining \ttbar\ background.\\% and reach a single top purity of $\sim$50\%.\\
+
+The selections for CRW and CRST are shown in Table \ref{tab:selectionCRWSTTTGamma}. 
+
+
+%The selections for a possible \Wjets\ validation region in the 1-lepton, two b-jets channel (VRW) are summarised in Tab.~\ref{tab:VRW}.
 
 %\begin{table}[htpb]
 %  \caption{Summary of the selection for the 1-lepton, single top, $W$+jets and common to all top control regions. The signal lepton is treated as a jet for the jet counting and \pt\ ordering as well as for the top reco.}
@@ -573,7 +578,8 @@ The three sets of CRs (with multiple CRTs) are mutually exclusive. The requireme
 
 \subsubsection{\boldmath$t\bar{t}$ Control Region}
 
-Table \ref{selectionCRTs} show the definitions of the various top control regions. SRA and SRB each have a set of three orthogonal control regions defined by the top candidate categories. Additionally, control regions are designed for SRC, SRD and SRE.  \\ %~\ref{tab:crTopABDef} and ~\ref{tab:crTopCDEDef}, after the requirements shown in Table~\ref{tab:1LCR_BaseDefs}
+Table \ref{tab:selectionCRTs} show the definitions of the various top control regions. SRA and SRB each have a set of three orthogonal control regions defined by the top candidate categories. Additionally, control regions are designed for SRC, SRD and SRE.  Figure \ref{fig:CRT} shows the distributions of some of the discriminating variables in the top control regions. \\
+\\ %~\ref{tab:crTopABDef} and ~\ref{tab:crTopCDEDef}, after the requirements shown in Table~\ref{tab:1LCR_BaseDefs}
 
 The control region for SRC is designed using the same sensitive variables as the SRC definition to mimic the signal regions as close as possible while maintaining a high purity of the dominant background semi-leptonic \ttbar.  A cut of $\mtlepmet < 80\gev$ is added to remove signal contamination and a $\mindrblep<2.0$ cut is added to increase purity and ensure orthogonality to CRW. Requirements for CRTC are shown in Table \ref{tab:ttbar1LepCRISR_def}. \\
 
@@ -703,7 +709,6 @@ The control region for SRC is designed using the same sensitive variables as the
 \end{table}
 \end{landscape}
 
-Figure \ref{fig:CRT} shows the distributions of some of the discriminating variables in the top control regions. \\
 
 %\begin{figure}[htbp]
 %  \begin{center}
@@ -727,7 +732,7 @@ Figure \ref{fig:CRT} shows the distributions of some of the discriminating varia
     \includegraphics[width=0.45\textwidth]{figures/ttbar/postfit/Ht_CRTopE_log} 
     \includegraphics[width=0.45\textwidth]{figures/ttbar/postfit/JetPt_4__CRTopD_log} 
   \end{center}
-  \caption{Postfit distributions for \intlumi\ \ifb\ of data for various discriminating variables in CRTA, CRTB, CRTD, and CRTE.  The ratio between data and MC is shown in the bottom panel. The hashed area in both the top and lower panel represent the uncertainty due to MC statistics and detector systematic uncertainties.}
+  \caption[Postfit distributions of several discriminating variables in CRT]{Postfit distributions for 36.1 \ifb\ of data for various discriminating variables in CRTA, CRTB, CRTD, and CRTE.  The ratio between data and MC is shown in the bottom panel. The hashed area in both the top and lower panel represent the uncertainty due to MC statistics and detector systematic uncertainties.}
   \label{fig:CRT}
 \end{figure}
 \clearpage
@@ -801,14 +806,14 @@ Figure \ref{fig:CRT} shows the distributions of some of the discriminating varia
 \subsubsection{\boldmath$t\bar{t}$ Validation Region}
 
 
-The selections for the $\ttbar$ validation regions in the 0-lepton, two b-jets channel for the $t\bar{t}$ background are summarized in Tables~\ref{tab:vrTopABDef} and ~\ref{tab:vrTopCDEDef}. The same preselection as discussed in Table~\ref{tab:SRcommon} are used.
+The selections for the $\ttbar$ validation regions in the 0-lepton, two $b$-jets channel for the $t\bar{t}$ background are summarized in Tables~\ref{tab:vrTopABDef} and ~\ref{tab:vrTopCDEDef}. The same preselection as discussed in Table~\ref{tab:SRcommon} are used.
 
 \begin{table}[htb]
-  \caption[VRTopA and VRTopB region definitions.]{Validation region definitions, in addition to the requirements presented in Table~\ref{tab:SRcommon} for VRTopA and VRTopB.}
+  \caption[VRTA and VRTB region definitions.]{Validation region definitions, in addition to the requirements presented in Table~\ref{tab:SRcommon} for VRTA and VRTB.}
   \begin{center}
     \def\arraystretch{1.4}%
     \begin{tabular}{c||l|c|c|c} \hline\hline
-      {\bf VRTop}                &                    & {\bf TT}     & {\bf TW}     & {\bf T0}     \\ \hline \hline
+      {\bf VRT}                &                    & {\bf TT}     & {\bf TW}     & {\bf T0}     \\ \hline \hline
                                  & \mantikttwelvezero & \multicolumn{3}{c}{$>120\gev$}             \\ \cline{2-5}
                                  & \mantikttwelveone  & $>120\gev$   & $60-120\gev$ & $<60\gev$    \\ \cline{2-5}
                                  & \mtbmin            & $>100,<200$ GeV & $>140,<200$ GeV & $>160,<200$ GeV       \\ \cline{2-5}
@@ -827,11 +832,11 @@ The selections for the $\ttbar$ validation regions in the 0-lepton, two b-jets c
 
 
 \begin{table}[htpb]
-  \caption[VRTopC, VRTopD and VRTopE Selection criteria.]{Summary of the selection for the 0-lepton top validation region for VRTopC, VRTopD and VRTopE, in addition to the requirements presented in Table~\ref{tab:SRcommon}. }
+  \caption[VRTC, VRTD and VRTE Selection criteria.]{Summary of the selection for the 0-lepton top validation region for VRTC, VRTD and VRTE, in addition to the requirements presented in Table~\ref{tab:SRcommon}. }
   \begin{center}
     \begin{tabular}{l|c|c|c}
       \hline \hline
-                           & VRTopC                & VRTopD     & VRTopE                   \\ \hline
+                           & VRTC                & VRTD     & VRTE                   \\ \hline
       \mtbmin              & -                     & \multicolumn{2}{c}{ $>100,<200$ GeV  } \\ \hline
       Number of jets   & $\ge4$                & $\ge 5$ & $\ge4$       \\ \hline \hline
       Number of $b$-jets   & $\ge1$                & \multicolumn{2}{c}{ $\geq 2$  }       \\ \hline \hline
@@ -922,13 +927,15 @@ The selections for the $\ttbar$ validation regions in the 0-lepton, two b-jets c
 %SRD
 % dominant backgrounds (not too jargony), CRs, VRs, 
 
-\subsubsection{\boldmath$W+$jets CR}
+%\subsubsection{\boldmath$W+$jets CR}
 
-The selection for CRW is shown in table \ref{tab:1LCR_BaseDefs}.  Data/MC comparisons in the \Wjets\ control region are shown in
-Fig.~\ref{fig:CRW}.  The MC is normalized to 36.07 \ifb,
-and no normalization factors are applied to any of the SM
-components. Several variables for which there is an extrapolation from
-CRW to the various SRs are shown. \\ %For SRA the extrapolation is in
+%The selection for CRW is shown in table \ref{tab:selectionCRWSTTTGamma}.  
+
+%Data/MC comparisons in the \Wjets\ control region are shown in %1LCR_BaseDefs
+%Fig.~\ref{fig:CRW}.  The MC is normalized to 36.07 \ifb,
+%and no normalization factors are applied to any of the SM
+%components. Several variables for which there is an extrapolation from
+%CRW to the various SRs are shown. \\ %For SRA the extrapolation is in
 %\met, \drbjetbjet, \mantikttwelvezero,  \mantikttwelveone, and
 %\mantikteightzero\ while for SRB the extrapolation is in \mtbmin\,
 %\mtbmax, and \drbjetbjet. The leading jet \pt s and the leading
@@ -986,32 +993,32 @@ CRW to the various SRs are shown. \\ %For SRA the extrapolation is in
 %  \label{fig:CRWMasses}
 %\end{figure}
 
+%
+%\subsubsection{\boldmath$W+$jets Validation Region}
+%\label{section:VRW}
+%
+%The selections for a possible \Wjets\ validation region in the 1-lepton, two b-jets channel (VRW) are summarised in Tab.~\ref{tab:VRW}.
 
-\subsubsection{\boldmath$W+$jets Validation Region}
-\label{section:VRW}
-
-The selections for a possible \Wjets\ validation region in the 1-lepton, two b-jets channel (VRW) are summarised in Tab.~\ref{tab:VRW}.
-
-\begin{table}[htpb]
-  \caption[Summary of the selection for the 1-lepton $W$+jets validation region.]{Summary of the selection for the 1-lepton $W$+jets validation region. The signal lepton is treated as a jet. The same \met\ triggers as mentioned in Table~\ref{tab:SRcommon} are used.}
-  \begin{center}
-    \begin{tabular}{c|c}
-      \hline \hline
-                                          & VRW              \\ \hline
-      Number of leptons                   & 1                \\ \hline
-      Number of jets (incl. lepton)       & $\geq 4$         \\ \hline
-      $\pt$ of jets (incl. lepton) in GeV & (80,80,40,40)    \\ \hline
-      Number of $b$-jets                  & $\geq 2$         \\ \hline
-      \mindphijettwomet                   & $>0.4$           \\ \hline
-      $\met$                              & $>250$ GeV       \\ \hline
-      \mtlepmet                           & $>30$,$<100$ GeV \\ \hline
-      \mantikttwelvezero                  & $<70\,$GeV       \\ \hline
-      \mtbmin                             & 150 GeV          \\ \hline
-      \mindrblep                          & $>1.8$           \\ \hline \hline
-    \end{tabular}
-  \end{center}
-  \label{tab:VRW}
-\end{table}
+%\begin{table}[htpb]
+%  \caption[Summary of the selection for the 1-lepton $W$+jets validation region.]{Summary of the selection for the 1-lepton $W$+jets validation region. The signal lepton is treated as a jet. The same \met\ triggers as mentioned in Table~\ref{tab:SRcommon} are used.}
+%  \begin{center}
+%    \begin{tabular}{c|c}
+%      \hline \hline
+%                                          & VRW              \\ \hline
+%      Number of leptons                   & 1                \\ \hline
+%      Number of jets (incl. lepton)       & $\geq 4$         \\ \hline
+%      $\pt$ of jets (incl. lepton) in GeV & (80,80,40,40)    \\ \hline
+%      Number of $b$-jets                  & $\geq 2$         \\ \hline
+%      \mindphijettwomet                   & $>0.4$           \\ \hline
+%      $\met$                              & $>250$ GeV       \\ \hline
+%      \mtlepmet                           & $>30$,$<100$ GeV \\ \hline
+%      \mantikttwelvezero                  & $<70\,$GeV       \\ \hline
+%      \mtbmin                             & 150 GeV          \\ \hline
+%      \mindrblep                          & $>1.8$           \\ \hline \hline
+%    \end{tabular}
+%  \end{center}
+%  \label{tab:VRW}
+%\end{table}
 
 %The yields in the VRW region are summarized in Tab.~\ref{tab:VRW_yields}. The \Wjets\ purity in this region is 30\% while the signal contamination is less than 15\% for all signal benchmark points except for ($\mstop$, $m_{\chinoonepm}$, $\mLSP$) = (550, 100, 50) GeV which has been excluded in previous searches. 
 
@@ -1022,7 +1029,7 @@ The selections for a possible \Wjets\ validation region in the 1-lepton, two b-j
 %  \label{tab:VRW_yields}
 %\end{table}
 
-A selection of distributions where data is compared to MC (no normalization factors applied) is shown in Fig.~\ref{fig:VRW}. 
+%A selection of distributions where data is compared to MC (no normalization factors applied) is shown in Fig.~\ref{fig:VRW}. 
 
 %\begin{figure}[!htb]
 %  \centering
@@ -1092,12 +1099,12 @@ A selection of distributions where data is compared to MC (no normalization fact
 
 The $\ttbar+Z$ background, where the $Z$ boson decays into neutrinos, is an irreducible background and is increased with respect to the Run 1 analysis. Designing a CR to estimate the $\ttbar+Z$ background by using the charged leptonic $Z$ boson decays would be favorable. However, such CR is difficult to design due to low statistics and the small branching fraction to leptons. In particular a 2-lepton CR suffers from a large contamination of $\ttbar$ and $Z$ + jets processes. For this reason, another data driven approach is followed by building a one-lepton CR for $\ttbar\gamma$ which is a similar process. A zero-lepton region was considered as a validation region but it was found to have a too low $\ttbar\gamma$ contribution, with $\gamma$+jets being the main contaminant.\\
 
-The CR is designed to minimize the differences between the two processes and keep the theoretical uncertainties from the extrapolation of the $\gamma$ to the \Zboson\ low. 
+%The CR is designed to minimize the differences between the two processes and keep the theoretical uncertainties from the extrapolation of the $\gamma$ to the \Zboson\ low. 
 
-The $\ttbar+\gamma$ CR requires exactly one photon, exactly one signal lepton (electron or muon, and at least four jets of which at least two are required to be b-tagged. Moreover, due to the difference in mass between the \Zboson\ and the $\gamma$, to mimic the $Z \rightarrow \nu\nu$ decay, the highest \pT\ photon is required to have $\pt>150\gev$. 
+The $\ttbar+\gamma$ CR is designed to minimize the differences between the two processes and keep the theoretical uncertainties from the extrapolation of the $\gamma$ to the \Zboson\ low.  It requires exactly one photon, exactly one signal lepton (electron or muon, and at least four jets of which at least two are required to be b-tagged. Moreover, due to the difference in mass between the \Zboson\ and the $\gamma$, to mimic the $Z \rightarrow \nu\nu$ decay, the highest \pT\ photon is required to have $\pt>150\gev$.  \\
 
 Unlike the CRTs, CRW, and CRST one-lepton control regions the lepton is not treated as a jet and unlike the CRZs the leptons are not removed from the \met\ calculation. Instead, the photon is used to model the \met\ since the \met\ from $\ttbar+Z$ in the SR originates mostly from the neutrino decay of the \Zboson. 
-The details of the selection for the one-lepton CR are summarized in Table~\ref{tb:ttG_1lepSel}.
+%The details of the selection for the one-lepton CR are summarized in Table~\ref{tb:ttG_1lepSel}. \\
 
 \begin{table}[htpb]
   \caption{Selection criteria for the common \Wjets, single-top, and $\ttbar+\gamma$ control-region definitions.} 
@@ -1142,6 +1149,28 @@ The details of the selection for the one-lepton CR are summarized in Table~\ref{
 \end{table}
 
 %\begin{table}[htpb]
+%  \caption[Summary of the selection for the 1-lepton $W$+jets validation region.]{Summary of the selection for the 1-lepton $W$+jets validation region. The signal lepton is treated as a jet. The same \met\ triggers as mentioned in Table~\ref{tab:SRcommon} are used.}
+%  \begin{center}
+%    \begin{tabular}{c|c}
+%      \hline \hline
+%                                          & VRW              \\ \hline
+%      Number of leptons                   & 1                \\ \hline
+%      Number of jets (incl. lepton)       & $\geq 4$         \\ \hline
+%      $\pt$ of jets (incl. lepton) in GeV & (80,80,40,40)    \\ \hline
+%      Number of $b$-jets                  & $\geq 2$         \\ \hline
+%      \mindphijettwomet                   & $>0.4$           \\ \hline
+%      $\met$                              & $>250$ GeV       \\ \hline
+%      \mtlepmet                           & $>30$,$<100$ GeV \\ \hline
+%      \mantikttwelvezero                  & $<70\,$GeV       \\ \hline
+%      \mtbmin                             & 150 GeV          \\ \hline
+%      \mindrblep                          & $>1.8$           \\ \hline \hline
+%    \end{tabular}
+%  \end{center}
+%  \label{tab:VRW}
+%\end{table}
+
+
+%\begin{table}[htpb]
 %  \caption{Selection for the $\ttbar+\gamma$ 1 lepton CR. The same triggers as described in Table~\ref{tb:lepTriggers} are used.}% and the same signal lepton requirements are mad as in Tables~\ref{tb:electronsSignal} and~\ref{tb:muonsSignal}}
 %  \begin{center}
 %    \begin{tabular}{c|c}
@@ -1183,9 +1212,9 @@ The details of the selection for the one-lepton CR are summarized in Table~\ref{
 %\end{figure}
 %\clearpage
 
-Truth studies are performed in order to check the differencies in
-kinematic distributions. The truth \pT\ ratio for a 2-bjet
-selection are shown in Fig.~\ref{fig:ttZ_vs_ttGamma_pt}.
+%Truth studies are performed in order to check the differencies in
+%kinematic distributions. The truth \pT\ ratio for a 2-bjet
+%selection are shown in Fig.~\ref{fig:ttZ_vs_ttGamma_pt}.
 
 %\begin{figure}[htpb]
 %\centering
@@ -1199,7 +1228,7 @@ selection are shown in Fig.~\ref{fig:ttZ_vs_ttGamma_pt}.
 \subsection{QCD multi-jet and all-hadronic \boldmath$t\bar{t}$ }
 \label{sec:QCDbkgd}
 The background from the production of multijet events and all-hadronic
-\ttbar~ events is estimated with the jet smearing method. The main assumption of the \verb| JetSmearing| method is that the QCD background is dominated by the mis-measurement of multiple jets. The term {\it mis-measurement} refers to cases in which the hadronisation of partons is not fully reconstructed by ATLAS and cases in which the hadronisation (particularly for heavy-flavour quarks) produces real \met in the form of neutrinos.
+\ttbar\ events is estimated with the jet smearing method. The main assumption of the jet smearing method is that the QCD background is dominated by the mis-measurement of multiple jets. The term {\it mis-measurement} refers to cases in which the hadronization of partons is not fully reconstructed by ATLAS and cases in which the hadronization (particularly for heavy-flavor quarks) produces real \met\ in the form of neutrinos. \\
 
 The attributed sources of mis-measurement which are taken into account by the method are the following:
 \begin{itemize}
@@ -1207,7 +1236,7 @@ The attributed sources of mis-measurement which are taken into account by the me
 \item Since jets are clusters of showering particles it is possible that not all of these particles can be contained within the jet radius. Some of the showering particles may be lost due to interacting with non-detector material. Additionally background particles from various different sources may enter into a jet cone, although this effect is reduced by cosmic background vetos and the overlap removal of other jets, photons, electrons and muons.
 \item Not all jets are fully contained within the calorimeter systems, if a jet has large amounts of energy it can punch through to the muon system and potentially large amounts of the energy can be lost. This is one such source of the non-Gaussian part of the jet response; this effect always gives lost energy rather than an overestimation of the energy.
 \item Jets that are close to areas of large amounts of dead material are vetoed, however there are still regions with small amounts of dead material in the calorimeters which can cause particles to deposit their energy. The sources of dead material include damaged or inactive parts of the detector, services for running electronics to the detector and various non-instrumented region from the support structure of ATLAS.
-\item In decays of heavy flavour quarks, particularly those of b-quarks, real missing energy can be present from neutrinos. Typically: $\sim$76\% of b-quark decays will be hadronic (including hadronic tau decays); leaving 12\% of decays with muons and muon neutrinos; and 12\% of decays with electrons and electron neutrinos. The decays involving neutrinos will carry a fraction of the jet energy with them, this gives a larger non-Gaussian tail in the case of b-tagged jets.
+\item In decays of heavy flavor quarks, particularly those of $b$-quarks, real missing energy can be present from neutrinos. Typically: $\sim$76\% of $b$-quark decays will be hadronic (including hadronic tau decays); leaving 12\% of decays with muons and muon neutrinos; and 12\% of decays with electrons and electron neutrinos. The decays involving neutrinos will carry a fraction of the jet energy with them, this gives a larger non-Gaussian tail in the case of b-tagged jets.
 \end{itemize}
 
 The recommended procedure is followed and both control regions and validation regions were designed. \\
@@ -1232,19 +1261,92 @@ The recommended procedure is followed and both control regions and validation re
 \section{Systematic Uncertainties}
 \label{sec:Systematics}
 
+%From Max's thesis:
+%Systematic uncertainties are associated with the predictions of all background components and the expected signal yields. The systematic uncertainties can be categorized into two sources: experimental and theoretical uncertainties. These systematic uncertainties can impact the expected event yields in the control and signal region as well as the transfer factors used when extrapolating the background expectation from the control to the signal region. \\
+%
+%The main sources of detector-related systematic uncertainties in the SM background estimates originate from jet energy scale (JES) and jet energy resolution (JER), which reaches up to 16\%, $b-$tagging efficiency, up to 9\%, \met\ soft term, up to 6\%, and pileup, up to 14\%.  There is also an uncertainty in measured luminosity of 3.2\%.
+%
+%Theory uncertainties affecting the background normalization and kinematic distribution shapes largely impact the background prediction in the signal regions, as they directly affect the background normalization and acceptance times efficiency. If a background normalization is determined by making use of dedicated control regions, then only systematics affecting the analysis acceptance are relevant. Statistical uncertainties in the evaluation of systematics are neglected in general; where necessary, selection cuts are loosened to make the systematic comparison statistically meaningful. \\ %The remainder of this section is dedicated to the discussion on how the theory systematic uncertainties have been derived for each of the background processes considered. \\
+%
+%Theory uncertainties are evaluated as follows:
+%\begin{itemize}
+%	\item $W/Z+$jets: renormalization and factorization scales, and merging and resummation scales, are varied in SHERPA.  These are factors that come out of perturbation theory but shouldn't have any impact on physical observables.  The uncertainty for $W/Z+$jets are up to 5\% and 19\% respectively.
+%	\item $t\bar{t}$: uncertainty is due to hard scattering generation from the choice of model and emission of additional partons in the initial and final states, comparing generators POWHEG-Box+PYTHIA vs. HERWIG++ and SHERPA.  This impacts SRC the largest, by 11-71\%.
+%	\item $t\bar{t}+W/Z$: the uncertainty is estimated by varying the renormalization and factorization scales and choice of PDF and comparing generators.  This results in an uncertainty of up to 6\%.
+%	\item Single $t$: the background is dominated by $Wt$ subprocess and uncertainties are evaluated for the choice of parton-showering model and parton emission for initial- and final-state radiation.  A 30\% uncertainty is applied to the background estimate to account for the effect of interference between single-top quark and $t\bar{t}$ production.
+%\end{itemize}
+
 Systematic uncertainties are associated with the predictions of all background components and the expected signal yields. The systematic uncertainties can be categorized into two sources: experimental and theoretical uncertainties. These systematic uncertainties can impact the expected event yields in the control and signal region as well as the transfer factors used when extrapolating the background expectation from the control to the signal region. \\
 
-The main sources of detector-related systematic uncertainties in the SM background estimates originate from jet energy scale (JES) and jet energy resolution (JER), which reaches up to 16\%, $b-$tagging efficiency, up to 9\%, \met\ soft term, up to 6\%, and pileup, up to 14\%.  There is also an uncertainty in measured luminosity of 3.2\%.
+\begin{description}
+\item{Jet Energy Scale (JES) and Jet Energy Resolution (JER):} The two
+  main uncertainties for jets are uncertainties affecting the JES
+  calibration and the JER. The final jet
+  energy calibration generally referred as JES is a correction
+  relating the calorimeter's response to the true jet energy. The effect of the JES and JER uncertainties on the
+background estimates in the signal regions can reach 17\%. In signal the JER uncertainty ranges from 3\% to
+6\%, and the JES uncertainty ranges from 2\% to 5.7\%.
 
-Theory uncertainties affecting the background normalization and kinematic distribution shapes largely impact the background prediction in the signal regions, as they directly affect the background normalization and acceptance times efficiency. If a background normalization is determined by making use of dedicated control regions, then only systematics affecting the analysis acceptance are relevant. Statistical uncertainties in the evaluation of systematics are neglected in general; where necessary, selection cuts are loosened to make the systematic comparison statistically meaningful. \\ %The remainder of this section is dedicated to the discussion on how the theory systematic uncertainties have been derived for each of the background processes considered. \\
+\item{$b$-tagging:} The $b$-tagging uncertainty has large contribution
+  to both signal and backgrounds because of the two
+  $b$-tagged jets requirement. The uncertainty in the $b$-tagging
+efficiency is not more than 9\%.
+  
+\item{ \met\ Soft-term Resolution and Scale:}} The
+uncertainty in the soft term of the \met\ is most significant in
+SRC5 at 15\%.
+% These are denoted by {\bf RESOST} and {\bf SCALEST} in the fit, respectively.
 
-Theory uncertainties are evaluated as follows:
-\begin{itemize}
-	\item $W/Z+$jets: renormalization and factorization scales, and merging and resummation scales, are varied in SHERPA.  These are factors that come out of perturbation theory but shouldn't have any impact on physical observables.  The uncertainty for $W/Z+$jets are up to 5\% and 19\% respectively.
-	\item $t\bar{t}$: uncertainty is due to hard scattering generation from the choice of model and emission of additional partons in the initial and final states, comparing generators POWHEG-Box+PYTHIA vs. HERWIG++ and SHERPA.  This impacts SRC the largest, by 11-71\%.
-	\item $t\bar{t}+W/Z$: the uncertainty is estimated by varying the renormalization and factorization scales and choice of PDF and comparing generators.  This results in an uncertainty of up to 6\%.
-	\item Single $t$: the background is dominated by $Wt$ subprocess and uncertainties are evaulated for the choice of parton-showering model and parton emission for initial- and final-state radiation.  A 30\% uncertainty is applied to the background estimate to account for the effect of interference between single-top quark and $t\bar{t}$ production.
-\end{itemize}
+\item{ Lepton efficiencies:} Lepton reconstruction and identification efficiencies have contributions to the backgrounds. For electrons, the uncertainties originate from the e/gamma resolution and scale and from the electron reconstruction efficiency. Similarly, for muons the uncertainties originate from the muon resolution and reconstruction efficiency, the isolation and the momentum scale. The lepton trigger scale factors are also taken into consideration.  These have a small impact.
+
+\item{ Pileup:} The uncertainty due to pileup re-weighting is
+  considered as two-sided variation in the event weights. This contributes
+up to 14\%.
+ \item{ Luminosity:} The uncertainty in the combined 2015+2016 integrated luminosity is 3.2\%.
+\end{description}
+
+
+
+Theory uncertainties affecting the background normalization and kinematic distribution shapes largely impact the background prediction in the signal regions, as they directly affect the background normalization and acceptance times efficiency. If a background normalization is determined by making use of dedicated control regions, then only systematics affecting the analysis acceptance are relevant. Statistical uncertainties in the evaluation of systematics are neglected in general; where necessary, selection cuts are loosened to make the systematic comparison statistically meaningful.  \\
+
+The theoretical uncertainty in each signal region is evaluated by
+considering variations with respect to the default settings and choices for the event generation. For each of the variations considered, the systematic uncertainty is estimated as an uncertainty on the so-called transfer factor, that is, the ratio of the predicted yields between the signal region and the $\ttbar$ control region(s). \\
+
+Theoretical uncertainties in the modeling of the SM background are
+estimated. For the \Vjets\ background processes, the modeling uncertainties
+are estimated using \sherpa\ samples by varying the renormalization and
+factorization scales, and the merging 
+and resummation
+scales (each varied up and down by a
+factor of two). PDF uncertainties were found to have a negligible impact. The resulting impact on the total background yields from the
+\Zjets\ theoretical uncertainties is up to 3\% while the uncertainties from the \Wjets\ sample variations are less than 3\%.  \\\
+
+Theoretical uncertainties in the modeling of the SM background are
+estimated. For the \Vjets\ background processes, the modeling uncertainties
+are estimated using \sherpa\ samples by varying the renormalization and
+factorization scales, and the merging 
+and resummation
+scales (each varied up and down by a
+factor of two). PDF uncertainties were found to have a negligible impact. The resulting impact on the total background yields from the
+\Zjets\ theoretical uncertainties is up to 3\% while the uncertainties from the \Wjets\ sample variations are less than 3\%.  For the \ttbar\ background, uncertainties are estimated from the
+comparison of different matrix-element calculations, the choice of parton-showering model and
+the emission of additional partons in the initial and final
+states. 
+The largest impact of the \ttbar\ theory
+systematic uncertainties on the total background yields arises for SRC and it
+varies from 11\% to 71\% by tightening the \RISR requirement. For the \ttbar+$W/Z$ background, the theoretical uncertainty is
+estimated through variations, in both \ttbar+$W/Z$ and $\ttbar\gamma$ MC simulation, including the choice of
+renormalization and factorization scales, the choice of PDF, as well as a comparison between generators, resulting in a maximum uncertainty of 2\% in SRA-TT.
+The single-top background is dominated by the $Wt$ subprocess. Uncertainties are estimated for
+the choice of parton-showering model (\pythia\ vs \herwig++) and
+for the emission of additional partons in the initial- and final-state
+radiation. A 30\% uncertainty is assigned to the single-top background estimate to account for the effect of
+interference between single-top-quark and \ttbar\ production. This uncertainty is estimated by comparing yields in the signal and control 
+regions for a sample that includes resonant and non-resonant $WW$+$bb$ production with the sum of the yields of 
+resonant \ttbar\ and single-top+$b$ production. The
+final single-top uncertainty relative to the total background estimate
+is up to 12\%.
+
 
 
 \section{Fitting Procedure}
@@ -1253,23 +1355,22 @@ Theory uncertainties are evaluated as follows:
 The SM backgrounds in each SR are estimated with a profile likelihood fit using the observed number of events in the CRs.  The correlations in the systematic uncertainties that are common between SRs and CRs  are treated as nuisance parameters in the fit and are modeled by Gaussian probability density functions.  A normalization factor is then derived from the fit.  For backgrounds without a defined CR, contributions are estimated using the cross section.  \\
 
 
-%The fitted scale factors for the backgrounds are summarized in Table \ref{table.scale.factors}.  
-Tables \ref{table.bkgonly.SRA}, \ref{table.bkgonly.SRB}, \ref{table.bkgonly.SRC1to3}, \ref{table.bkgonly.SRC4to5}, and \ref{table.bkgonly.SRE} show the background and signal yields in simulation before and after the scale factors are applied for SRA, B, C, D, and E respectively. %, and Figures \ref{fig:bkgSRA}, \ref{fig:bkgSRB}, \ref{fig:bkgSRC1to3}, \ref{fig:bkgSRC4to5}, \ref{fig:bkgSRD}, and \ref{fig:bkgSRE} show a graphical breakdown of the backgrounds in these signal regions so that the proportion of each is easily seen. \\
+The fitted scale factors for the backgrounds are summarized in Table \ref{table.scale.factors}.  Tables \ref{tab:srABYields}, \ref{tab:srCYields}, and \ref{tab:srDEYields} show the background and signal yields in simulation before and after the scale factors are applied for SRA, B, C, D, and E. %, and Figures \ref{fig:bkgSRA}, \ref{fig:bkgSRB}, \ref{fig:bkgSRC1to3}, \ref{fig:bkgSRC4to5}, \ref{fig:bkgSRD}, and \ref{fig:bkgSRE} show a graphical breakdown of the backgrounds in these signal regions so that the proportion of each is easily seen. \\
 
-%\begin{table}
-%  \begin{center}
-%    \input{sfs.tex}
-%  \end{center}
-%  \caption{Fitted scale factors for the MC background samples based on
-%    36.07 \ifb of data.}
-%  \label{table.scale.factors}
-%\end{table}
-%\clearpage
+\begin{table}
+  \begin{center}
+    \input{sfs.tex}
+  \end{center}
+  \caption{Fitted scale factors for the MC background samples based on
+    36.07 \ifb of data.}
+  \label{table.scale.factors}
+\end{table}
+\clearpage
 
 
 %\input{histFitterTables/YieldsTable.SRA.tex}
 \begin{table}[htpb]
-  \caption{Observed and expected yields, before and after the fit, for SRA and SRB.
+  \caption[Observed and expected yields, before and after the fit, for SRA and SRB]{Observed and expected yields, before and after the fit, for SRA and SRB.
 The uncertainties include MC statistical uncertainties, detector-related systematic uncertainties, and theoretical uncertainties in the extrapolation from CR to SR.}
   \begin{center}
   \small
@@ -1313,7 +1414,7 @@ The uncertainties include MC statistical uncertainties, detector-related systema
 %\input{histFitterTables/YieldsTable.SRC1to3.tex}
 
 \begin{table}[htpb]
-  \caption{Observed and expected yields, before and after the fit.
+  \caption[Observed and expected yields, before and after the fit, for SRC]{Observed and expected yields, before and after the fit, for SRC.
 The uncertainties include MC statistical uncertainties, detector-related systematic uncertainties, and theoretical uncertainties in the extrapolation from CR to SR.}
   \begin{center}
 {\renewcommand{\arraystretch}{1.2}
@@ -1352,7 +1453,7 @@ The uncertainties include MC statistical uncertainties, detector-related systema
 
 %\input{histFitterTables/YieldsTable.SRD.tex}
 \begin{table}[htpb]
-  \caption{Observed and expected yields, before and after the fit, for SRD and SRE.
+  \caption[Observed and expected yields, before and after the fit, for SRD and SRE]{Observed and expected yields, before and after the fit, for SRD and SRE.
 The uncertainties include MC statistical uncertainties, detector-related systematic uncetainties, and theoretical uncertainties in the extrapolation from CR to SR.}
   \begin{center}
 {\renewcommand{\arraystretch}{1.2}
@@ -1394,12 +1495,13 @@ For discovery a p-value is calculated in each SR and subregion independently.  F
 
 
 
-The observed yields compared to the background estimates (after applying the scale factors) for all SRs are shown in Tables \ref{table.bkgonly.SRA}, \ref{table.bkgonly.SRB}, \ref{table.bkgonly.SRC1to3}, \ref{table.bkgonly.SRD}, and \ref{table.bkgonly.SRE}.  No significant excess above the SM expectation is observed in any of the signal regions. \\
+The observed yields compared to the background estimates (after applying the scale factors) for all SRs are shown in Tables \ref{tab:srABYields}, \ref{tab:srCYields}, and \ref{tab:srDEYields}.  No significant excess above the SM expectation is observed in any of the signal regions. As can be seen in Figure \ref{fig:srSum} the yields in the VRs and SRs match the background estimation well. Figures \ref{fig:SRs} shows the postfit, unblinded distribution of some of the most discriminating variables of SRA, SRB, SRC, SRD, and SRE at 36.07 \ifb. For SRA and SRB the distributions for individual categories are shown. Additionally, the error bands include both MC statistical and all detector systematical uncertainties. \\ %\ref{fig:SRAunblinded},~\ref{fig:SRBunblinded},~\ref{fig:SRCunblinded},~\ref{fig:SRDunblinded},~\ref{fig:SREunblinded}
+
+\\
 %, , table.bkgonly.SRC1to3, table.bkgonly.SRC4to5, table.bkgonly.SRD, table.bkgonly.SRE
 % histFitterTables/YieldsTable.SRB, histFitterTables/YieldsTable.SRC1to3, histFitterTables/YieldsTable.SRC4to5, histFitterTables/YieldsTable.SRD, histFitterTables/YieldsTable.SRE
 
-As shown in Figure \ref{fig:srSum} the VRs match the background estimation well.  It can be seen that the SRs do as well.
-
+ 
 
 \begin{figure}[!hp] 
 \begin{center}
@@ -1413,7 +1515,19 @@ As shown in Figure \ref{fig:srSum} the VRs match the background estimation well.
 
 %% Unblinded Results
 
-Figures~\ref{fig:SRAunblinded},~\ref{fig:SRBunblinded},~\ref{fig:SRCunblinded},~\ref{fig:SRDunblinded},~\ref{fig:SREunblinded} show the postfit, unblinded distribution of some of the most discriminating variables of SRA, SRB, SRC, SRD, and SRE at 36.07 \ifb. For SRA and SRB the distributions for individual categories are shown. Additionally, the error bands include both MC statistical and all detector systematical uncertainties. \\
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.49\textwidth]{figures/SRA/Met_SRA_TT.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/SRA/MT2Chi2_SRA_T0.pdf}\\%\hspace{0.05\textwidth}
+    \includegraphics[width=0.49\textwidth]{figures/SRB/MtBMax_SRB_TW.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/SRC/CA_RISR_SRC1_5.pdf}\\%\hspace{0.05\textwidth}
+    \includegraphics[width=0.49\textwidth]{figures/SRD/MtBMax_SRD_high.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/SRE/Ht_SRE.pdf}
+    \caption[Distribution of several kinematic variables in the signal regions]{Distributions of \met\ for SRA-TT, \mttwo\ for SRA-T0, \mtbmax\ for SRB-TW, \rISR\ for SRC1--5, \mtbmax\ for SRD-high and \HT\ for SRE after the likelihood fit. The stacked histograms show the SM prediction and the hatched uncertainty band around the SM prediction shows the MC statistical and detector-related systematic uncertainties. For each variable, the distribution for a representative signal point is shown.}
+    \label{fig:SRs}
+  \end{center}
+\end{figure}
+\clearpage
 
 %\begin{figure}[!hp] 
 %\begin{center}
@@ -1495,7 +1609,7 @@ There are two types of limits that are evaluated:
 
 The results of the discovery fit for 36.07 \ifb\ are summarized by the
 model-independent upper limits, as evaluated with asymptotics
-and shown in Table \ref{table.results.exclxsec.pval.upperlimit}. In the asymptotic case, the calculator does not return a p0 value when the number of observed events is less than expected.  The table shows the 95\% confidence level upper limits on the visible cross section ($\langle \epsilon \sigma \rangle$, the detector acceptance multiplied by the efficiency), the number of signal events, the confidence level for the background-only hypothesis, and the discover p-values.  The smaller the p-value the more likely for the background-only hypothesis to be incorrect.  When the number of observed events are smaller than predicted a p-value of 0.50 is assigned.  The smallest p-values are 0.19, 0.24, 0.27, and 0.29 for SRB-T0, SRD-high, SRA-TT, and SRC3.  These values are too large to reject the background-only theory\footnote{For excluding a signal hypothesis a p-value greater than 0.05, which corresponds to a 95\% confidence level, is used.  The standard of a 5$\sigma$ excess for a discovery has a p-value of $2.87 \times 10^{-7}$.}. \\
+and shown in Table \ref{tab:upLimits}. In the asymptotic case, the calculator does not return a p0 value when the number of observed events is less than expected.  The table shows the 95\% confidence level upper limits on the visible cross section ($\langle \epsilon \sigma \rangle$, the detector acceptance multiplied by the efficiency), the number of signal events, the confidence level for the background-only hypothesis, and the discover p-values.  The smaller the p-value the more likely for the background-only hypothesis to be incorrect.  When the number of observed events are smaller than predicted a p-value of 0.50 is assigned.  The smallest p-values are 0.19, 0.24, 0.27, and 0.29 for SRB-T0, SRD-high, SRA-TT, and SRC3.  These values are too large to reject the background-only theory\footnote{For excluding a signal hypothesis a p-value greater than 0.05, which corresponds to a 95\% confidence level, is used.  The standard of a 5$\sigma$ excess for a discovery has a p-value of $2.87 \times 10^{-7}$.}. \\
 
 \begin{table}[htpb]
   \caption[95\% CL upper limits]{Left to right: 95\% CL upper limits on the average visible cross section
@@ -1523,7 +1637,7 @@ The two last columns indicate the CL$_\mathrm{B}$ value, i.e. the confidence lev
 The results have been interpreted in terms of a simplified model and for several pMSSM interpretations.
 
 \subsection{Simplified Model}
-The exclusion curves for the 100\% \stop $\ra t\ninoone$ \gls{br} is shown in Figure \ref{fig:SRABC_exclusion}.  Included in blue are the results from the 8 TeV analysis.  The observed and expected limits are shown in red and blue respectively.  For a Natural-SUSY inspired mixed grid scenario, where the \stop\ decays to a $t\ninoone$ or $b\chinoonepm$ with different branching ratios is shown in Figure \ref{fig:tbMet_exclusion}.  Finally the SRE results are interpreted for indirect top-squark production through gluino decays in terms of the \stop\ vs.\ $\gluino$ mass plane with $\Delta m(\stop,\ninoone)=5\GeV$. Gluino masses up to $m_{\gluino}=1800\GeV$ with $\mstop<800\GeV$ are excluded as shown in Fig. \ref{fig:SRE_exclusion}. 
+The exclusion curves for the 100\% \stop $\ra t\ninoone$ \gls{br} is shown in Figure \ref{fig:SRABC_exclusion}.  Included in blue are the results from the 8 TeV analysis.  The observed and expected limits are shown in red and blue respectively.   Assuming a branching fraction of $100\%$ to a top quark and neutralino, stop masses in the range 450-1000 GeV are excluded for neutralino masses below $160\GeV$. In the case where the stop mass is close to the top mass plus the neutralino mass, masses between 235-590 GeV are excluded.  For a Natural-SUSY inspired mixed grid scenario, where the \stop\ decays to a $t\ninoone$ or $b\chinoonepm$ with different branching ratios is shown in Figure \ref{fig:tbMet_exclusion}.  Finally the SRE results are interpreted for indirect top-squark production through gluino decays in terms of the \stop\ vs.\ $\gluino$ mass plane with $\Delta m(\stop,\ninoone)=5\GeV$. Gluino masses up to $m_{\gluino}=1800\GeV$ with $\mstop<800\GeV$ are excluded as shown in Fig. \ref{fig:SRE_exclusion}. 
 
 %The yields for the validation and signal regions are shown in Figure \ref{fig:srSum}.  
 %Figures~\ref{fig:SRAunblinded},~\ref{fig:SRBunblinded},~\ref{fig:SRCunblinded},~\ref{fig:SRDunblinded},~\ref{fig:SREunblinded} show the postfit, unblinded distribution of some of the most discriminating variables of SRA, SRB, SRC, SRD, and SRE at 36.07 \ifb. For SRA and SRB the distributions for individual categories are shown. Additionally, the error bands include both MC statistical and all detector systematical uncertainties. \\
@@ -1598,8 +1712,8 @@ The exclusion curves for the 100\% \stop $\ra t\ninoone$ \gls{br} is shown in Fi
 
 
 
-\begin{figure}[htpb]
-  \begin{center} \includegraphics[width=0.7\textwidth]{figures/atlascls_m0m12_wband1_showcms0_StopZL2016_SRABCDE_Tt_directTTplusbWN_all_Output_fixSigXSecNominal_hypotest__1_harvest_list.pdf}%
+\begin{figure}[h]
+  \begin{center} \includegraphics[width=0.9\textwidth]{figures/atlascls_m0m12_wband1_showcms0_StopZL2016_SRABCDE_Tt_directTTplusbWN_all_Output_fixSigXSecNominal_hypotest__1_harvest_list.pdf}%
     \caption[Exclusion contours as a function of $\stop$ and
       $\ninoone$ masses in the scenario where both top squarks decay
       via $\stop\to t^{(*)} \ninoone$.]{Observed (red solid line) and expected (blue solid line)
@@ -1613,21 +1727,21 @@ The exclusion curves for the 100\% \stop $\ra t\ninoone$ \gls{br} is shown in Fi
     \label{fig:SRABC_exclusion}%\label{fig:SRD4_exclusion}
   \end{center}
 \end{figure}
-\clearpage
 
-\begin{figure}[htpb]
+
+\begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.7\textwidth]{figures/SRABCD_mixed_dm1.pdf}
+    \includegraphics[width=0.9\textwidth]{figures/SRABCD_mixed_dm1.pdf}
     \caption[Exclusion contours for the Natural SUSY-inspired mixed grid scenario]{Observed (solid line) and expected (dashed line) exclusion contours at 95\% CL as a function of $\stop$ and $\ninoone$ masses and branching ratio to $\stop\to t\LSP$ in the Natural SUSY-inspired mixed grid scenario where $m_{\chinoonepm}=\mLSP+1\gev$. %Uncertainty bands corresponding to the $\pm 1 \sigma$ variation on the expected limit (yellow band) and the sensitivity of the observed limit to $\pm 1\sigma$ variations of the signal theoretical uncertainties (red dotted lines) are also indicated. Observed limits from the Run~1 search~\cite{stop1L8TeV,stop2L8TeV} are overlaid for comparison. 
 }
     \label{fig:tbMet_exclusion}
   \end{center}
 \end{figure}
-\clearpage
 
-\begin{figure}[htpb]
+
+\begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.7\textwidth]{figures/SRE_exclusion}
+    \includegraphics[width=0.9\textwidth]{figures/SRE_exclusion}
     \caption[Exclusion controus for the scenario where both
       gluinos decay via $\gluino\to t\stop\to t\ninoone$]{Observed (red solid line) and expected (blue solid line)
       exclusion contours at 95\% CL as a function
@@ -1666,40 +1780,39 @@ The results have also been interpreted in the context of pMSSM, which is describ
 	\item Well-tempered neutralino pMSSM: A model that provides a viable dark matter candidate in which three light neutralinos and a light chargino, which are composed as a mixture of bino and higgsino states, are considered with masses within $50$~\GeV\ of the lightest state~\cite{atlasDM,wellTemp}. The model is designed to satisfy the SM Higgs-boson mass and the dark matter relic density ($0.10<\Omega h^{2}<0.12$, where $\Omega$ is density parameter and $h$ is the Planck constant~\cite{relic_density}).% with pMSSM parameters: $\mone=-(\mu+\delta)$ where $\delta=20-50\gev$, $\mtwo=2.0$ TeV, $\mthree=1.8$ TeV, $\ms=0.8-1.2$~\TeV, $\xtms\sim\sqrt{6}$, and $\tanb=20$. For this model, limits are shown in Fig.~\ref{fig:wellTemp_exclusion}. Only bottom- and top-squark production are considered in this interpretation. The signal grid points were produced in two planes, $\mu$ vs \mtr\ and $\mu$ vs \mqlthree, and then projected to the corresponding \stop\ and \ninoone\ masses. All other pMSSM parameters are set to $>$3 TeV. 
 \end{itemize}
 
-\begin{figure}[htpb]
+\begin{figure}[h]
   \begin{center}
-   \includegraphics[width=0.7\textwidth]{figures/SRABCD_tN1tN2bC1.pdf}
+   \includegraphics[width=0.6\textwidth]{figures/SRABCD_tN1tN2bC1.pdf}
     \caption[Exclusion contours for the pMSSM-inspired non-asymptotic higgsino simplified model.]{Observed (solid line) and expected (dashed line) exclusion contours at 95\% CL as a function of \mstop\ and \mLSP\ for the pMSSM-inspired non-asymptotic higgsino simplified model for a small tan$\beta$ with BR($\stop\to t\ninotwo$, $\stop\to t\LSP$, $\stop\to b\chinoonepm$) = 45\%, 10\%, 45\% (blue), a large tan$\beta$ with BR($\stop\to t\ninotwo$, $\stop\to t\LSP$, $\stop\to b\chinoonepm$) = 33\%, 33\%, 33\% (red), and a small right-handed top-squark mass parameter with BR($\stop\to t\ninotwo$, $\stop\to t\LSP$, $\stop\to b\chinoonepm$) = 25\%, 50\%, 25\% (green) assumption. Uncertainty bands correspond to the $\pm 1 \sigma$ variation on the expected limit.}
     \label{fig:nonAsymhiggsino_exclusion}
   \end{center}
 \end{figure}
 \clearpage
 
-\begin{figure}[htpb]
+\begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.7\textwidth]{figures/SRABCD_winoNLSP.pdf}
+    \includegraphics[width=0.6\textwidth]{figures/SRABCD_winoNLSP.pdf}
     \caption[Exclusion contours for the Wino NLSP pMSSM model.]{Observed (solid line) and expected (dashed line) exclusion contours at 95\% CL as a function of $\stop$ and $\ninoone$ masses for the Wino NLSP pMSSM model for both positive (blue) and negative (red) values of $\mu$. Uncertainty bands correspond to the $\pm 1 \sigma$ variation on the expected limit. % Uncertainty bands corresponding to the $\pm 1 \sigma$ variation on the expected limit (yellow band) and the sensitivity of the observed limit to $\pm 1\sigma$ variations of the signal theoretical uncertainties (red dotted lines) are also indicated.
     }
     \label{fig:winoNLSP_exclusion}
   \end{center}
 \end{figure}
-\clearpage
 
-\begin{figure}[htpb]
+
+\begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.7\textwidth]{figures/SRABCD_wellTempered.pdf}
+    \includegraphics[width=0.6\textwidth]{figures/SRABCD_wellTempered.pdf}
     \caption[Exclusion contour for the well-tempered pMSSM model.]{Observed (solid line) and expected (dashed line) exclusion contours at 95\% CL as a function of $\stop$ and $\ninoone$ masses for the left-handed top-squark mass parameter scan (red) as well as in the right-handed top-squark mass parameter scan (blue) in the well-tempered pMSSM model. Uncertainty bands correspond to the $\pm 1 \sigma$ variation on the expected limit.} 
-    
     \label{fig:wellTemp_exclusion}
   \end{center}
 \end{figure}
-\clearpage
+
 
 
 \section{Outlook}
 
 
-The amount of data that the LHC has produced in Run 2 has exceeded expectations.  However, as can be seen in Section \ref{fig:1tevstopreach}, the rate at which increasing luminosity increases the discovery potential slows with more data.  This is due to the increase in background, and as the mass of the stop increases the cross section decreases. There is a need for much more data and the High-Luminosity LHC will be invaluable for searches in the future and improvements to the trigger system, such as triggering on large-radius jets as the gFEX is designed to do, will also improve chances of discovery.  \\
+The amount of data that the LHC has produced in Run 2 has exceeded expectations.  However, as can be seen in Section \ref{fig:1tevstopreach}, the rate at which increasing luminosity increases the discovery potential slows with more data.  This is due to the increase in background, and as the mass of the stop increases the cross section decreases. There is a need for much more data and the High-Luminosity LHC, as discussed in Section \ref{sec:HLLHC}, will be invaluable for searches in the future and improvements to the trigger system, such as triggering on large-radius jets as the gFEX is designed to do, will also improve chances of discovery.  \\
 
 
 \begin{figure}[!h]
@@ -1719,17 +1832,20 @@ The amount of data that the LHC has produced in Run 2 has exceeded expectations.
 %		\includegraphics[width=\textwidth]{figures/significance25_50_100SRAT01000}
 %		\caption{SRA-T0}
 %	\end{subfigure}
-	\caption[Significance as a function of integrated luminosity for 1000~\gev\ stop]{Signal significant as a function of integrated luminosity for simplified model with $(\mstop,\mLSP) = (1000,1)~\gev$ and 100\% \stop $\ra t\ninoone$ \gls{br} for SRA subregions. The color lines represent different levels of background estimate uncertainty.}
+	\caption[Significance as a function of integrated luminosity for a 1000 GeV stop]{Signal significant as a function of integrated luminosity for simplified model with $(\mstop,\mLSP) = (1000,1)~\gev$ and 100\% \stop $\ra t\ninoone$ \gls{br} for SRA subregions. The color lines represent different levels of background estimate uncertainty.}
 	\label{fig:1tevstopreach}
 \end{figure}
-\clearpage
+%\clearpage
 
 
 %Additionally, there are orthogonal stop searches in the 1-lepton and 2-lepton channels.  The 2-lepton exclusion limits puts the stop quark at 940 GeV with a massless neutrino.  The 1-lepton search puts the limit at 
 
 The CMS experiment also has conducted a search for the all-hadronic decay of the stop, though with some different approaches.  For instance the method of identifying top quarks; instead of using mass categories the approach is to identify based on \pt.  For high \pt\  top, jets are reclustered with the \antikt\ algorithm with a distance parameter of R=0.8.  Substructure is also required and the tops, and kinematic variables are used for two separate BDTs, one for top quarks and one for $W$ bosons, which discriminate between signal and background.  Intermediate \pt\ candidates use the two highest $b-$tagged jets and then find a $W$ boson candidate to form resolved top candidates.  Various kinematic varables from these top-tagged jets are then input to a BDT to discriminate signal from background.  Stop masses up to 1040 GeV and neutralino masses up to 500 GeV are excluded with this search.  The multiple uses of BDTs improved the exclusion, but adds complications to the analysis.\\
 
-There is also a need to find ways to remove background and improve the analysis, and there is ongoing R\&D for the analysis.  For example, at the time of this writing work to improve $b-$jet efficiency as well as calibrating smaller-radius jets, which can help resolve structure in larger radius jets, is being carried out.  In addition to this, it may be worth an effort to design some machine learning studies.  While a BDT study was used in this analysis and helped to design the top categories, much more sophisticated networks have been created that can be tested.  The downside of using machine learning is the risk of creating a black box where some complex nonlinear discrimination is being carried out, the details of which may be nearly impossible to figure out.  However it can at least provide a metric of what is possible to achieve with cuts.
+There is also a need to find ways to remove background and improve the analysis, and there is ongoing R\&D for the analysis.  For example, at the time of this writing work to improve $b-$jet efficiency as well as calibrating smaller-radius jets, which can help resolve structure in larger radius jets, is being carried out.  In addition, it's worthwhile to determine if some new machine learning algorithms can help in the search.  For example, jets in the calorimeter can be thought of as an image, so Convolutional Neural Networks (CNNS), which are designed to, for example, discriminate between specific images and similar ones, which can be useful to optimize signal regions.  In this analysis, the cuts used for SRA and SRB were compared to a BDT, and it was found that the BDT used the top masses to improve performance.  After the top mass subcategories were employed the cuts matched the performance of the BDT.  More advanced algorithms can be used, but can be much more difficult or impossible to decipher what the algorithm is doing.  This means that there is a risk of losing the physical interpretation of what the algorithms are doing, and reinterpreting the analysis is more difficult.  However, it can at the least provide a metric to compare analysis cuts to what is possible. \\
+
+
+%In addition to this, it may be worth an effort to design some machine learning studies.  While a BDT study was used in this analysis and helped to design the top categories, much more sophisticated networks have been created that can be tested.  The downside of using machine learning is the risk of creating a black box where some complex nonlinear discrimination is being carried out, the details of which may be nearly impossible to figure out.  However it can at least provide a metric of what is possible to achieve with cuts.
 
 
 %There is an additional requirement for the signal regions with a large mass difference between the stop and neutralino for the angle between the \met\ vector and highest \pt\ jet to be greater than 0.5, since the \met\ tends to be aligned with that jet.  This requirement is loosened for smaller mass differences.  Stop masses up to 1040 GeV and neutralino masses up to 500 GeV are excluded with this search. \\
